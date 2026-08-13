@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>40 Duas - Ilm-e-Quran</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif:wght@400;700&family=Plus+Jakarta+Sans:wght@600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+          rel="stylesheet">
+
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="bg-[#faf9f4] text-[#173c2a] min-h-screen">
+
+<!-- ================================================= -->
+<!-- NAVBAR -->
+<!-- ================================================= -->
+
+<nav class="sticky top-0 z-50 bg-[#faf9f4]/90 backdrop-blur-md border-b border-[#e3e3de]">
+
+    <div class="max-w-7xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
+
+        <!-- Logo -->
+
+        <a href="index.html"
+           class="flex items-center gap-2 text-[#0f5132] text-xl font-bold">
+
+            <span class="material-symbols-outlined">
+                menu_book
+            </span>
+
+            Ilm-e-Quran
+
+        </a>
+
+
+        <!-- Desktop Navigation -->
+
+        <div class="hidden md:flex items-center gap-2">
+
+            <a href="index.html"
+               class="px-4 py-2 rounded-lg text-[#52635a] hover:text-[#0f5132] hover:bg-[#f0f1ec]">
+                Home
+            </a>
+
+            <a href="99-names.html"
+               class="px-4 py-2 rounded-lg text-[#52635a] hover:text-[#0f5132] hover:bg-[#f0f1ec]">
+                99 Names
+            </a>
+
+            <a href="40-hadith.html"
+               class="px-4 py-2 rounded-lg text-[#52635a] hover:text-[#0f5132] hover:bg-[#f0f1ec]">
+                40 Hadith
+            </a>
+
+            <a href="40-duas.html"
+               class="px-4 py-2 rounded-lg bg-[#e7f0e9] text-[#0f5132] font-semibold">
+                40 Duas
+            </a>
+
+        </div>
+
+
+        <!-- Dark Mode -->
+
+        <button id="themeToggle"
+                class="w-10 h-10 rounded-full flex items-center justify-center bg-[#f0f1ec] hover:bg-[#e3e3de]">
+
+            <span class="material-symbols-outlined" id="themeIcon">
+                dark_mode
+            </span>
+
+        </button>
+
+    </div>
+
+</nav>
+
+
+<!-- ================================================= -->
+<!-- MAIN -->
+<!-- ================================================= -->
+
+<main class="max-w-7xl mx-auto px-4 md:px-8 py-12">
+
+
+    <!-- HEADER -->
+
+    <section class="pattern-bg bg-[#ffffff] rounded-3xl px-6 py-14 text-center border border-[#e3e3de] shadow-sm">
+
+        <div class="max-w-3xl mx-auto">
+
+            <p class="text-[#c89b25] font-semibold uppercase tracking-widest text-sm mb-3">
+                Ilm-e-Quran
+            </p>
+
+            <h1 class="text-4xl md:text-5xl font-bold text-[#0f5132] mb-5">
+                40 Duas
+            </h1>
+
+            <p class="text-[#52635a] text-lg leading-relaxed">
+                Beautiful supplications for every occasion,
+                guiding you towards light, peace and tranquility.
+            </p>
+
+
+            <!-- SEARCH -->
+
+            <div class="relative max-w-xl mx-auto mt-8">
+
+                <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-[#0f5132]">
+                    search
+                </span>
+
+                <input
+                    type="text"
+                    id="duaSearch"
+                    placeholder="Search Duas, Arabic, English or Urdu..."
+                    class="w-full bg-[#f4f5f0] border-b-2 border-[#0f5132]/20 focus:border-[#c89b25] outline-none rounded-t-xl py-4 pl-12 pr-4 text-[#173c2a]"
+                >
+
+            </div>
+
+
+            <!-- COUNTER -->
+
+            <p id="duaCounter"
+               class="mt-5 text-sm font-semibold text-[#0f5132]">
+                Showing 40 Duas
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- DUA GRID -->
+    <!-- ================================================= -->
+
+    <section
+        id="duasGrid"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+
+        <!-- JavaScript will insert 40 Duas here -->
+
+    </section>
+
+
+    <!-- NO RESULTS -->
+
+    <div id="noResults"
+         class="hidden text-center py-20">
+
+        <span class="material-symbols-outlined text-6xl text-[#c0c9c0]">
+            search_off
+        </span>
+
+        <h2 class="text-2xl font-bold text-[#0f5132] mt-4">
+            No Duas Found
+        </h2>
+
+        <p class="text-[#52635a] mt-2">
+            Try another search.
+        </p>
+
+    </div>
+
+</main>
+
+
+<!-- ================================================= -->
+<!-- MODAL -->
+<!-- ================================================= -->
+
+<div id="duaModal"
+     class="hidden fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm p-4 flex items-center justify-center">
+
+    <div class="bg-[#ffffff] w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-3xl shadow-2xl relative">
+
+
+        <!-- CLOSE -->
+
+        <button id="closeModal"
+                class="absolute top-4 right-4 w-10 h-10 rounded-full bg-[#f0f1ec] flex items-center justify-center hover:bg-[#e3e3de]">
+
+            <span class="material-symbols-outlined">
+                close
+            </span>
+
+        </button>
+
+
+        <div class="p-6 md:p-10">
+
+
+            <!-- NUMBER -->
+
+            <p id="modalNumber"
+               class="text-[#c89b25] font-bold text-sm uppercase tracking-widest mb-2">
+            </p>
+
+
+            <!-- TITLE -->
+
+            <h2 id="modalTitle"
+                class="text-3xl md:text-4xl font-bold text-[#0f5132] mb-8">
+            </h2>
+
+
+            <!-- ARABIC -->
+
+            <div class="bg-[#f5f7f1] rounded-2xl p-6 md:p-10 mb-8 border border-[#e3e3de]">
+
+                <p id="modalArabic"
+                   dir="rtl"
+                   class="font-serif text-3xl md:text-4xl leading-loose text-[#0f5132] text-right">
+                </p>
+
+            </div>
+
+
+            <!-- TRANSLITERATION -->
+
+            <div class="mb-7">
+
+                <h3 class="text-xs font-bold uppercase tracking-widest text-[#68776e] mb-2">
+                    Transliteration
+                </h3>
+
+                <p id="modalTransliteration"
+                   class="text-[#173c2a] italic text-lg leading-relaxed">
+                </p>
+
+            </div>
+
+
+            <!-- ENGLISH -->
+
+            <div class="border-t border-[#e3e3de] pt-6 mb-7">
+
+                <h3 class="text-xs font-bold uppercase tracking-widest text-[#68776e] mb-2">
+                    English Translation
+                </h3>
+
+                <p id="modalEnglish"
+                   class="text-[#173c2a] text-lg leading-relaxed">
+                </p>
+
+            </div>
+
+
+            <!-- URDU -->
+
+            <div class="border-t border-[#e3e3de] pt-6 mb-7">
+
+                <h3 class="text-xs font-bold uppercase tracking-widest text-[#68776e] mb-2 text-right">
+                    اردو ترجمہ
+                </h3>
+
+                <p id="modalUrdu"
+                   dir="rtl"
+                   class="font-serif text-xl leading-loose text-[#173c2a] text-right">
+                </p>
+
+            </div>
+
+
+            <!-- REFERENCE -->
+
+            <div class="border-t border-[#e3e3de] pt-6 flex items-center gap-2 text-[#0f5132]">
+
+                <span class="material-symbols-outlined">
+                    menu_book
+                </span>
+
+                <span id="modalReference"
+                      class="font-semibold">
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- FOOTER -->
+<!-- ================================================= -->
+
+<footer class="bg-[#f0f1ec] border-t border-[#e3e3de] mt-16">
+
+    <div class="max-w-7xl mx-auto px-4 md:px-8 py-10 flex flex-col md:flex-row justify-between items-center gap-6">
+
+        <div class="text-center md:text-left">
+
+            <h3 class="text-xl font-bold text-[#0f5132]">
+                Ilm-e-Quran
+            </h3>
+
+            <p class="text-sm text-[#52635a] mt-2">
+                © 2024 Ilm-e-Quran.
+                Seeking Tranquility through Knowledge.
+            </p>
+
+        </div>
+
+
+        <div class="flex flex-wrap justify-center gap-6 text-sm">
+
+            <a href="#" class="text-[#52635a] hover:text-[#0f5132]">
+                About Us
+            </a>
+
+            <a href="#" class="text-[#52635a] hover:text-[#0f5132]">
+                Contact
+            </a>
+
+            <a href="#" class="text-[#52635a] hover:text-[#0f5132]">
+                Privacy Policy
+            </a>
+
+            <a href="#" class="text-[#52635a] hover:text-[#0f5132]">
+                Terms of Service
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- ================================================= -->
+<!-- JAVASCRIPT -->
+<!-- ================================================= -->
+
+<script src="duas.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
