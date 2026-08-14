@@ -56,3 +56,127 @@
 html { scroll-behavior: smooth; }
 body { margin: 0; }
 button, a, input { -webkit-tap-highlight-color: transparent; }
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+html.dark body {
+    background-color: #101411 !important;
+    color: #f1f4ef !important;
+}
+
+/* Navbar */
+html.dark nav {
+    background-color: rgba(21, 26, 23, 0.92) !important;
+    border-color: #39423d !important;
+}
+
+/* Main surfaces */
+html.dark .bg-background {
+    background-color: #101411 !important;
+}
+
+html.dark .bg-surface {
+    background-color: #151a17 !important;
+}
+
+html.dark .bg-surface-container-low {
+    background-color: #1b211e !important;
+}
+
+html.dark .bg-surface-container-lowest {
+    background-color: #151a17 !important;
+}
+
+html.dark .bg-surface-container-high {
+    background-color: #252b28 !important;
+}
+
+html.dark .bg-surface-variant {
+    background-color: #303833 !important;
+}
+
+/* Text */
+html.dark .text-on-background,
+html.dark .text-on-surface {
+    color: #f1f4ef !important;
+}
+
+html.dark .text-on-surface-variant {
+    color: #b8c1ba !important;
+}
+
+/* Borders */
+html.dark .border-surface-variant {
+    border-color: #39423d !important;
+}
+
+/* Search input */
+html.dark input {
+    background-color: #1b211e !important;
+    color: #f1f4ef !important;
+}
+
+html.dark input::placeholder {
+    color: #8f9991 !important;
+}
+
+/* Search box */
+html.dark .bg-surface-container-lowest {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* Cards */
+html.dark .card-hover {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Footer */
+html.dark footer {
+    background-color: #151a17 !important;
+    border-color: #39423d !important;
+}
+
+/* Mobile menu */
+html.dark #mobile-menu {
+    background-color: #151a17 !important;
+    border-color: #39423d !important;
+}
+
+/* Islamic pattern */
+html.dark .islamic-pattern {
+    background-color: #101411;
+}
+
+/* Keyboard shortcut */
+html.dark kbd {
+    background-color: #303833 !important;
+    color: #b8c1ba !important;
+}
+
+/* Scrollbar */
+html.dark ::-webkit-scrollbar-track {
+    background: #101411;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+    background: #39423d;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+    background: #4b5750;
+}
+
+/* Smooth transition */
+body,
+nav,
+footer,
+input,
+.card-hover,
+#mobile-menu {
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
