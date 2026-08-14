@@ -1,150 +1,830 @@
-// Generate exactly 40 Hadith entries
-        const baseHadiths = [
-            {
-                number: 1,
-                arabic: "إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ، وَإِنَّمَا لِكُلِّ امْرِئٍ مَا نَوَى...",
-                english: "\"Actions are (judged) by motives (niyyah), so each man will have what he intended...\"",
-                urdu: "\"اعمال کا دارومدار نیتوں پر ہے، اور ہر شخص کے لیے وہی ہے جس کی اس نے نیت کی...\"",
-                reference: "Sahih Bukhari & Muslim"
-            },
-            {
-                number: 2,
-                arabic: "بُنِيَ الإِسْلامُ عَلَى خَمْسٍ: شَهَادَةِ أَنْ لا إِلَهَ إِلا اللَّهُ...",
-                english: "\"Islam is based on (the following) five (principles): To testify that none has the right to be worshipped but Allah...\"",
-                urdu: "\"اسلام کی بنیاد پانچ چیزوں پر ہے: اس بات کی گواہی دینا کہ اللہ کے سوا کوئی معبود نہیں...\"",
-                reference: "Sahih Bukhari & Muslim"
-            },
-            {
-                number: 3,
-                arabic: "لا يُؤْمِنُ أَحَدُكُمْ حَتَّى يُحِبَّ لأَخِيهِ مَا يُحِبُّ لِنَفْسِهِ",
-                english: "\"None of you truly believes until he loves for his brother what he loves for himself.\"",
-                urdu: "\"تم میں سے کوئی شخص اس وقت تک مومن نہیں ہو سکتا جب تک کہ وہ اپنے بھائی کے لیے وہی پسند نہ کرے جو اپنے لیے کرتا ہے۔\"",
-                reference: "Sahih Bukhari & Muslim"
-            },
-            {
-                number: 4,
-                arabic: "الدِّينُ النَّصِيحَةُ",
-                english: "\"Religion is sincerity.\"",
-                urdu: "\"دین خیر خواہی کا نام ہے۔\"",
-                reference: "Sahih Muslim"
-            }
-        ];
+// =====================================================
+// 40 UNIQUE HADITH - ILM-E-QURAN
+// =====================================================
 
-        const hadithData = [];
-        for (let i = 0; i < 40; i++) {
-            const template = baseHadiths[i % baseHadiths.length];
-            hadithData.push({
-                number: i + 1,
-                arabic: template.arabic,
-                english: template.english,
-                urdu: template.urdu,
-                reference: template.reference
-            });
-        }
+const hadithData = [
 
-        const grid = document.getElementById('hadithGrid');
-        const searchInput = document.getElementById('searchInput');
-        const counterText = document.getElementById('counterText');
-        
-        const modal = document.getElementById('hadithModal');
-        const modalContent = document.getElementById('modalContent');
-        const closeModalBtn = document.getElementById('closeModalBtn');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalArabic = document.getElementById('modalArabic');
-        const modalEnglish = document.getElementById('modalEnglish');
-        const modalUrdu = document.getElementById('modalUrdu');
-        const modalRef = document.getElementById('modalRef');
+    {
+        number: 1,
+        arabic: "إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ، وَإِنَّمَا لِكُلِّ امْرِئٍ مَا نَوَى",
+        english: "Actions are judged by intentions, and every person will have only what they intended.",
+        urdu: "اعمال کا دار و مدار نیتوں پر ہے، اور ہر شخص کو وہی ملے گا جس کی اس نے نیت کی۔",
+        reference: "Sahih Bukhari & Sahih Muslim"
+    },
 
-        function createCard(hadith) {
-            const article = document.createElement('article');
-            article.className = "bg-surface-container-lowest rounded-2xl p-6 border border-[#F4F0E6] shadow-[0px_10px_30px_rgba(15,81,50,0.05)] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 relative group overflow-hidden flex flex-col h-full";
-            
-            article.innerHTML = `
-                <div class="absolute top-0 left-0 w-full h-1 bg-transparent group-hover:bg-secondary transition-colors duration-300"></div>
-                <div class="flex justify-between items-start mb-4">
-                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-surface-container text-primary font-title-md text-title-md">${hadith.number}</span>
-                    <button class="text-on-surface-variant hover:text-secondary transition-colors group/fav">
-                        <span class="material-symbols-outlined group-hover/fav:text-secondary">favorite</span>
-                    </button>
-                </div>
-                <div class="flex-1 flex flex-col gap-4">
-                    <p class="font-body-ar-lg text-body-ar-lg text-primary text-right leading-loose mb-2" dir="rtl">${hadith.arabic}</p>
-                    <div class="h-px w-full bg-surface-variant/50"></div>
-                    <p class="font-body-md text-body-md text-on-surface line-clamp-3">${hadith.english}</p>
-                    <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2" dir="rtl">${hadith.urdu}</p>
-                </div>
-                <div class="mt-6 pt-4 border-t border-surface-variant/30 flex justify-between items-center">
-                    <span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-low px-2 py-1 rounded">${hadith.reference}</span>
-                    <button class="read-more-btn text-primary font-title-md text-title-md hover:text-secondary transition-colors flex items-center gap-1 text-sm">
-                        Read More
-                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                    </button>
-                </div>
-            `;
-            
-            article.querySelector('.read-more-btn').addEventListener('click', () => openModal(hadith));
-            return article;
-        }
+    {
+        number: 2,
+        arabic: "بُنِيَ الإِسْلَامُ عَلَى خَمْسٍ",
+        english: "Islam is built upon five pillars: testimony of faith, prayer, zakat, fasting Ramadan, and pilgrimage to the House.",
+        urdu: "اسلام کی بنیاد پانچ چیزوں پر ہے: کلمۂ شہادت، نماز، زکوٰۃ، رمضان کے روزے اور بیت اللہ کا حج۔",
+        reference: "Sahih Bukhari & Sahih Muslim"
+    },
 
-        function renderGrid(data) {
-            grid.innerHTML = '';
-            data.forEach(hadith => {
-                grid.appendChild(createCard(hadith));
-            });
-            counterText.textContent = `Showing ${data.length}/40`;
-        }
+    {
+        number: 3,
+        arabic: "مَنْ أَحْدَثَ فِي أَمْرِنَا هَذَا مَا لَيْسَ مِنْهُ فَهُوَ رَدٌّ",
+        english: "Whoever introduces into this matter of ours that which is not from it, it will be rejected.",
+        urdu: "جس نے ہمارے اس دین میں ایسی چیز ایجاد کی جو اس میں سے نہیں، وہ مردود ہے۔",
+        reference: "Sahih Bukhari & Sahih Muslim"
+    },
 
-        function filterData(query) {
-            const lowerQuery = query.toLowerCase();
-            return hadithData.filter(h => 
-                h.english.toLowerCase().includes(lowerQuery) ||
-                h.arabic.includes(lowerQuery) ||
-                h.urdu.includes(lowerQuery) ||
-                h.number.toString().includes(lowerQuery)
+    {
+        number: 4,
+        arabic: "إِنَّ الْحَلَالَ بَيِّنٌ وَإِنَّ الْحَرَامَ بَيِّنٌ",
+        english: "The lawful is clear and the unlawful is clear, and between them are doubtful matters.",
+        urdu: "حلال واضح ہے اور حرام بھی واضح ہے، اور ان دونوں کے درمیان کچھ مشتبہ امور ہیں۔",
+        reference: "Sahih Bukhari & Sahih Muslim"
+    },
+
+    {
+        number: 5,
+        arabic: "مِنْ حُسْنِ إِسْلَامِ الْمَرْءِ تَرْكُهُ مَا لَا يَعْنِيهِ",
+        english: "Part of the perfection of a person's Islam is leaving what does not concern him.",
+        urdu: "آدمی کے اسلام کی خوبی یہ ہے کہ وہ ان چیزوں کو چھوڑ دے جو اس سے متعلق نہیں۔",
+        reference: "Jami` at-Tirmidhi"
+    },
+
+    {
+        number: 6,
+        arabic: "لَا يُؤْمِنُ أَحَدُكُمْ حَتَّى يُحِبَّ لِأَخِيهِ مَا يُحِبُّ لِنَفْسِهِ",
+        english: "None of you truly believes until he loves for his brother what he loves for himself.",
+        urdu: "تم میں سے کوئی شخص اس وقت تک کامل مومن نہیں ہو سکتا جب تک وہ اپنے بھائی کے لیے وہی پسند نہ کرے جو اپنے لیے پسند کرتا ہے۔",
+        reference: "Sahih Bukhari & Sahih Muslim"
+    },
+
+    {
+        number: 7,
+        arabic: "مَنْ كَانَ يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الْآخِرِ فَلْيَقُلْ خَيْرًا أَوْ لِيَصْمُتْ",
+        english: "Whoever believes in Allah and the Last Day should speak good or remain silent.",
+        urdu: "جو شخص اللہ اور آخرت کے دن پر ایمان رکھتا ہے اسے چاہیے کہ اچھی بات کہے یا خاموش رہے۔",
+        reference: "Sahih Bukhari & Sahih Muslim"
+    },
+
+    {
+        number: 8,
+        arabic: "لَا تَغْضَبْ",
+        english: "Do not become angry.",
+        urdu: "غصہ نہ کرو۔",
+        reference: "Sahih Bukhari"
+    },
+
+    {
+        number: 9,
+        arabic: "مَنْ لَا يَرْحَمْ لَا يُرْحَمْ",
+        english: "Whoever does not show mercy will not be shown mercy.",
+        urdu: "جو رحم نہیں کرتا اس پر رحم نہیں کیا جاتا۔",
+        reference: "Sahih Bukhari & Sahih Muslim"
+    },
+
+    {
+        number: 10,
+        arabic: "الْمُسْلِمُ مَنْ سَلِمَ الْمُسْلِمُونَ مِنْ لِسَانِهِ وَيَدِهِ",
+        english: "A Muslim is the one from whose tongue and hand other Muslims are safe.",
+        urdu: "مسلمان وہ ہے جس کی زبان اور ہاتھ سے دوسرے مسلمان محفوظ رہیں۔",
+        reference: "Sahih Bukhari & Sahih Muslim"
+    },
+
+    {
+        number: 11,
+        arabic: "الدِّينُ النَّصِيحَةُ",
+        english: "Religion is sincere advice.",
+        urdu: "دین خیر خواہی کا نام ہے۔",
+        reference: "Sahih Muslim"
+    },
+
+    {
+        number: 12,
+        arabic: "الطُّهُورُ شَطْرُ الْإِيمَانِ",
+        english: "Purification is half of faith.",
+        urdu: "پاکیزگی نصف ایمان ہے۔",
+        reference: "Sahih Muslim"
+    },
+
+    {
+        number: 13,
+        arabic: "الصَّلَاةُ نُورٌ",
+        english: "Prayer is light.",
+        urdu: "نماز نور ہے۔",
+        reference: "Sahih Muslim"
+    },
+
+    {
+        number: 14,
+        arabic: "الصَّدَقَةُ بُرْهَانٌ",
+        english: "Charity is a proof of faith.",
+        urdu: "صدقہ ایمان کی دلیل ہے۔",
+        reference: "Sahih Muslim"
+    },
+
+    {
+        number: 15,
+        arabic: "الْكَلِمَةُ الطَّيِّبَةُ صَدَقَةٌ",
+        english: "A good word is charity.",
+        urdu: "اچھی بات بھی صدقہ ہے۔",
+        reference: "Sahih Bukhari & Sahih Muslim"
+    },
+
+    {
+        number: 16,
+        arabic: "تَبَسُّمُكَ فِي وَجْهِ أَخِيكَ لَكَ صَدَقَةٌ",
+        english: "Your smile in the face of your brother is charity.",
+        urdu: "اپنے بھائی کے سامنے تمہارا مسکرانا بھی تمہارے لیے صدقہ ہے۔",
+        reference: "Jami` at-Tirmidhi"
+    },
+
+    {
+        number: 17,
+        arabic: "مَنْ غَشَّنَا فَلَيْسَ مِنَّا",
+        english: "Whoever cheats us is not one of us.",
+        urdu: "جو ہمیں دھوکا دے وہ ہم میں سے نہیں۔",
+        reference: "Sahih Muslim"
+    },
+
+    {
+        number: 18,
+        arabic: "لَا ضَرَرَ وَلَا ضِرَارَ",
+        english: "There should be neither harm nor reciprocating harm.",
+        urdu: "نہ خود نقصان پہنچاؤ اور نہ بدلے میں نقصان پہنچاؤ۔",
+        reference: "Sunan Ibn Majah"
+    },
+
+    {
+        number: 19,
+        arabic: "اتَّقِ اللَّهَ حَيْثُمَا كُنْتَ",
+        english: "Fear Allah wherever you are.",
+        urdu: "تم جہاں بھی ہو اللہ سے ڈرو۔",
+        reference: "Jami` at-Tirmidhi"
+    },
+
+    {
+        number: 20,
+        arabic: "وَأَتْبِعِ السَّيِّئَةَ الْحَسَنَةَ تَمْحُهَا",
+        english: "Follow a bad deed with a good deed and it will erase it.",
+        urdu: "برے عمل کے بعد نیک عمل کرو، وہ اسے مٹا دے گا۔",
+        reference: "Jami` at-Tirmidhi"
+    },
+
+    {
+        number: 21,
+        arabic: "احْفَظِ اللَّهَ يَحْفَظْكَ",
+        english: "Be mindful of Allah and He will protect you.",
+        urdu: "اللہ کے احکام کی حفاظت کرو، اللہ تمہاری حفاظت فرمائے گا۔",
+        reference: "Jami` at-Tirmidhi"
+    },
+
+    {
+        number: 22,
+        arabic: "إِذَا سَأَلْتَ فَاسْأَلِ اللَّهَ",
+        english: "When you ask, ask Allah.",
+        urdu: "جب مانگو تو اللہ ہی سے مانگو۔",
+        reference: "Jami` at-Tirmidhi"
+    },
+
+    {
+        number: 23,
+        arabic: "إِذَا اسْتَعَنْتَ فَاسْتَعِنْ بِاللَّهِ",
+        english: "When you seek help, seek help from Allah.",
+        urdu: "جب مدد مانگو تو اللہ ہی سے مدد مانگو۔",
+        reference: "Jami` at-Tirmidhi"
+    },
+
+    {
+        number: 24,
+        arabic: "الْبِرُّ حُسْنُ الْخُلُقِ",
+        english: "Righteousness is good character.",
+        urdu: "نیکی اچھے اخلاق کا نام ہے۔",
+        reference: "Sahih Muslim"
+    },
+
+    {
+        number: 25,
+        arabic: "الْحَيَاءُ مِنَ الْإِيمَانِ",
+        english: "Modesty is part of faith.",
+        urdu: "حیا ایمان کا حصہ ہے۔",
+        reference: "Sahih Bukhari & Sahih Muslim"
+    },
+
+    {
+        number: 26,
+        arabic: "مَنْ صَمَتَ نَجَا",
+        english: "Whoever remains silent is saved.",
+        urdu: "جو خاموش رہا وہ نجات پا گیا۔",
+        reference: "Jami` at-Tirmidhi"
+    },
+
+    {
+        number: 27,
+        arabic: "الْمَرْءُ مَعَ مَنْ أَحَبَّ",
+        english: "A person will be with those whom he loves.",
+        urdu: "انسان اسی کے ساتھ ہوگا جس سے وہ محبت کرتا ہے۔",
+        reference: "Sahih Bukhari & Sahih Muslim"
+    },
+
+    {
+        number: 28,
+        arabic: "مَنْ دَلَّ عَلَى خَيْرٍ فَلَهُ مِثْلُ أَجْرِ فَاعِلِهِ",
+        english: "Whoever guides to good will have a reward similar to the one who does it.",
+        urdu: "جو کسی نیکی کی طرف رہنمائی کرے اسے نیکی کرنے والے کے برابر اجر ملے گا۔",
+        reference: "Sahih Muslim"
+    },
+
+    {
+        number: 29,
+        arabic: "خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ",
+        english: "The best of you are those who learn the Quran and teach it.",
+        urdu: "تم میں سب سے بہتر وہ ہے جو قرآن سیکھے اور اسے سکھائے۔",
+        reference: "Sahih Bukhari"
+    },
+
+    {
+        number: 30,
+        arabic: "اقْرَؤُوا الْقُرْآنَ فَإِنَّهُ يَأْتِي يَوْمَ الْقِيَامَةِ شَفِيعًا لِأَصْحَابِهِ",
+        english: "Recite the Quran, for it will come on the Day of Resurrection as an intercessor for its companions.",
+        urdu: "قرآن پڑھا کرو، کیونکہ یہ قیامت کے دن اپنے پڑھنے والوں کے لیے سفارشی بن کر آئے گا۔",
+        reference: "Sahih Muslim"
+    },
+
+    {
+        number: 31,
+        arabic: "مَنْ سَلَكَ طَرِيقًا يَلْتَمِسُ فِيهِ عِلْمًا سَهَّلَ اللَّهُ لَهُ بِهِ طَرِيقًا إِلَى الْجَنَّةِ",
+        english: "Whoever follows a path seeking knowledge, Allah will make easy for him a path to Paradise.",
+        urdu: "جو شخص علم حاصل کرنے کے لیے راستہ اختیار کرے اللہ اس کے لیے جنت کا راستہ آسان فرما دیتا ہے۔",
+        reference: "Sahih Muslim"
+    },
+
+    {
+        number: 32,
+        arabic: "مَنْ لَا يَشْكُرِ النَّاسَ لَا يَشْكُرِ اللَّهَ",
+        english: "Whoever does not thank people does not thank Allah.",
+        urdu: "جو لوگوں کا شکر ادا نہیں کرتا وہ اللہ کا بھی شکر ادا نہیں کرتا۔",
+        reference: "Jami` at-Tirmidhi"
+    },
+
+    {
+        number: 33,
+        arabic: "مَنْ كَانَ فِي حَاجَةِ أَخِيهِ كَانَ اللَّهُ فِي حَاجَتِهِ",
+        english: "Whoever fulfills the need of his brother, Allah will fulfill his need.",
+        urdu: "جو اپنے بھائی کی ضرورت پوری کرتا ہے اللہ اس کی ضرورت پوری فرماتا ہے۔",
+        reference: "Sahih Bukhari & Sahih Muslim"
+    },
+
+    {
+        number: 34,
+        arabic: "مَنْ لَا يَرْحَمِ النَّاسَ لَا يَرْحَمْهُ اللَّهُ",
+        english: "Whoever does not show mercy to people, Allah will not show mercy to him.",
+        urdu: "جو لوگوں پر رحم نہیں کرتا اللہ اس پر رحم نہیں کرتا۔",
+        reference: "Sahih Bukhari & Sahih Muslim"
+    },
+
+    {
+        number: 35,
+        arabic: "مَنْ غَدَا إِلَى الْمَسْجِدِ أَوْ رَاحَ أَعَدَّ اللَّهُ لَهُ نُزُلًا فِي الْجَنَّةِ",
+        english: "Whoever goes to the mosque in the morning or evening, Allah prepares for him a place in Paradise.",
+        urdu: "جو شخص صبح یا شام مسجد جاتا ہے اللہ اس کے لیے جنت میں مہمانی تیار فرماتا ہے۔",
+        reference: "Sahih Bukhari & Sahih Muslim"
+    },
+
+    {
+        number: 36,
+        arabic: "مَنْ بَنَى لِلَّهِ مَسْجِدًا بَنَى اللَّهُ لَهُ بَيْتًا فِي الْجَنَّةِ",
+        english: "Whoever builds a mosque for Allah, Allah will build for him a house in Paradise.",
+        urdu: "جو اللہ کے لیے مسجد بنائے اللہ اس کے لیے جنت میں گھر بناتا ہے۔",
+        reference: "Sahih Bukhari & Sahih Muslim"
+    },
+
+    {
+        number: 37,
+        arabic: "أَحَبُّ الْأَعْمَالِ إِلَى اللَّهِ أَدْوَمُهَا وَإِنْ قَلَّ",
+        english: "The most beloved deeds to Allah are those that are consistent, even if they are few.",
+        urdu: "اللہ کو سب سے محبوب اعمال وہ ہیں جو پابندی سے کیے جائیں، اگرچہ وہ کم ہوں۔",
+        reference: "Sahih Bukhari & Sahih Muslim"
+    },
+
+    {
+        number: 38,
+        arabic: "يَسِّرُوا وَلَا تُعَسِّرُوا وَبَشِّرُوا وَلَا تُنَفِّرُوا",
+        english: "Make things easy and do not make them difficult; give glad tidings and do not repel people.",
+        urdu: "آسانی پیدا کرو، مشکل نہ بناؤ، خوشخبری دو اور لوگوں کو متنفر نہ کرو۔",
+        reference: "Sahih Bukhari & Sahih Muslim"
+    },
+
+    {
+        number: 39,
+        arabic: "مَنْ كَانَ يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الْآخِرِ فَلَا يُؤْذِ جَارَهُ",
+        english: "Whoever believes in Allah and the Last Day should not harm his neighbor.",
+        urdu: "جو اللہ اور آخرت کے دن پر ایمان رکھتا ہے اسے اپنے پڑوسی کو تکلیف نہیں دینی چاہیے۔",
+        reference: "Sahih Bukhari & Sahih Muslim"
+    },
+
+    {
+        number: 40,
+        arabic: "الْمُؤْمِنُ لِلْمُؤْمِنِ كَالْبُنْيَانِ يَشُدُّ بَعْضُهُ بَعْضًا",
+        english: "A believer to another believer is like a building whose parts support one another.",
+        urdu: "ایک مومن دوسرے مومن کے لیے عمارت کی مانند ہے جس کا ایک حصہ دوسرے حصے کو مضبوط کرتا ہے۔",
+        reference: "Sahih Bukhari & Sahih Muslim"
+    }
+
+];
+
+
+// =====================================================
+// GET HTML ELEMENTS
+// =====================================================
+
+const grid = document.getElementById("hadithGrid");
+const searchInput = document.getElementById("searchInput");
+const counterText = document.getElementById("counterText");
+
+const modal = document.getElementById("hadithModal");
+const modalContent = document.getElementById("modalContent");
+
+const closeModalBtn = document.getElementById("closeModalBtn");
+
+const modalTitle = document.getElementById("modalTitle");
+const modalArabic = document.getElementById("modalArabic");
+const modalEnglish = document.getElementById("modalEnglish");
+const modalUrdu = document.getElementById("modalUrdu");
+const modalRef = document.getElementById("modalRef");
+
+
+// =====================================================
+// FAVORITES
+// =====================================================
+
+let favorites = JSON.parse(
+    localStorage.getItem("hadithFavorites") || "[]"
+);
+
+
+// =====================================================
+// CREATE HADITH CARD
+// =====================================================
+
+function createCard(hadith) {
+
+    const article = document.createElement("article");
+
+    article.className =
+        "bg-white rounded-2xl p-6 border border-[#F4F0E6] shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-300 relative group overflow-hidden flex flex-col h-full";
+
+
+    const isFavorite = favorites.includes(hadith.number);
+
+
+    article.innerHTML = `
+
+        <div class="absolute top-0 left-0 w-full h-1
+                    bg-transparent group-hover:bg-[#c89b25]
+                    transition-colors duration-300">
+        </div>
+
+
+        <div class="flex justify-between items-start mb-4">
+
+            <span class="flex items-center justify-center
+                         w-8 h-8 rounded-full
+                         bg-[#f0f1ec] text-[#0f5132]
+                         font-bold">
+
+                ${hadith.number}
+
+            </span>
+
+
+            <button
+                class="favorite-btn text-[#68776e]
+                       hover:text-red-500 transition-colors"
+                title="Add to Favorites">
+
+                <span class="material-symbols-outlined">
+
+                    ${isFavorite ? "favorite" : "favorite_border"}
+
+                </span>
+
+            </button>
+
+        </div>
+
+
+        <div class="flex-1 flex flex-col gap-4">
+
+            <p
+                class="font-serif text-2xl text-[#0f5132]
+                       text-right leading-loose"
+                dir="rtl">
+
+                ${hadith.arabic}
+
+            </p>
+
+
+            <div class="h-px w-full bg-[#e3e3de]"></div>
+
+
+            <p class="text-[#173c2a] leading-relaxed">
+
+                ${hadith.english}
+
+            </p>
+
+
+            <p
+                class="text-[#52635a] leading-relaxed text-right"
+                dir="rtl">
+
+                ${hadith.urdu}
+
+            </p>
+
+        </div>
+
+
+        <div
+            class="mt-6 pt-4 border-t border-[#e3e3de]
+                   flex justify-between items-center gap-2">
+
+            <span
+                class="text-xs text-[#68776e]
+                       bg-[#f4f5f0] px-2 py-1 rounded">
+
+                ${hadith.reference}
+
+            </span>
+
+
+            <button
+                class="listen-btn text-[#0f5132]
+                       font-semibold text-sm
+                       hover:text-[#c89b25]
+                       transition-colors">
+
+                🔊 Listen
+
+            </button>
+
+
+            <button
+                class="read-more-btn text-[#0f5132]
+                       font-semibold text-sm
+                       hover:text-[#c89b25]
+                       transition-colors">
+
+                Read More →
+
+            </button>
+
+        </div>
+
+    `;
+
+
+    // =================================================
+    // FAVORITE BUTTON
+    // =================================================
+
+    const favoriteBtn =
+        article.querySelector(".favorite-btn");
+
+    favoriteBtn.addEventListener("click", function(event) {
+
+        event.stopPropagation();
+
+        toggleFavorite(hadith.number, favoriteBtn);
+
+    });
+
+
+    // =================================================
+    // LISTEN BUTTON
+    // =================================================
+
+    const listenBtn =
+        article.querySelector(".listen-btn");
+
+    listenBtn.addEventListener("click", function(event) {
+
+        event.stopPropagation();
+
+        speakHadith(hadith);
+
+    });
+
+
+    // =================================================
+    // READ MORE
+    // =================================================
+
+    const readMoreBtn =
+        article.querySelector(".read-more-btn");
+
+    readMoreBtn.addEventListener("click", function(event) {
+
+        event.stopPropagation();
+
+        openModal(hadith);
+
+    });
+
+
+    // Clicking card also opens modal
+    article.addEventListener("click", function() {
+
+        openModal(hadith);
+
+    });
+
+
+    return article;
+
+}
+
+
+// =====================================================
+// RENDER GRID
+// =====================================================
+
+function renderGrid(data) {
+
+    grid.innerHTML = "";
+
+    counterText.textContent =
+        `Showing ${data.length}/40`;
+
+
+    data.forEach(function(hadith) {
+
+        grid.appendChild(
+            createCard(hadith)
+        );
+
+    });
+
+}
+
+
+// =====================================================
+// SEARCH
+// =====================================================
+
+function filterData(query) {
+
+    const q = query.toLowerCase().trim();
+
+
+    return hadithData.filter(function(hadith) {
+
+        return (
+
+            hadith.english
+                .toLowerCase()
+                .includes(q)
+
+            ||
+
+            hadith.urdu
+                .toLowerCase()
+                .includes(q)
+
+            ||
+
+            hadith.arabic
+                .includes(q)
+
+            ||
+
+            hadith.reference
+                .toLowerCase()
+                .includes(q)
+
+            ||
+
+            hadith.number
+                .toString()
+                .includes(q)
+
+        );
+
+    });
+
+}
+
+
+searchInput.addEventListener("input", function() {
+
+    const filtered =
+        filterData(this.value);
+
+    renderGrid(filtered);
+
+});
+
+
+// =====================================================
+// OPEN MODAL
+// =====================================================
+
+function openModal(hadith) {
+
+    modalTitle.textContent =
+        `Hadith ${hadith.number}`;
+
+    modalArabic.textContent =
+        hadith.arabic;
+
+    modalEnglish.textContent =
+        hadith.english;
+
+    modalUrdu.textContent =
+        hadith.urdu;
+
+    modalRef.textContent =
+        hadith.reference;
+
+
+    modal.classList.remove("hidden");
+
+    document.body.style.overflow =
+        "hidden";
+
+
+    if (modalContent) {
+
+        setTimeout(function() {
+
+            modalContent.classList.remove(
+                "scale-95"
             );
+
+            modalContent.classList.add(
+                "scale-100"
+            );
+
+        }, 10);
+
+    }
+
+}
+
+
+// =====================================================
+// CLOSE MODAL
+// =====================================================
+
+function closeModal() {
+
+    if (modalContent) {
+
+        modalContent.classList.remove(
+            "scale-100"
+        );
+
+        modalContent.classList.add(
+            "scale-95"
+        );
+
+    }
+
+
+    modal.classList.add("hidden");
+
+    document.body.style.overflow = "";
+
+}
+
+
+closeModalBtn.addEventListener(
+    "click",
+    closeModal
+);
+
+
+modal.addEventListener(
+    "click",
+    function(event) {
+
+        if (event.target === modal) {
+
+            closeModal();
+
         }
 
-        searchInput.addEventListener('input', (e) => {
-            const filtered = filterData(e.target.value);
-            renderGrid(filtered);
-        });
+    }
+);
 
-        function openModal(hadith) {
-            modalTitle.textContent = `Hadith ${hadith.number}`;
-            modalArabic.textContent = hadith.arabic;
-            modalEnglish.textContent = hadith.english;
-            modalUrdu.textContent = hadith.urdu;
-            modalRef.textContent = hadith.reference;
-            
-            modal.classList.remove('hidden');
-            // Small delay to allow display:block to apply before animating opacity
-            setTimeout(() => {
-                modal.classList.remove('opacity-0');
-                modalContent.classList.remove('scale-95');
-                modalContent.classList.add('scale-100');
-            }, 10);
-            
-            document.body.style.overflow = 'hidden';
+
+// =====================================================
+// ESCAPE KEY
+// =====================================================
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Escape" &&
+            !modal.classList.contains("hidden")
+        ) {
+
+            closeModal();
+
         }
 
-        function closeModal() {
-            modal.classList.add('opacity-0');
-            modalContent.classList.remove('scale-100');
-            modalContent.classList.add('scale-95');
-            
-            setTimeout(() => {
-                modal.classList.add('hidden');
-                document.body.style.overflow = '';
-            }, 300);
-        }
+    }
+);
 
-        closeModalBtn.addEventListener('click', closeModal);
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) closeModal();
-        });
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
-        });
 
-        // Initial render
-        renderGrid(hadithData);
+// =====================================================
+// FAVORITE FUNCTION
+// =====================================================
+
+function toggleFavorite(
+    number,
+    button
+) {
+
+    const index =
+        favorites.indexOf(number);
+
+
+    if (index === -1) {
+
+        favorites.push(number);
+
+    } else {
+
+        favorites.splice(index, 1);
+
+    }
+
+
+    localStorage.setItem(
+        "hadithFavorites",
+        JSON.stringify(favorites)
+    );
+
+
+    const icon =
+        button.querySelector(
+            ".material-symbols-outlined"
+        );
+
+
+    icon.textContent =
+        favorites.includes(number)
+            ? "favorite"
+            : "favorite_border";
+
+}
+
+
+// =====================================================
+// AUDIO / LISTEN
+// =====================================================
+
+function speakHadith(hadith) {
+
+    if (!("speechSynthesis" in window)) {
+
+        alert(
+            "Sorry, audio is not supported in this browser."
+        );
+
+        return;
+
+    }
+
+
+    // Stop current speech
+    window.speechSynthesis.cancel();
+
+
+    const text =
+        hadith.arabic +
+        ". " +
+        hadith.english;
+
+
+    const speech =
+        new SpeechSynthesisUtterance(text);
+
+
+    speech.lang = "en-US";
+
+    speech.rate = 0.85;
+
+    speech.pitch = 1;
+
+
+    window.speechSynthesis.speak(
+        speech
+    );
+
+}
+
+
+// =====================================================
+// INITIAL LOAD
+// =====================================================
+
+renderGrid(hadithData);
