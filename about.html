@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Us | Ilm-e-Quran</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700&family=Noto+Serif:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+
+            theme: {
+                extend: {
+
+                    colors: {
+                        primary: "#003820",
+                        "primary-container": "#0f5132",
+                        secondary: "#755b00",
+                        "secondary-container": "#fed255",
+                        background: "#faf9f4",
+                        "surface": "#faf9f4",
+                        "surface-container-low": "#f5f4ef",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#e9e8e3",
+                        "surface-variant": "#e3e3de",
+                        "on-surface": "#1b1c19",
+                        "on-surface-variant": "#404942",
+                        "on-primary": "#ffffff",
+                        "outline": "#707971"
+                    },
+
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        "2xl": "1rem",
+                        full: "9999px"
+                    },
+
+                    spacing: {
+                        "stack-md": "24px",
+                        "stack-lg": "48px",
+                        "stack-sm": "12px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "margin-desktop": "48px",
+                        "margin-mobile": "16px",
+                        unit: "8px"
+                    },
+
+                    fontFamily: {
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "display-ar": ["Noto Serif"],
+                        "title-md": ["Plus Jakarta Sans"]
+                    },
+
+                    fontSize: {
+                        "label-sm": [
+                            "13px",
+                            {
+                                lineHeight: "18px",
+                                letterSpacing: "0.02em",
+                                fontWeight: "500"
+                            }
+                        ],
+
+                        "headline-lg": [
+                            "32px",
+                            {
+                                lineHeight: "40px",
+                                fontWeight: "700"
+                            }
+                        ],
+
+                        "body-md": [
+                            "16px",
+                            {
+                                lineHeight: "24px",
+                                fontWeight: "400"
+                            }
+                        ],
+
+                        "display-ar": [
+                            "48px",
+                            {
+                                lineHeight: "72px",
+                                fontWeight: "700"
+                            }
+                        ],
+
+                        "title-md": [
+                            "20px",
+                            {
+                                lineHeight: "28px",
+                                fontWeight: "600"
+                            }
+                        ]
+                    }
+                }
+            }
+        };
+    </script>
+
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .islamic-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230f5132' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #faf9f4;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #e3e3de;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c0c9c0;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+
+</head>
+
+
+<body class="bg-background text-on-surface antialiased">
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <nav
+        class="w-full sticky top-0 bg-surface/90 backdrop-blur-md z-50 border-b border-surface-variant/30 shadow-sm">
+
+        <div
+            class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+
+            <!-- Logo -->
+
+            <a href="index.html"
+                class="text-title-md font-title-md text-primary tracking-tight flex items-center gap-2 group">
+
+                <span
+                    class="material-symbols-outlined text-secondary transition-transform group-hover:rotate-12">
+                    menu_book
+                </span>
+
+                Ilm-e-Quran
+
+            </a>
+
+
+            <!-- Desktop Navigation -->
+
+            <div class="hidden md:flex items-center gap-8">
+
+                <ul class="flex items-center gap-6">
+
+                    <li>
+                        <a href="index.html"
+                            class="text-on-surface-variant hover:text-primary transition-colors rounded-lg px-2 py-1">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="99-names.html"
+                            class="text-on-surface-variant hover:text-primary transition-colors rounded-lg px-2 py-1">
+                            99 Names
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="40-hadith.html"
+                            class="text-on-surface-variant hover:text-primary transition-colors rounded-lg px-2 py-1">
+                            40 Hadith
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="40-duas.html"
+                            class="text-on-surface-variant hover:text-primary transition-colors rounded-lg px-2 py-1">
+                            40 Duas
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="about.html"
+                            class="text-primary border-b-2 border-secondary pb-1 font-semibold rounded-lg px-2 py-1">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html"
+                            class="text-on-surface-variant hover:text-primary transition-colors rounded-lg px-2 py-1">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Mobile -->
+
+            <div class="md:hidden flex items-center gap-2">
+
+                <button
+                    id="theme-toggle"
+                    class="p-2 rounded-full text-primary hover:bg-surface-container-low">
+
+                    <span class="material-symbols-outlined">
+                        dark_mode
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <main>
+
+        <section
+            class="relative overflow-hidden islamic-pattern py-20 md:py-28">
+
+            <div
+                class="absolute inset-0 bg-gradient-to-b from-transparent to-surface-container-low/60">
+            </div>
+
+
+            <div
+                class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
+
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 bg-secondary-container/20 rounded-full border border-secondary/20 mb-6">
+
+                    <span class="material-symbols-outlined text-secondary">
+                        auto_stories
+                    </span>
+
+                    <span class="font-label-sm text-primary">
+                        About Ilm-e-Quran
+                    </span>
+
+                </div>
+
+
+                <h1
+                    class="font-headline-lg text-headline-lg md:text-5xl text-on-surface mb-6">
+
+                    Gateway to Sacred Knowledge
+
+                </h1>
+
+
+                <p
+                    class="font-display-ar text-3xl md:text-4xl text-primary mb-6"
+                    dir="rtl">
+
+                    بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
+
+                </p>
+
+
+                <p
+                    class="font-body-md text-body-md text-on-surface-variant max-w-3xl mx-auto leading-relaxed">
+
+                    Ilm-e-Quran is a simple and beautiful platform created
+                    to make Islamic knowledge easier to explore, understand
+                    and remember in everyday life.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ABOUT INTRO
+        ====================================================== -->
+
+        <section
+            class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg">
+
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+
+                <!-- Text -->
+
+                <div>
+
+                    <span
+                        class="font-label-sm uppercase tracking-widest text-secondary">
+                        Our Purpose
+                    </span>
+
+
+                    <h2
+                        class="font-headline-lg text-headline-lg text-on-surface mt-3 mb-6">
+
+                        Learning Islam Through Sacred Knowledge
+
+                    </h2>
+
+
+                    <p
+                        class="font-body-md text-body-md text-on-surface-variant mb-5 leading-relaxed">
+
+                        Ilm-e-Quran brings together important Islamic
+                        resources in one peaceful and easy-to-use website.
+                        Our goal is to help visitors discover the beautiful
+                        Names of Allah, learn meaningful Hadith and explore
+                        authentic Duas.
+
+                    </p>
+
+
+                    <p
+                        class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+
+                        The website is designed with a simple interface so
+                        that students, families and anyone interested in
+                        Islamic knowledge can easily read, search and reflect
+                        upon these teachings.
+
+                    </p>
+
+                </div>
+
+
+                <!-- Islamic Card -->
+
+                <div
+                    class="bg-primary rounded-2xl p-8 md:p-10 text-center shadow-lg relative overflow-hidden">
+
+                    <div
+                        class="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-secondary/20 blur-2xl">
+                    </div>
+
+                    <div
+                        class="absolute -bottom-12 -left-12 w-32 h-32 rounded-full bg-secondary/20 blur-2xl">
+                    </div>
+
+
+                    <div class="relative z-10">
+
+                        <span
+                            class="material-symbols-outlined text-secondary text-5xl mb-5">
+                            menu_book
+                        </span>
+
+
+                        <p
+                            class="font-display-ar text-3xl md:text-4xl text-white leading-relaxed"
+                            dir="rtl">
+
+                            وَقُلْ رَبِّ زِدْنِي عِلْمًا
+
+                        </p>
+
+
+                        <div class="w-16 h-px bg-secondary mx-auto my-5"></div>
+
+
+                        <p class="text-white/90 font-body-md">
+
+                            "And say: My Lord, increase me in knowledge."
+
+                        </p>
+
+
+                        <span
+                            class="inline-block mt-5 px-3 py-1 rounded bg-white/10 text-white/80 font-label-sm">
+
+                            Qur'an 20:114
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             WHAT WE OFFER
+        ====================================================== -->
+
+        <section
+            class="bg-surface-container-low py-stack-lg">
+
+            <div
+                class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+
+
+                <div class="text-center mb-12">
+
+                    <span
+                        class="font-label-sm uppercase tracking-widest text-secondary">
+                        What We Offer
+                    </span>
+
+                    <h2
+                        class="font-headline-lg text-headline-lg text-on-surface mt-3">
+
+                        Explore Sacred Knowledge
+
+                    </h2>
+
+                </div>
+
+
+                <div
+                    class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+
+
+                    <!-- 99 Names -->
+
+                    <div
+                        class="bg-surface-container-lowest rounded-2xl p-7 shadow-sm card-hover border-t-2 border-secondary">
+
+                        <div
+                            class="w-14 h-14 rounded-full bg-secondary-container flex items-center justify-center mb-6">
+
+                            <span class="material-symbols-outlined text-secondary text-2xl">
+                                stars
+                            </span>
+
+                        </div>
+
+
+                        <h3
+                            class="font-title-md text-title-md text-on-surface mb-3">
+
+                            99 Names of Allah
+
+                        </h3>
+
+
+                        <p
+                            class="font-body-md text-on-surface-variant leading-relaxed mb-6">
+
+                            Learn the beautiful Names of Allah with Arabic,
+                            transliteration, English and Urdu meanings.
+
+                        </p>
+
+
+                        <a href="99-names.html"
+                            class="text-secondary font-semibold hover:underline">
+
+                            Explore Names →
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- Hadith -->
+
+                    <div
+                        class="bg-surface-container-lowest rounded-2xl p-7 shadow-sm card-hover border-t-2 border-primary">
+
+                        <div
+                            class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+
+                            <span class="material-symbols-outlined text-primary text-2xl">
+                                menu_book
+                            </span>
+
+                        </div>
+
+
+                        <h3
+                            class="font-title-md text-title-md text-on-surface mb-3">
+
+                            40 Hadith
+
+                        </h3>
+
+
+                        <p
+                            class="font-body-md text-on-surface-variant leading-relaxed mb-6">
+
+                            Read selected Hadith with Arabic text and
+                            English and Urdu translations.
+
+                        </p>
+
+
+                        <a href="40-hadith.html"
+                            class="text-secondary font-semibold hover:underline">
+
+                            Read Hadith →
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- Duas -->
+
+                    <div
+                        class="bg-surface-container-lowest rounded-2xl p-7 shadow-sm card-hover border-t-2 border-secondary">
+
+                        <div
+                            class="w-14 h-14 rounded-full bg-secondary-container flex items-center justify-center mb-6">
+
+                            <span class="material-symbols-outlined text-secondary text-2xl">
+                                auto_stories
+                            </span>
+
+                        </div>
+
+
+                        <h3
+                            class="font-title-md text-title-md text-on-surface mb-3">
+
+                            40 Duas
+
+                        </h3>
+
+
+                        <p
+                            class="font-body-md text-on-surface-variant leading-relaxed mb-6">
+
+                            Explore meaningful supplications for everyday
+                            life, worship and remembrance.
+
+                        </p>
+
+
+                        <a href="40-duas.html"
+                            class="text-secondary font-semibold hover:underline">
+
+                            Explore Duas →
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             OUR VISION
+        ====================================================== -->
+
+        <section
+            class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg">
+
+            <div
+                class="bg-primary rounded-2xl p-8 md:p-12 text-center shadow-lg relative overflow-hidden">
+
+
+                <div
+                    class="absolute top-0 right-0 w-40 h-40 bg-secondary/10 rounded-full blur-3xl">
+                </div>
+
+                <div
+                    class="absolute bottom-0 left-0 w-40 h-40 bg-secondary/10 rounded-full blur-3xl">
+                </div>
+
+
+                <div class="relative z-10 max-w-3xl mx-auto">
+
+                    <span
+                        class="material-symbols-outlined text-secondary text-4xl mb-4">
+                        lightbulb
+                    </span>
+
+
+                    <h2
+                        class="font-headline-lg text-headline-lg text-white mb-5">
+
+                        Our Vision
+
+                    </h2>
+
+
+                    <p
+                        class="font-body-md text-white/90 leading-relaxed text-lg">
+
+                        Our vision is to create a peaceful digital space
+                        where people can access beneficial Islamic knowledge,
+                        reflect upon it and carry its guidance into their
+                        daily lives.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CALL TO ACTION
+        ====================================================== -->
+
+        <section
+            class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-stack-lg">
+
+            <div class="text-center">
+
+                <h2
+                    class="font-headline-lg text-headline-lg text-on-surface mb-4">
+
+                    Begin Your Journey of Knowledge
+
+                </h2>
+
+
+                <p
+                    class="font-body-md text-on-surface-variant max-w-2xl mx-auto mb-8">
+
+                    Explore the Names of Allah, reflect upon the teachings
+                    of the Prophet ﷺ and discover beautiful Duas.
+
+                </p>
+
+
+                <div
+                    class="flex flex-col sm:flex-row justify-center gap-4">
+
+                    <a href="99-names.html"
+                        class="bg-primary hover:bg-primary-container text-white px-8 py-4 rounded-lg font-semibold transition-all shadow-sm">
+
+                        Explore 99 Names
+
+                    </a>
+
+
+                    <a href="40-hadith.html"
+                        class="border-2 border-secondary text-secondary hover:bg-secondary/5 px-8 py-4 rounded-lg font-semibold transition-all">
+
+                        Read Hadith
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer
+        class="w-full bg-surface-container-low border-t border-surface-variant/30">
+
+        <div
+            class="w-full px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col md:flex-row justify-between items-center gap-stack-md max-w-container-max mx-auto">
+
+
+            <div
+                class="flex flex-col items-center md:items-start gap-2">
+
+                <a href="index.html"
+                    class="font-title-md text-title-md text-primary flex items-center gap-2">
+
+                    <span class="material-symbols-outlined text-secondary">
+                        menu_book
+                    </span>
+
+                    Ilm-e-Quran
+
+                </a>
+
+
+                <p
+                    class="font-body-md text-on-surface-variant text-center md:text-left">
+
+                    © 2026 Ilm-e-Quran. Seeking Tranquility through Knowledge.
+
+                </p>
+
+            </div>
+
+
+            <ul class="flex flex-wrap justify-center gap-6">
+
+                <li>
+
+                    <a href="about.html"
+                        class="font-body-md text-primary hover:text-secondary transition-colors underline decoration-secondary decoration-2 underline-offset-4">
+
+                        About Us
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="contact.html"
+                        class="font-body-md text-on-surface-variant hover:text-primary transition-colors">
+
+                        Contact
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="index.html"
+                        class="font-body-md text-on-surface-variant hover:text-primary transition-colors">
+
+                        Home
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         THEME SCRIPT
+    ====================================================== -->
+
+    <script>
+
+        const themeToggle =
+            document.getElementById("theme-toggle");
+
+        if (themeToggle) {
+
+            themeToggle.addEventListener("click", function () {
+
+                document.documentElement.classList.toggle("dark");
+
+                const icon =
+                    themeToggle.querySelector(
+                        ".material-symbols-outlined"
+                    );
+
+                if (
+                    document.documentElement.classList.contains("dark")
+                ) {
+
+                    icon.textContent = "light_mode";
+
+                } else {
+
+                    icon.textContent = "dark_mode";
+
+                }
+
+            });
+
+        }
+
+    </script>
+
+</body>
+
+</html>
