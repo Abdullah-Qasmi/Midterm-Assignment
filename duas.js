@@ -9,7 +9,7 @@ const duas = [
         title: "Dua for Guidance",
         arabic: "رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا وَهَبْ لَنَا مِن لَّدُنكَ رَحْمَةً ۚ إِنَّكَ أَنتَ الْوَهَّابُ",
         transliteration: "Rabbana la tuzigh qulubana ba'da idh hadaytana wa hab lana milladunka rahmah, innaka antal-Wahhab.",
-        english: "Our Lord, do not let our hearts deviate after You have guided us, and grant us mercy from You. Indeed, You are the Bestower.",
+        english: "Our Lord, do not let our hearts deviate after You have guided us and grant us mercy from You. Indeed, You are the Bestower.",
         urdu: "اے ہمارے رب! ہمارے دلوں کو ہدایت دینے کے بعد ٹیڑھا نہ کرنا اور ہمیں اپنے پاس سے رحمت عطا فرما، بے شک تو ہی بہت عطا کرنے والا ہے۔",
         reference: "Qur'an 3:8"
     },
@@ -46,7 +46,7 @@ const duas = [
 
     {
         id: 5,
-        title: "Dua for Good in This World",
+        title: "Dua for Good in This World and Hereafter",
         arabic: "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ",
         transliteration: "Rabbana atina fid-dunya hasanatan wa fil-akhirati hasanatan wa qina azaban-nar.",
         english: "Our Lord, give us good in this world and good in the Hereafter, and protect us from the punishment of the Fire.",
@@ -59,7 +59,7 @@ const duas = [
         title: "Dua for Patience",
         arabic: "رَبَّنَا أَفْرِغْ عَلَيْنَا صَبْرًا وَتَوَفَّنَا مُسْلِمِينَ",
         transliteration: "Rabbana afrigh alayna sabran wa tawaffana muslimin.",
-        english: "Our Lord, pour upon us patience and let us die as Muslims in submission to You.",
+        english: "Our Lord, pour upon us patience and let us die as Muslims.",
         urdu: "اے ہمارے رب! ہم پر صبر انڈیل دے اور ہمیں مسلمان ہونے کی حالت میں موت دے۔",
         reference: "Qur'an 7:126"
     },
@@ -77,8 +77,8 @@ const duas = [
     {
         id: 8,
         title: "Dua for Ease",
-        arabic: "رَبِّ اشْرَحْ لِي صَدْرِي وَيَسِّرْ لِي أَمْرِي",
-        transliteration: "Rabbishrah li sadri wa yassir li amri.",
+        arabic: "رَبِّ اشْرَحْ لِي صَدْرِي ۝ وَيَسِّرْ لِي أَمْرِي",
+        transliteration: "Rabbishrah li sadri, wa yassir li amri.",
         english: "My Lord, expand for me my chest and ease for me my task.",
         urdu: "اے میرے رب! میرے سینے کو کشادگی عطا فرما اور میرے کام کو میرے لیے آسان فرما۔",
         reference: "Qur'an 20:25-26"
@@ -86,7 +86,7 @@ const duas = [
 
     {
         id: 9,
-        title: "Dua for Protection",
+        title: "Dua for Protection from Evil",
         arabic: "قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ",
         transliteration: "Qul a'udhu bi rabbil-falaq.",
         english: "Say: I seek refuge in the Lord of daybreak.",
@@ -96,7 +96,7 @@ const duas = [
 
     {
         id: 10,
-        title: "Dua for Refuge",
+        title: "Dua for Protection from Mankind's Evil",
         arabic: "قُلْ أَعُوذُ بِرَبِّ النَّاسِ",
         transliteration: "Qul a'udhu bi rabbin-nas.",
         english: "Say: I seek refuge in the Lord of mankind.",
@@ -117,7 +117,7 @@ const duas = [
     {
         id: 12,
         title: "Dua for Acceptance",
-        arabic: "رَبَّنَا تَقَبَّلْ مِنَّا إِنَّكَ أَنتَ السَّمِيعُ الْعَلِيمُ",
+        arabic: "رَبَّنَا تَقَبَّلْ مِنَّا ۖ إِنَّكَ أَنتَ السَّمِيعُ الْعَلِيمُ",
         transliteration: "Rabbana taqabbal minna innaka antas-Sami'ul-Alim.",
         english: "Our Lord, accept this from us. Indeed, You are the All-Hearing, All-Knowing.",
         urdu: "اے ہمارے رب! ہم سے یہ قبول فرما، بے شک تو سننے والا جاننے والا ہے۔",
@@ -126,7 +126,7 @@ const duas = [
 
     {
         id: 13,
-        title: "Dua for Forgiveness and Mercy",
+        title: "Dua for Believers",
         arabic: "رَبَّنَا اغْفِرْ لَنَا وَلِإِخْوَانِنَا الَّذِينَ سَبَقُونَا بِالْإِيمَانِ",
         transliteration: "Rabbanaghfir lana wa li ikhwaninalladhina sabaquna bil-iman.",
         english: "Our Lord, forgive us and our brothers who preceded us in faith.",
@@ -166,7 +166,7 @@ const duas = [
 
     {
         id: 17,
-        title: "Dua for Paradise",
+        title: "Dua for a House in Paradise",
         arabic: "رَبِّ ابْنِ لِي عِندَكَ بَيْتًا فِي الْجَنَّةِ",
         transliteration: "Rabbi ibni li indaka baytan fil-jannah.",
         english: "My Lord, build for me near You a house in Paradise.",
@@ -177,8 +177,8 @@ const duas = [
     {
         id: 18,
         title: "Dua for Protection from Devils",
-        arabic: "وَقُلْ رَّبِّ أَعُوذُ بِكَ مِنْ هَمَزَاتِ الشَّيَاطِينِ",
-        transliteration: "Wa qul rabbi a'udhu bika min hamazatish-shayatin.",
+        arabic: "رَبِّ أَعُوذُ بِكَ مِنْ هَمَزَاتِ الشَّيَاطِينِ",
+        transliteration: "Rabbi a'udhu bika min hamazatish-shayatin.",
         english: "My Lord, I seek refuge in You from the incitements of the devils.",
         urdu: "اے میرے رب! میں شیطانوں کے وسوسوں سے تیری پناہ مانگتا ہوں۔",
         reference: "Qur'an 23:97"
@@ -186,7 +186,7 @@ const duas = [
 
     {
         id: 19,
-        title: "Dua for Refuge from Evil",
+        title: "Dua for Refuge from Devils",
         arabic: "وَأَعُوذُ بِكَ رَبِّ أَن يَحْضُرُونِ",
         transliteration: "Wa a'udhu bika rabbi an yahdurun.",
         english: "And I seek refuge in You, my Lord, lest they be present with me.",
@@ -206,26 +206,16 @@ const duas = [
 
     {
         id: 21,
-        title: "Dua for a Good Entrance",
-        arabic: "رَبِّ أَدْخِلْنِي مُدْخَلَ صِدْقٍ وَأَخْرِجْنِي مُخْرَجَ صِدْقٍ",
-        transliteration: "Rabbi adkhilni mudkhala sidqin wa akhrijni mukhraja sidqin.",
-        english: "My Lord, cause me to enter a sound entrance and to exit a sound exit.",
-        urdu: "اے میرے رب! مجھے سچائی کے ساتھ داخل فرما اور سچائی کے ساتھ نکال۔",
+        title: "Dua for a Good Entrance and Exit",
+        arabic: "رَّبِّ أَدْخِلْنِي مُدْخَلَ صِدْقٍ وَأَخْرِجْنِي مُخْرَجَ صِدْقٍ وَاجْعَل لِّي مِن لَّدُنكَ سُلْطَانًا نَّصِيرًا",
+        transliteration: "Rabbi adkhilni mudkhala sidqin wa akhrijni mukhraja sidqin waj'al li milladunka sultanan nasira.",
+        english: "My Lord, cause me to enter a sound entrance and to exit a sound exit and grant me from Yourself a supporting authority.",
+        urdu: "اے میرے رب! مجھے سچائی کے ساتھ داخل فرما اور سچائی کے ساتھ نکال اور اپنے پاس سے میرے لیے مددگار قوت عطا فرما۔",
         reference: "Qur'an 17:80"
     },
 
     {
         id: 22,
-        title: "Dua for Support",
-        arabic: "وَاجْعَل لِّي مِن لَّدُنكَ سُلْطَانًا نَّصِيرًا",
-        transliteration: "Waj'al li milladunka sultanan nasira.",
-        english: "And grant me from Yourself a supporting authority.",
-        urdu: "اور اپنے پاس سے میرے لیے مددگار قوت عطا فرما۔",
-        reference: "Qur'an 17:80"
-    },
-
-    {
-        id: 23,
         title: "Dua for Mercy and Guidance",
         arabic: "رَبَّنَا هَبْ لَنَا مِن لَّدُنكَ رَحْمَةً وَهَيِّئْ لَنَا مِنْ أَمْرِنَا رَشَدًا",
         transliteration: "Rabbana hab lana milladunka rahmatan wa hayyi lana min amrina rashada.",
@@ -235,17 +225,17 @@ const duas = [
     },
 
     {
-        id: 24,
-        title: "Dua for Righteous Child",
-        arabic: "رَبِّ هَبْ لِي مِن لَّدُنكَ ذُرِّيَّةً طَيِّبَةً",
-        transliteration: "Rabbi hab li milladunka dhurriyyatan tayyibah.",
-        english: "My Lord, grant me from Yourself a good offspring.",
-        urdu: "اے میرے رب! مجھے اپنے پاس سے پاکیزہ اولاد عطا فرما۔",
+        id: 23,
+        title: "Dua for Good Offspring",
+        arabic: "رَبِّ هَبْ لِي مِن لَّدُنكَ ذُرِّيَّةً طَيِّبَةً ۖ إِنَّكَ سَمِيعُ الدُّعَاءِ",
+        transliteration: "Rabbi hab li milladunka dhurriyyatan tayyibah, innaka sami'ud-du'a.",
+        english: "My Lord, grant me from Yourself a good offspring. Indeed, You are the Hearer of supplication.",
+        urdu: "اے میرے رب! مجھے اپنے پاس سے پاکیزہ اولاد عطا فرما، بے شک تو دعا سننے والا ہے۔",
         reference: "Qur'an 3:38"
     },
 
     {
-        id: 25,
+        id: 24,
         title: "Dua for Trust in Allah",
         arabic: "حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ",
         transliteration: "Hasbunallahu wa ni'mal-wakil.",
@@ -255,9 +245,9 @@ const duas = [
     },
 
     {
-        id: 26,
+        id: 25,
         title: "Dua for Protection from Hell",
-        arabic: "رَبَّنَا اصْرِفْ عَنَّا عَذَابَ جَهَنَّمَ إِنَّ عَذَابَهَا كَانَ غَرَامًا",
+        arabic: "رَبَّنَا اصْرِفْ عَنَّا عَذَابَ جَهَنَّمَ ۖ إِنَّ عَذَابَهَا كَانَ غَرَامًا",
         transliteration: "Rabbanasrif anna adhaba jahannama inna adhaba-ha kana gharama.",
         english: "Our Lord, turn away from us the punishment of Hell. Indeed, its punishment is inseparable.",
         urdu: "اے ہمارے رب! ہم سے جہنم کا عذاب پھیر دے، بے شک اس کا عذاب لازم پکڑنے والا ہے۔",
@@ -265,8 +255,8 @@ const duas = [
     },
 
     {
-        id: 27,
-        title: "Dua for Relief",
+        id: 26,
+        title: "Dua for Relief from Hardship",
         arabic: "أَنِّي مَسَّنِيَ الضُّرُّ وَأَنتَ أَرْحَمُ الرَّاحِمِينَ",
         transliteration: "Anni massaniyad-durru wa anta arhamur-rahimin.",
         english: "Indeed, adversity has touched me, and You are the Most Merciful of the merciful.",
@@ -275,7 +265,7 @@ const duas = [
     },
 
     {
-        id: 28,
+        id: 27,
         title: "Dua for Healing",
         arabic: "وَإِذَا مَرِضْتُ فَهُوَ يَشْفِينِ",
         transliteration: "Wa idha maridtu fahuwa yashfin.",
@@ -285,7 +275,7 @@ const duas = [
     },
 
     {
-        id: 29,
+        id: 28,
         title: "Dua for a Good Ending",
         arabic: "تَوَفَّنِي مُسْلِمًا وَأَلْحِقْنِي بِالصَّالِحِينَ",
         transliteration: "Tawaffani musliman wa alhiqni bis-salihin.",
@@ -295,8 +285,8 @@ const duas = [
     },
 
     {
-        id: 30,
-        title: "Dua for Forgiveness",
+        id: 29,
+        title: "Dua for Forgiveness for Parents and Believers",
         arabic: "رَبِّ اغْفِرْ لِي وَلِوَالِدَيَّ وَلِلْمُؤْمِنِينَ يَوْمَ يَقُومُ الْحِسَابُ",
         transliteration: "Rabbighfir li wa liwalidayya wa lil-mu'minina yawma yaqumul-hisab.",
         english: "My Lord, forgive me, my parents, and the believers on the Day the account is established.",
@@ -305,28 +295,18 @@ const duas = [
     },
 
     {
-        id: 31,
+        id: 30,
         title: "Dua for Repentance",
-        arabic: "رَبَّنَا اغْفِرْ لَنَا ذُنُوبَنَا وَإِسْرَافَنَا فِي أَمْرِنَا",
-        transliteration: "Rabbanaghfir lana dhunubana wa israfana fi amrina.",
-        english: "Our Lord, forgive us our sins and our excesses in our affairs.",
-        urdu: "اے ہمارے رب! ہمارے گناہوں کو اور ہمارے کاموں میں ہماری زیادتیوں کو بخش دے۔",
+        arabic: "رَبَّنَا اغْفِرْ لَنَا ذُنُوبَنَا وَإِسْرَافَنَا فِي أَمْرِنَا وَثَبِّتْ أَقْدَامَنَا",
+        transliteration: "Rabbanaghfir lana dhunubana wa israfana fi amrina wa thabbit aqdamana.",
+        english: "Our Lord, forgive us our sins and our excesses in our affairs and make our feet firm.",
+        urdu: "اے ہمارے رب! ہمارے گناہوں کو اور ہمارے کاموں میں ہماری زیادتیوں کو بخش دے اور ہمارے قدم جما دے۔",
         reference: "Qur'an 3:147"
     },
 
     {
-        id: 32,
-        title: "Dua for Steadfastness",
-        arabic: "رَبَّنَا أَفْرِغْ عَلَيْنَا صَبْرًا وَثَبِّتْ أَقْدَامَنَا",
-        transliteration: "Rabbana afrigh alayna sabran wa thabbit aqdamana.",
-        english: "Our Lord, pour upon us patience and make our feet firm.",
-        urdu: "اے ہمارے رب! ہم پر صبر نازل فرما اور ہمارے قدم جما دے۔",
-        reference: "Qur'an 2:250"
-    },
-
-    {
-        id: 33,
-        title: "Dua for Good Deeds",
+        id: 31,
+        title: "Dua for Righteous Deeds",
         arabic: "رَبِّ أَوْزِعْنِي أَنْ أَعْمَلَ صَالِحًا تَرْضَاهُ",
         transliteration: "Rabbi awzi'ni an a'mala salihan tardahu.",
         english: "My Lord, enable me to do righteous deeds that please You.",
@@ -335,17 +315,7 @@ const duas = [
     },
 
     {
-        id: 34,
-        title: "Dua for Parents and Believers",
-        arabic: "رَبَّنَا اغْفِرْ لِي وَلِوَالِدَيَّ وَلِلْمُؤْمِنِينَ",
-        transliteration: "Rabbana ighfir li wa liwalidayya wa lil-mu'minin.",
-        english: "Our Lord, forgive me, my parents, and the believers.",
-        urdu: "اے ہمارے رب! مجھے، میرے والدین اور تمام مومنوں کو بخش دے۔",
-        reference: "Qur'an 71:28"
-    },
-
-    {
-        id: 35,
+        id: 32,
         title: "Dua for Wisdom",
         arabic: "رَبِّ هَبْ لِي حُكْمًا وَأَلْحِقْنِي بِالصَّالِحِينَ",
         transliteration: "Rabbi hab li hukman wa alhiqni bis-salihin.",
@@ -355,53 +325,83 @@ const duas = [
     },
 
     {
-        id: 36,
-        title: "Dua for Protection from Wrongdoing",
-        arabic: "رَبَّنَا لَا تَجْعَلْنَا فِتْنَةً لِّلَّذِينَ كَفَرُوا وَاغْفِرْ لَنَا رَبَّنَا",
-        transliteration: "Rabbana la taj'alna fitnatan lilladhina kafaru waghfir lana rabbana.",
-        english: "Our Lord, do not make us a trial for those who disbelieve, and forgive us, our Lord.",
-        urdu: "اے ہمارے رب! ہمیں کافروں کے لیے آزمائش نہ بنا اور ہمیں بخش دے، اے ہمارے رب۔",
-        reference: "Qur'an 60:5"
-    },
-
-    {
-        id: 37,
+        id: 33,
         title: "Dua for Light",
-        arabic: "رَبَّنَا أَتْمِمْ لَنَا نُورَنَا وَاغْفِرْ لَنَا",
-        transliteration: "Rabbana atmim lana nurana waghfir lana.",
-        english: "Our Lord, perfect for us our light and forgive us.",
-        urdu: "اے ہمارے رب! ہمارے لیے ہمارا نور مکمل فرما اور ہمیں بخش دے۔",
+        arabic: "رَبَّنَا أَتْمِمْ لَنَا نُورَنَا وَاغْفِرْ لَنَا ۖ إِنَّكَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ",
+        transliteration: "Rabbana atmim lana nurana waghfir lana innaka ala kulli shay'in qadir.",
+        english: "Our Lord, perfect for us our light and forgive us. Indeed, You are over all things competent.",
+        urdu: "اے ہمارے رب! ہمارے لیے ہمارا نور مکمل فرما اور ہمیں بخش دے، بے شک تو ہر چیز پر قادر ہے۔",
         reference: "Qur'an 66:8"
     },
 
     {
-        id: 38,
+        id: 34,
+        title: "Dua for Protection from Trials",
+        arabic: "رَبَّنَا لَا تَجْعَلْنَا فِتْنَةً لِّلَّذِينَ كَفَرُوا وَاغْفِرْ لَنَا رَبَّنَا إِنَّكَ أَنتَ الْعَزِيزُ الْحَكِيمُ",
+        transliteration: "Rabbana la taj'alna fitnatan lilladhina kafaru waghfir lana rabbana innaka antal-Azizul-Hakim.",
+        english: "Our Lord, do not make us a trial for those who disbelieve, and forgive us, our Lord. Indeed, You are the Almighty, the Wise.",
+        urdu: "اے ہمارے رب! ہمیں کافروں کے لیے آزمائش نہ بنا اور ہمیں بخش دے، اے ہمارے رب! بے شک تو غالب اور حکمت والا ہے۔",
+        reference: "Qur'an 60:5"
+    },
+
+    {
+        id: 35,
         title: "Dua for a Righteous Life",
-        arabic: "رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ",
-        transliteration: "Rabbana hab lana min azwajina wa dhurriyyatina qurrata a'yun.",
-        english: "Our Lord, grant us from our spouses and offspring comfort to our eyes.",
-        urdu: "اے ہمارے رب! ہمیں ہماری بیویوں اور اولاد کی طرف سے آنکھوں کی ٹھنڈک عطا فرما۔",
-        reference: "Qur'an 25:74"
+        arabic: "رَبَّنَا وَآتِنَا مَا وَعَدتَّنَا عَلَىٰ رُسُلِكَ وَلَا تُخْزِنَا يَوْمَ الْقِيَامَةِ",
+        transliteration: "Rabbana wa atina ma wa'adtana ala rusulika wa la tukhzina yawmal-qiyamah.",
+        english: "Our Lord, grant us what You promised us through Your messengers and do not disgrace us on the Day of Resurrection.",
+        urdu: "اے ہمارے رب! ہمیں وہ عطا فرما جس کا تو نے اپنے رسولوں کے ذریعے ہم سے وعدہ کیا اور قیامت کے دن ہمیں رسوا نہ کرنا۔",
+        reference: "Qur'an 3:194"
+    },
+
+    {
+        id: 36,
+        title: "Dua for Acceptance of Worship",
+        arabic: "رَبَّنَا وَاجْعَلْنَا مُسْلِمَيْنِ لَكَ وَمِن ذُرِّيَّتِنَا أُمَّةً مُّسْلِمَةً لَّكَ وَأَرِنَا مَنَاسِكَنَا وَتُبْ عَلَيْنَا",
+        transliteration: "Rabbana waj'alna muslimayni laka wa min dhurriyyatina ummatan muslimatan laka wa arina manasikana wa tub alayna.",
+        english: "Our Lord, make us submissive to You and from our descendants a nation submissive to You, and show us our rites and accept our repentance.",
+        urdu: "اے ہمارے رب! ہمیں اپنا فرمانبردار بنا اور ہماری اولاد میں سے بھی ایک فرمانبردار امت بنا، ہمیں ہماری عبادت کے طریقے دکھا اور ہماری توبہ قبول فرما۔",
+        reference: "Qur'an 2:128"
+    },
+
+    {
+        id: 37,
+        title: "Dua for Victory",
+        arabic: "رَبَّنَا افْتَحْ بَيْنَنَا وَبَيْنَ قَوْمِنَا بِالْحَقِّ وَأَنتَ خَيْرُ الْفَاتِحِينَ",
+        transliteration: "Rabbana iftah baynana wa bayna qawmina bil-haqqi wa anta khayrul-fatihin.",
+        english: "Our Lord, decide between us and our people in truth, and You are the best of those who decide.",
+        urdu: "اے ہمارے رب! ہمارے اور ہماری قوم کے درمیان حق کے ساتھ فیصلہ فرما اور تو سب سے بہتر فیصلہ کرنے والا ہے۔",
+        reference: "Qur'an 7:89"
+    },
+
+    {
+        id: 38,
+        title: "Dua for Protection from Burden",
+        arabic: "رَبَّنَا لَا تُؤَاخِذْنَا إِن نَّسِينَا أَوْ أَخْطَأْنَا",
+        transliteration: "Rabbana la tu'akhidhna in nasina aw akhta'na.",
+        english: "Our Lord, do not impose blame upon us if we forget or make a mistake.",
+        urdu: "اے ہمارے رب! اگر ہم بھول جائیں یا غلطی کر بیٹھیں تو ہمارا مؤاخذہ نہ فرما۔",
+        reference: "Qur'an 2:286"
     },
 
     {
         id: 39,
-        title: "Dua for Mercy",
-        arabic: "رَبَّنَا وَسِعْتَ كُلَّ شَيْءٍ رَّحْمَةً وَعِلْمًا فَاغْفِرْ لِلَّذِينَ تَابُوا",
-        transliteration: "Rabbana wasi'ta kulla shay'in rahmatan wa ilman faghfir lilladhina tabu.",
-        english: "Our Lord, You encompass all things in mercy and knowledge, so forgive those who repent.",
-        urdu: "اے ہمارے رب! تیری رحمت اور علم ہر چیز کو گھیرے ہوئے ہے، پس ان لوگوں کو بخش دے جو توبہ کرتے ہیں۔",
-        reference: "Qur'an 40:7"
+        title: "Dua for Help and Forgiveness",
+        arabic: "رَبَّنَا لَا تُحَمِّلْ عَلَيْنَا إِصْرًا كَمَا حَمَلْتَهُ عَلَى الَّذِينَ مِن قَبْلِنَا",
+        transliteration: "Rabbana la tuhammil alayna isran kama hamaltahu alal-ladhina min qablina.",
+        english: "Our Lord, do not burden us with a burden as You burdened those before us.",
+        urdu: "اے ہمارے رب! ہم پر ایسا بوجھ نہ ڈال جیسا تو نے ہم سے پہلے لوگوں پر ڈالا تھا۔",
+        reference: "Qur'an 2:286"
     },
 
     {
         id: 40,
-        title: "Dua for Complete Forgiveness",
-        arabic: "رَبَّنَا ظَلَمْنَا أَنفُسَنَا وَإِن لَّمْ تَغْفِرْ لَنَا وَتَرْحَمْنَا لَنَكُونَنَّ مِنَ الْخَاسِرِينَ",
-        transliteration: "Rabbana zalamna anfusana wa illam taghfir lana wa tarhamna lanakunanna minal-khasirin.",
-        english: "Our Lord, we have wronged ourselves. If You do not forgive us and have mercy upon us, we will surely be among the losers.",
-        urdu: "اے ہمارے رب! ہم نے اپنی جانوں پر ظلم کیا، اگر تو نے ہمیں نہ بخشا اور ہم پر رحم نہ کیا تو ہم ضرور نقصان اٹھانے والوں میں سے ہوں گے۔",
-        reference: "Qur'an 7:23"
+        title: "Dua for Help Against Wrongdoing",
+        arabic: "رَبَّنَا أَفْرِغْ عَلَيْنَا صَبْرًا وَتَوَفَّنَا مُسْلِمِينَ",
+        transliteration: "Rabbana afrigh alayna sabran wa tawaffana muslimin.",
+        english: "Our Lord, pour upon us patience and let us die as Muslims in submission to You.",
+        urdu: "اے ہمارے رب! ہم پر صبر انڈیل دے اور ہمیں مسلمان ہونے کی حالت میں موت دے۔",
+        reference: "Qur'an 7:126"
     }
 
 ];
@@ -429,12 +429,46 @@ const modalReference = document.getElementById("modalReference");
 
 
 // =====================================================
-// FAVORITES
+// FAVORITES - LOAD FROM LOCAL STORAGE
 // =====================================================
 
-let duaFavorites = JSON.parse(
-    localStorage.getItem("duaFavorites") || "[]"
-);
+let duaFavorites = [];
+
+try {
+
+    const savedFavorites =
+        JSON.parse(localStorage.getItem("duaFavorites"));
+
+    if (Array.isArray(savedFavorites)) {
+
+        duaFavorites =
+            savedFavorites
+                .map(Number)
+                .filter(id => !isNaN(id));
+
+    }
+
+} catch (error) {
+
+    console.error("Could not load favorites:", error);
+
+    duaFavorites = [];
+
+}
+
+
+// =====================================================
+// SAVE FAVORITES
+// =====================================================
+
+function saveDuaFavorites() {
+
+    localStorage.setItem(
+        "duaFavorites",
+        JSON.stringify(duaFavorites)
+    );
+
+}
 
 
 // =====================================================
@@ -443,12 +477,16 @@ let duaFavorites = JSON.parse(
 
 function createDuaCard(dua) {
 
-    const article = document.createElement("article");
+    const article =
+        document.createElement("article");
 
     article.className =
-        "bg-white rounded-2xl p-6 border border-[#F4F0E6] shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-300 relative group overflow-hidden flex flex-col h-full";
+        "bg-white rounded-2xl p-6 border border-[#F4F0E6] shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-300 relative group overflow-hidden flex flex-col h-full cursor-pointer";
 
-    const isFavorite = duaFavorites.includes(dua.id);
+
+    const isFavorite =
+        duaFavorites.includes(Number(dua.id));
+
 
     article.innerHTML = `
 
@@ -471,11 +509,15 @@ function createDuaCard(dua) {
 
 
             <button
-                class="favorite-btn text-[#68776e]
+                type="button"
+                class="favorite-btn
+                       ${isFavorite ? "text-red-500" : "text-[#68776e]"}
                        hover:text-red-500 transition-colors"
-                title="Add to Favorites">
+                title="${isFavorite ? "Remove from Favorites" : "Add to Favorites"}"
+                aria-label="${isFavorite ? "Remove from Favorites" : "Add to Favorites"}">
 
-                <span class="material-symbols-outlined">
+                <span
+                    class="material-symbols-outlined favorite-icon">
 
                     ${isFavorite ? "favorite" : "favorite_border"}
 
@@ -551,6 +593,7 @@ function createDuaCard(dua) {
 
 
             <button
+                type="button"
                 class="listen-btn text-[#0f5132]
                        font-semibold text-sm
                        hover:text-[#c89b25]
@@ -562,6 +605,7 @@ function createDuaCard(dua) {
 
 
             <button
+                type="button"
                 class="read-more-btn text-[#0f5132]
                        font-semibold text-sm
                        hover:text-[#c89b25]
@@ -583,16 +627,20 @@ function createDuaCard(dua) {
     const favoriteBtn =
         article.querySelector(".favorite-btn");
 
-    favoriteBtn.addEventListener("click", function(event) {
+    favoriteBtn.addEventListener(
+        "click",
+        function(event) {
 
-        event.stopPropagation();
+            event.preventDefault();
+            event.stopPropagation();
 
-        toggleDuaFavorite(
-            dua.id,
-            favoriteBtn
-        );
+            toggleDuaFavorite(
+                dua.id,
+                favoriteBtn
+            );
 
-    });
+        }
+    );
 
 
     // =================================================
@@ -602,13 +650,17 @@ function createDuaCard(dua) {
     const listenBtn =
         article.querySelector(".listen-btn");
 
-    listenBtn.addEventListener("click", function(event) {
+    listenBtn.addEventListener(
+        "click",
+        function(event) {
 
-        event.stopPropagation();
+            event.preventDefault();
+            event.stopPropagation();
 
-        speakDua(dua);
+            speakDua(dua);
 
-    });
+        }
+    );
 
 
     // =================================================
@@ -618,24 +670,31 @@ function createDuaCard(dua) {
     const readMoreBtn =
         article.querySelector(".read-more-btn");
 
-    readMoreBtn.addEventListener("click", function(event) {
+    readMoreBtn.addEventListener(
+        "click",
+        function(event) {
 
-        event.stopPropagation();
+            event.preventDefault();
+            event.stopPropagation();
 
-        openDua(dua);
+            openDua(dua);
 
-    });
+        }
+    );
 
 
     // =================================================
-    // CLICK CARD TO OPEN MODAL
+    // CARD CLICK
     // =================================================
 
-    article.addEventListener("click", function() {
+    article.addEventListener(
+        "click",
+        function() {
 
-        openDua(dua);
+            openDua(dua);
 
-    });
+        }
+    );
 
 
     return article;
@@ -649,28 +708,49 @@ function createDuaCard(dua) {
 
 function displayDuas(list) {
 
+    if (!duasGrid) return;
+
+
     duasGrid.innerHTML = "";
 
-    duaCounter.textContent =
-        `Showing ${list.length}/40`;
+
+    if (duaCounter) {
+
+        duaCounter.textContent =
+            `Showing ${list.length}/40 Duas`;
+
+    }
+
 
     if (list.length === 0) {
 
-        noResults.classList.remove("hidden");
+        if (noResults) {
+
+            noResults.classList.remove("hidden");
+
+        }
 
         return;
 
     }
 
-    noResults.classList.add("hidden");
 
-    list.forEach(function(dua) {
+    if (noResults) {
 
-        duasGrid.appendChild(
-            createDuaCard(dua)
-        );
+        noResults.classList.add("hidden");
 
-    });
+    }
+
+
+    list.forEach(
+        function(dua) {
+
+            duasGrid.appendChild(
+                createDuaCard(dua)
+            );
+
+        }
+    );
 
 }
 
@@ -681,65 +761,82 @@ function displayDuas(list) {
 
 function filterDuas(query) {
 
-    const q = query.toLowerCase().trim();
+    const q =
+        query.toLowerCase().trim();
 
-    return duas.filter(function(dua) {
 
-        return (
+    if (!q) {
 
-            dua.title
-                .toLowerCase()
-                .includes(q)
+        return duas;
 
-            ||
+    }
 
-            dua.arabic
-                .includes(q)
 
-            ||
+    return duas.filter(
+        function(dua) {
 
-            dua.transliteration
-                .toLowerCase()
-                .includes(q)
+            return (
 
-            ||
+                dua.title
+                    .toLowerCase()
+                    .includes(q)
 
-            dua.english
-                .toLowerCase()
-                .includes(q)
+                ||
 
-            ||
+                dua.arabic
+                    .includes(q)
 
-            dua.urdu
-                .includes(q)
+                ||
 
-            ||
+                dua.transliteration
+                    .toLowerCase()
+                    .includes(q)
 
-            dua.reference
-                .toLowerCase()
-                .includes(q)
+                ||
 
-            ||
+                dua.english
+                    .toLowerCase()
+                    .includes(q)
 
-            dua.id
-                .toString()
-                .includes(q)
+                ||
 
-        );
+                dua.urdu
+                    .includes(q)
 
-    });
+                ||
+
+                dua.reference
+                    .toLowerCase()
+                    .includes(q)
+
+                ||
+
+                String(dua.id)
+                    .includes(q)
+
+            );
+
+        }
+    );
 
 }
 
 
-duaSearch.addEventListener("input", function() {
+if (duaSearch) {
 
-    const filtered =
-        filterDuas(this.value);
+    duaSearch.addEventListener(
+        "input",
+        function() {
 
-    displayDuas(filtered);
+            const filtered =
+                filterDuas(this.value);
 
-});
+            displayDuas(filtered);
+
+        }
+    );
+
+}
 
 
 // =====================================================
@@ -747,6 +844,9 @@ duaSearch.addEventListener("input", function() {
 // =====================================================
 
 function openDua(dua) {
+
+    if (!duaModal) return;
+
 
     modalNumber.textContent =
         `Dua ${dua.id}`;
@@ -784,31 +884,43 @@ function openDua(dua) {
 
 function closeDuaModal() {
 
+    if (!duaModal) return;
+
+
     duaModal.classList.add("hidden");
 
-    document.body.style.overflow = "";
+    document.body.style.overflow =
+        "";
 
 }
 
 
-closeModal.addEventListener(
-    "click",
-    closeDuaModal
-);
+if (closeModal) {
+
+    closeModal.addEventListener(
+        "click",
+        closeDuaModal
+    );
+
+}
 
 
-duaModal.addEventListener(
-    "click",
-    function(event) {
+if (duaModal) {
 
-        if (event.target === duaModal) {
+    duaModal.addEventListener(
+        "click",
+        function(event) {
 
-            closeDuaModal();
+            if (event.target === duaModal) {
+
+                closeDuaModal();
+
+            }
 
         }
+    );
 
-    }
-);
+}
 
 
 // =====================================================
@@ -821,6 +933,7 @@ document.addEventListener(
 
         if (
             event.key === "Escape" &&
+            duaModal &&
             !duaModal.classList.contains("hidden")
         ) {
 
@@ -836,10 +949,11 @@ document.addEventListener(
 // FAVORITE FUNCTION
 // =====================================================
 
-function toggleDuaFavorite(
-    id,
-    button
-) {
+function toggleDuaFavorite(id, button) {
+
+    id =
+        Number(id);
+
 
     const index =
         duaFavorites.indexOf(id);
@@ -847,31 +961,78 @@ function toggleDuaFavorite(
 
     if (index === -1) {
 
+        // ADD
+
         duaFavorites.push(id);
 
     } else {
+
+        // REMOVE
 
         duaFavorites.splice(index, 1);
 
     }
 
 
-    localStorage.setItem(
-        "duaFavorites",
-        JSON.stringify(duaFavorites)
-    );
+    // Save to localStorage
+
+    saveDuaFavorites();
 
 
-    const icon =
-        button.querySelector(
-            ".material-symbols-outlined"
+    // Update button
+
+    if (button) {
+
+        const icon =
+            button.querySelector(
+                ".favorite-icon"
+            );
+
+
+        const isFavorite =
+            duaFavorites.includes(id);
+
+
+        if (icon) {
+
+            icon.textContent =
+                isFavorite
+                    ? "favorite"
+                    : "favorite_border";
+
+        }
+
+
+        // Red color
+
+        button.classList.toggle(
+            "text-red-500",
+            isFavorite
         );
 
 
-    icon.textContent =
-        duaFavorites.includes(id)
-            ? "favorite"
-            : "favorite_border";
+        // Normal color
+
+        button.classList.toggle(
+            "text-[#68776e]",
+            !isFavorite
+        );
+
+
+        button.title =
+            isFavorite
+                ? "Remove from Favorites"
+                : "Add to Favorites";
+
+
+        button.setAttribute(
+            "aria-label",
+            isFavorite
+                ? "Remove from Favorites"
+                : "Add to Favorites"
+        );
+
+    }
 
 }
 
@@ -894,39 +1055,58 @@ function speakDua(dua) {
 
 
     // Stop previous audio
+
     window.speechSynthesis.cancel();
 
 
-    // Speak Arabic first
+    // Arabic
+
     const arabicSpeech =
         new SpeechSynthesisUtterance(
             dua.arabic
         );
 
-    arabicSpeech.lang = "ar-SA";
 
-    arabicSpeech.rate = 0.75;
-
-    arabicSpeech.pitch = 1;
+    arabicSpeech.lang =
+        "ar-SA";
 
 
-    // Then English translation
+    arabicSpeech.rate =
+        0.75;
+
+
+    arabicSpeech.pitch =
+        1;
+
+
+    // English
+
     const englishSpeech =
         new SpeechSynthesisUtterance(
             dua.english
         );
 
-    englishSpeech.lang = "en-US";
 
-    englishSpeech.rate = 0.85;
-
-    englishSpeech.pitch = 1;
+    englishSpeech.lang =
+        "en-US";
 
 
-    // Arabic first, then English
+    englishSpeech.rate =
+        0.85;
+
+
+    englishSpeech.pitch =
+        1;
+
+
+    // Arabic first
+
     window.speechSynthesis.speak(
         arabicSpeech
     );
+
+
+    // English after Arabic
 
     window.speechSynthesis.speak(
         englishSpeech
@@ -940,3 +1120,17 @@ function speakDua(dua) {
 // =====================================================
 
 displayDuas(duas);
+
+
+// =====================================================
+// DEBUG
+// =====================================================
+
+console.log(
+    `Ilm-e-Quran: ${duas.length} Duas loaded successfully.`
+);
+
+console.log(
+    "Saved favorites:",
+    duaFavorites
+);

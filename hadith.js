@@ -1,5 +1,11 @@
 // =====================================================
-// 40 UNIQUE HADITH - ILM-E-QURAN
+// 40 HADITH - ILM-E-QURAN
+// WORKING FAVORITES + SEARCH + MODAL + AUDIO
+// =====================================================
+
+
+// =====================================================
+// HADITH DATA
 // =====================================================
 
 const hadithData = [
@@ -328,7 +334,7 @@ const hadithData = [
 
 
 // =====================================================
-// GET HTML ELEMENTS
+// ELEMENTS
 // =====================================================
 
 const grid = document.getElementById("hadithGrid");
@@ -348,12 +354,75 @@ const modalRef = document.getElementById("modalRef");
 
 
 // =====================================================
-// FAVORITES
+// FAVORITES - LOCAL STORAGE
 // =====================================================
 
-let favorites = JSON.parse(
-    localStorage.getItem("hadithFavorites") || "[]"
-);
+let favorites = [];
+
+try {
+
+    const savedFavorites =
+        localStorage.getItem("hadithFavorites");
+
+    if (savedFavorites) {
+
+        const parsed =
+            JSON.parse(savedFavorites);
+
+        if (Array.isArray(parsed)) {
+
+            favorites = parsed.map(Number);
+
+        }
+
+    }
+
+} catch (error) {
+
+    console.error(
+        "Could not load favorites:",
+        error
+    );
+
+    favorites = [];
+
+}
+
+
+// =====================================================
+// SAVE FAVORITES
+// =====================================================
+
+function saveFavorites() {
+
+    try {
+
+        localStorage.setItem(
+            "hadithFavorites",
+            JSON.stringify(favorites)
+        );
+
+    } catch (error) {
+
+        console.error(
+            "Could not save favorites:",
+            error
+        );
+
+    }
+
+}
+
+
+// =====================================================
+// CHECK FAVORITE
+// =====================================================
+
+function isFavorite(number) {
+
+    return favorites.includes(Number(number));
+
+}
 
 
 // =====================================================
@@ -362,56 +431,82 @@ let favorites = JSON.parse(
 
 function createCard(hadith) {
 
-    const article = document.createElement("article");
+    const article =
+        document.createElement("article");
+
 
     article.className =
-        "bg-white rounded-2xl p-6 border border-[#F4F0E6] shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-300 relative group overflow-hidden flex flex-col h-full";
+        "hadith-card relative group overflow-hidden flex flex-col h-full";
 
 
-    const isFavorite = favorites.includes(hadith.number);
+    const favorite =
+        isFavorite(hadith.number);
 
 
     article.innerHTML = `
 
-        <div class="absolute top-0 left-0 w-full h-1
-                    bg-transparent group-hover:bg-[#c89b25]
-                    transition-colors duration-300">
-        </div>
-
+        <!-- TOP -->
 
         <div class="flex justify-between items-start mb-4">
 
-            <span class="flex items-center justify-center
-                         w-8 h-8 rounded-full
-                         bg-[#f0f1ec] text-[#0f5132]
-                         font-bold">
+            <!-- NUMBER -->
+
+            <span
+                class="flex items-center justify-center
+                w-9 h-9 rounded-full
+                bg-[#f0f1ec]
+                text-[#0f5132]
+                font-bold">
 
                 ${hadith.number}
 
             </span>
 
 
+            <!-- FAVORITE BUTTON -->
+
             <button
-                class="favorite-btn text-[#68776e]
-                       hover:text-red-500 transition-colors"
-                title="Add to Favorites">
+                type="button"
+                class="favorite-btn
+                flex items-center justify-center
+                w-10 h-10 rounded-full
+                hover:bg-red-50
+                transition-all duration-200"
+                title="${
+                    favorite
+                    ? "Remove from Favorites"
+                    : "Add to Favorites"
+                }">
 
-                <span class="material-symbols-outlined">
-
-                    ${isFavorite ? "favorite" : "favorite_border"}
-
-                </span>
+                <span
+                    class="material-symbols-outlined favorite-icon"
+                    style="
+                        color: ${favorite ? "#ef4444" : "#68776e"};
+                        font-size: 28px;
+                        font-variation-settings:
+                        'FILL' ${favorite ? 1 : 0},
+                        'wght' 500,
+                        'GRAD' 0,
+                        'opsz' 28;
+                    "
+                >${favorite ? "favorite" : "favorite_border"}</span>
 
             </button>
 
         </div>
 
 
+        <!-- CONTENT -->
+
         <div class="flex-1 flex flex-col gap-4">
 
+            <!-- ARABIC -->
+
             <p
-                class="font-serif text-2xl text-[#0f5132]
-                       text-right leading-loose"
+                class="font-serif text-2xl
+                text-[#0f5132]
+                text-right
+                leading-loose"
                 dir="rtl">
 
                 ${hadith.arabic}
@@ -419,18 +514,30 @@ function createCard(hadith) {
             </p>
 
 
-            <div class="h-px w-full bg-[#e3e3de]"></div>
+            <!-- LINE -->
+
+            <div
+                class="h-px w-full bg-[#e3e3de]">
+            </div>
 
 
-            <p class="text-[#173c2a] leading-relaxed">
+            <!-- ENGLISH -->
+
+            <p
+                class="text-[#173c2a]
+                leading-relaxed">
 
                 ${hadith.english}
 
             </p>
 
 
+            <!-- URDU -->
+
             <p
-                class="text-[#52635a] leading-relaxed text-right"
+                class="text-[#52635a]
+                leading-relaxed
+                text-right"
                 dir="rtl">
 
                 ${hadith.urdu}
@@ -440,35 +547,55 @@ function createCard(hadith) {
         </div>
 
 
+        <!-- BOTTOM -->
+
         <div
-            class="mt-6 pt-4 border-t border-[#e3e3de]
-                   flex justify-between items-center gap-2">
+            class="mt-6 pt-4
+            border-t border-[#e3e3de]
+            flex flex-wrap
+            justify-between
+            items-center gap-3">
+
+            <!-- REFERENCE -->
 
             <span
-                class="text-xs text-[#68776e]
-                       bg-[#f4f5f0] px-2 py-1 rounded">
+                class="text-xs
+                text-[#68776e]
+                bg-[#f4f5f0]
+                px-2 py-1
+                rounded">
 
                 ${hadith.reference}
 
             </span>
 
 
+            <!-- LISTEN -->
+
             <button
-                class="listen-btn text-[#0f5132]
-                       font-semibold text-sm
-                       hover:text-[#c89b25]
-                       transition-colors">
+                type="button"
+                class="listen-btn
+                text-[#0f5132]
+                font-semibold
+                text-sm
+                hover:text-[#c89b25]
+                transition-colors">
 
                 🔊 Listen
 
             </button>
 
 
+            <!-- READ MORE -->
+
             <button
-                class="read-more-btn text-[#0f5132]
-                       font-semibold text-sm
-                       hover:text-[#c89b25]
-                       transition-colors">
+                type="button"
+                class="read-more-btn
+                text-[#0f5132]
+                font-semibold
+                text-sm
+                hover:text-[#c89b25]
+                transition-colors">
 
                 Read More →
 
@@ -486,13 +613,22 @@ function createCard(hadith) {
     const favoriteBtn =
         article.querySelector(".favorite-btn");
 
-    favoriteBtn.addEventListener("click", function(event) {
 
-        event.stopPropagation();
+    favoriteBtn.addEventListener(
+        "click",
+        function(event) {
 
-        toggleFavorite(hadith.number, favoriteBtn);
+            event.preventDefault();
 
-    });
+            event.stopPropagation();
+
+            toggleFavorite(
+                hadith.number,
+                favoriteBtn
+            );
+
+        }
+    );
 
 
     // =================================================
@@ -502,40 +638,191 @@ function createCard(hadith) {
     const listenBtn =
         article.querySelector(".listen-btn");
 
-    listenBtn.addEventListener("click", function(event) {
 
-        event.stopPropagation();
+    listenBtn.addEventListener(
+        "click",
+        function(event) {
 
-        speakHadith(hadith);
+            event.preventDefault();
 
-    });
+            event.stopPropagation();
+
+            speakHadith(hadith);
+
+        }
+    );
 
 
     // =================================================
-    // READ MORE
+    // READ MORE BUTTON
     // =================================================
 
     const readMoreBtn =
         article.querySelector(".read-more-btn");
 
-    readMoreBtn.addEventListener("click", function(event) {
 
-        event.stopPropagation();
+    readMoreBtn.addEventListener(
+        "click",
+        function(event) {
 
-        openModal(hadith);
+            event.preventDefault();
 
-    });
+            event.stopPropagation();
+
+            openModal(hadith);
+
+        }
+    );
 
 
-    // Clicking card also opens modal
-    article.addEventListener("click", function() {
+    // =================================================
+    // CARD CLICK
+    // =================================================
 
-        openModal(hadith);
+    article.addEventListener(
+        "click",
+        function() {
 
-    });
+            openModal(hadith);
+
+        }
+    );
 
 
     return article;
+
+}
+
+
+// =====================================================
+// TOGGLE FAVORITE
+// =====================================================
+
+function toggleFavorite(
+    number,
+    button
+) {
+
+    number = Number(number);
+
+
+    const index =
+        favorites.indexOf(number);
+
+
+    // =================================================
+    // ADD FAVORITE
+    // =================================================
+
+    if (index === -1) {
+
+        favorites.push(number);
+
+    }
+
+
+    // =================================================
+    // REMOVE FAVORITE
+    // =================================================
+
+    else {
+
+        favorites.splice(
+            index,
+            1
+        );
+
+    }
+
+
+    // SAVE
+    saveFavorites();
+
+
+    // GET ICON
+    const icon =
+        button.querySelector(
+            ".favorite-icon"
+        );
+
+
+    if (!icon) return;
+
+
+    const nowFavorite =
+        favorites.includes(number);
+
+
+    // =================================================
+    // FULL RED HEART
+    // =================================================
+
+    if (nowFavorite) {
+
+        icon.textContent =
+            "favorite";
+
+
+        // FULL RED
+        icon.style.color =
+            "#ef4444";
+
+
+        // FILL HEART
+        icon.style.fontVariationSettings =
+            "'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 28";
+
+
+        icon.style.transform =
+            "scale(1.25)";
+
+
+        button.title =
+            "Remove from Favorites";
+
+
+        // Animation
+        setTimeout(
+            function() {
+
+                icon.style.transform =
+                    "scale(1)";
+
+            },
+            200
+        );
+
+    }
+
+
+    // =================================================
+    // OUTLINE HEART
+    // =================================================
+
+    else {
+
+        icon.textContent =
+            "favorite_border";
+
+
+        // GREY
+        icon.style.color =
+            "#68776e";
+
+
+        // OUTLINE
+        icon.style.fontVariationSettings =
+            "'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 28";
+
+
+        icon.style.transform =
+            "scale(1)";
+
+
+        button.title =
+            "Add to Favorites";
+
+    }
 
 }
 
@@ -546,19 +833,70 @@ function createCard(hadith) {
 
 function renderGrid(data) {
 
-    grid.innerHTML = "";
+    if (!grid) {
 
-    counterText.textContent =
-        `Showing ${data.length}/40`;
-
-
-    data.forEach(function(hadith) {
-
-        grid.appendChild(
-            createCard(hadith)
+        console.error(
+            "hadithGrid element not found!"
         );
 
-    });
+        return;
+
+    }
+
+
+    grid.innerHTML = "";
+
+
+    // COUNTER
+
+    if (counterText) {
+
+        counterText.textContent =
+            `Showing ${data.length}/40`;
+
+    }
+
+
+    // DISPLAY CARDS
+
+    data.forEach(
+        function(hadith) {
+
+            grid.appendChild(
+                createCard(hadith)
+            );
+
+        }
+    );
+
+
+    // NO RESULTS
+
+    const noResults =
+        document.getElementById(
+            "noResults"
+        );
+
+
+    if (noResults) {
+
+        if (data.length === 0) {
+
+            noResults.classList.remove(
+                "hidden"
+            );
+
+        }
+
+        else {
+
+            noResults.classList.add(
+                "hidden"
+            );
+
+        }
+
+    }
 
 }
 
@@ -569,55 +907,83 @@ function renderGrid(data) {
 
 function filterData(query) {
 
-    const q = query.toLowerCase().trim();
+    const q =
+        query
+            .toLowerCase()
+            .trim();
 
 
-    return hadithData.filter(function(hadith) {
+    if (!q) {
 
-        return (
+        return hadithData;
 
-            hadith.english
-                .toLowerCase()
-                .includes(q)
+    }
 
-            ||
 
-            hadith.urdu
-                .toLowerCase()
-                .includes(q)
+    return hadithData.filter(
+        function(hadith) {
 
-            ||
+            return (
 
-            hadith.arabic
-                .includes(q)
+                hadith.english
+                    .toLowerCase()
+                    .includes(q)
 
-            ||
+                ||
 
-            hadith.reference
-                .toLowerCase()
-                .includes(q)
+                hadith.urdu
+                    .toLowerCase()
+                    .includes(q)
 
-            ||
+                ||
 
-            hadith.number
-                .toString()
-                .includes(q)
+                hadith.arabic
+                    .includes(q)
 
-        );
+                ||
 
-    });
+                hadith.reference
+                    .toLowerCase()
+                    .includes(q)
+
+                ||
+
+                hadith.number
+                    .toString()
+                    .includes(q)
+
+            );
+
+        }
+    );
 
 }
 
 
-searchInput.addEventListener("input", function() {
+// =====================================================
+// SEARCH EVENT
+// =====================================================
 
-    const filtered =
-        filterData(this.value);
+if (searchInput) {
 
-    renderGrid(filtered);
+    searchInput.addEventListener(
+        "input",
+        function() {
 
-});
+            const filtered =
+                filterData(
+                    this.value
+                );
+
+
+            renderGrid(
+                filtered
+            );
+
+        }
+    );
+
+}
 
 
 // =====================================================
@@ -626,23 +992,58 @@ searchInput.addEventListener("input", function() {
 
 function openModal(hadith) {
 
-    modalTitle.textContent =
-        `Hadith ${hadith.number}`;
-
-    modalArabic.textContent =
-        hadith.arabic;
-
-    modalEnglish.textContent =
-        hadith.english;
-
-    modalUrdu.textContent =
-        hadith.urdu;
-
-    modalRef.textContent =
-        hadith.reference;
+    if (!modal) return;
 
 
-    modal.classList.remove("hidden");
+    if (modalTitle) {
+
+        modalTitle.textContent =
+            `Hadith ${hadith.number}`;
+
+    }
+
+
+    if (modalArabic) {
+
+        modalArabic.textContent =
+            hadith.arabic;
+
+    }
+
+
+    if (modalEnglish) {
+
+        modalEnglish.textContent =
+            hadith.english;
+
+    }
+
+
+    if (modalUrdu) {
+
+        modalUrdu.textContent =
+            hadith.urdu;
+
+    }
+
+
+    if (modalRef) {
+
+        modalRef.textContent =
+            hadith.reference;
+
+    }
+
+
+    modal.classList.remove(
+        "hidden"
+    );
+
+
+    modal.classList.add(
+        "flex"
+    );
+
 
     document.body.style.overflow =
         "hidden";
@@ -650,17 +1051,13 @@ function openModal(hadith) {
 
     if (modalContent) {
 
-        setTimeout(function() {
+        modalContent.classList.remove(
+            "scale-95"
+        );
 
-            modalContent.classList.remove(
-                "scale-95"
-            );
-
-            modalContent.classList.add(
-                "scale-100"
-            );
-
-        }, 10);
+        modalContent.classList.add(
+            "scale-100"
+        );
 
     }
 
@@ -672,6 +1069,9 @@ function openModal(hadith) {
 // =====================================================
 
 function closeModal() {
+
+    if (!modal) return;
+
 
     if (modalContent) {
 
@@ -686,31 +1086,58 @@ function closeModal() {
     }
 
 
-    modal.classList.add("hidden");
+    modal.classList.add(
+        "hidden"
+    );
 
-    document.body.style.overflow = "";
+
+    modal.classList.remove(
+        "flex"
+    );
+
+
+    document.body.style.overflow =
+        "";
 
 }
 
 
-closeModalBtn.addEventListener(
-    "click",
-    closeModal
-);
+// =====================================================
+// CLOSE BUTTON
+// =====================================================
+
+if (closeModalBtn) {
+
+    closeModalBtn.addEventListener(
+        "click",
+        closeModal
+    );
+
+}
 
 
-modal.addEventListener(
-    "click",
-    function(event) {
+// =====================================================
+// CLICK OUTSIDE MODAL
+// =====================================================
 
-        if (event.target === modal) {
+if (modal) {
 
-            closeModal();
+    modal.addEventListener(
+        "click",
+        function(event) {
+
+            if (
+                event.target === modal
+            ) {
+
+                closeModal();
+
+            }
 
         }
+    );
 
-    }
-);
+}
 
 
 // =====================================================
@@ -723,7 +1150,10 @@ document.addEventListener(
 
         if (
             event.key === "Escape" &&
-            !modal.classList.contains("hidden")
+            modal &&
+            !modal.classList.contains(
+                "hidden"
+            )
         ) {
 
             closeModal();
@@ -735,56 +1165,17 @@ document.addEventListener(
 
 
 // =====================================================
-// FAVORITE FUNCTION
-// =====================================================
-
-function toggleFavorite(
-    number,
-    button
-) {
-
-    const index =
-        favorites.indexOf(number);
-
-
-    if (index === -1) {
-
-        favorites.push(number);
-
-    } else {
-
-        favorites.splice(index, 1);
-
-    }
-
-
-    localStorage.setItem(
-        "hadithFavorites",
-        JSON.stringify(favorites)
-    );
-
-
-    const icon =
-        button.querySelector(
-            ".material-symbols-outlined"
-        );
-
-
-    icon.textContent =
-        favorites.includes(number)
-            ? "favorite"
-            : "favorite_border";
-
-}
-
-
-// =====================================================
 // AUDIO / LISTEN
 // =====================================================
 
 function speakHadith(hadith) {
 
-    if (!("speechSynthesis" in window)) {
+    if (
+        !(
+            "speechSynthesis"
+            in window
+        )
+    ) {
 
         alert(
             "Sorry, audio is not supported in this browser."
@@ -795,7 +1186,8 @@ function speakHadith(hadith) {
     }
 
 
-    // Stop current speech
+    // STOP PREVIOUS AUDIO
+
     window.speechSynthesis.cancel();
 
 
@@ -806,14 +1198,21 @@ function speakHadith(hadith) {
 
 
     const speech =
-        new SpeechSynthesisUtterance(text);
+        new SpeechSynthesisUtterance(
+            text
+        );
 
 
-    speech.lang = "en-US";
+    speech.lang =
+        "en-US";
 
-    speech.rate = 0.85;
 
-    speech.pitch = 1;
+    speech.rate =
+        0.85;
+
+
+    speech.pitch =
+        1;
 
 
     window.speechSynthesis.speak(
@@ -827,4 +1226,6 @@ function speakHadith(hadith) {
 // INITIAL LOAD
 // =====================================================
 
-renderGrid(hadithData);
+renderGrid(
+    hadithData
+);
