@@ -1,8 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    /* =====================================================
+       TASBIH VARIABLES
+    ===================================================== */
+
     let count = 0;
     let target = 33;
     let session = 0;
+
+
+    /* =====================================================
+       ELEMENTS
+    ===================================================== */
 
     const countDisplay =
         document.getElementById("counter-display");
@@ -34,12 +43,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const arabicDisplay =
         document.getElementById("arabic-display");
 
-    const circumference = 2 * Math.PI * 45;
 
-    progressCircle.style.strokeDasharray =
-        circumference;
+    /* =====================================================
+       PROGRESS CIRCLE
+    ===================================================== */
 
-    /* Load saved data */
+    const circumference =
+        2 * Math.PI * 45;
+
+    if (progressCircle) {
+
+        progressCircle.style.strokeDasharray =
+            circumference;
+
+        progressCircle.style.strokeDashoffset =
+            circumference;
+    }
+
+
+    /* =====================================================
+       LOAD SAVED DATA
+    ===================================================== */
 
     const savedCount =
         localStorage.getItem("tasbih_count");
@@ -53,45 +77,95 @@ document.addEventListener("DOMContentLoaded", () => {
     const savedPhrase =
         localStorage.getItem("tasbih_phrase");
 
+
     if (savedCount !== null) {
-        count = parseInt(savedCount);
+
+        count =
+            parseInt(savedCount);
+
     }
+
 
     if (savedTarget !== null) {
-        target = parseInt(savedTarget);
+
+        target =
+            parseInt(savedTarget);
+
     }
+
 
     if (savedSession !== null) {
-        session = parseInt(savedSession);
+
+        session =
+            parseInt(savedSession);
+
     }
 
-    if (savedPhrase) {
-        phraseSelect.value = savedPhrase;
+
+    if (savedPhrase && phraseSelect) {
+
+        phraseSelect.value =
+            savedPhrase;
+
     }
+
+
+    /* =====================================================
+       INITIAL UI
+    ===================================================== */
 
     updateArabic();
     updateTargetButtons();
     updateUI();
 
-    /* Update UI */
+
+    /* =====================================================
+       UPDATE UI
+    ===================================================== */
 
     function updateUI() {
 
-        countDisplay.textContent = count;
-        sessionCount.textContent = session;
+        if (countDisplay) {
+
+            countDisplay.textContent =
+                count;
+
+        }
+
+
+        if (sessionCount) {
+
+            sessionCount.textContent =
+                session;
+
+        }
+
 
         const percent =
-            Math.min(count / target, 1);
+            Math.min(
+                count / target,
+                1
+            );
+
 
         const offset =
             circumference -
             percent * circumference;
 
-        progressCircle.style.strokeDashoffset =
-            offset;
+
+        if (progressCircle) {
+
+            progressCircle.style.strokeDashoffset =
+                offset;
+
+        }
+
     }
 
-    /* Save */
+
+    /* =====================================================
+       SAVE STATE
+    ===================================================== */
 
     function saveState() {
 
@@ -110,155 +184,399 @@ document.addEventListener("DOMContentLoaded", () => {
             session
         );
 
-        localStorage.setItem(
-            "tasbih_phrase",
-            phraseSelect.value
-        );
+
+        if (phraseSelect) {
+
+            localStorage.setItem(
+                "tasbih_phrase",
+                phraseSelect.value
+            );
+
+        }
+
     }
 
-    /* Arabic */
+
+    /* =====================================================
+       UPDATE ARABIC
+    ===================================================== */
 
     function updateArabic() {
+
+        if (!phraseSelect || !arabicDisplay) {
+            return;
+        }
+
 
         const option =
             phraseSelect.options[
                 phraseSelect.selectedIndex
             ];
 
-        arabicDisplay.textContent =
-            option.dataset.ar;
+
+        if (option) {
+
+            arabicDisplay.textContent =
+                option.dataset.ar || "";
+
+        }
+
     }
 
-    /* Target buttons */
+
+    /* =====================================================
+       UPDATE TARGET BUTTONS
+    ===================================================== */
 
     function updateTargetButtons() {
 
         targetBtns.forEach(button => {
 
             const buttonTarget =
-                parseInt(button.dataset.target);
+                parseInt(
+                    button.dataset.target
+                );
+
 
             button.classList.toggle(
                 "active",
                 buttonTarget === target
             );
+
         });
+
     }
 
-    /* Count */
 
-    countBtn.addEventListener("click", () => {
+    /* =====================================================
+       COUNT BUTTON
+    ===================================================== */
 
-        if (count >= target) {
-            return;
-        }
+    if (countBtn) {
 
-        count++;
+        countBtn.addEventListener(
+            "click",
+            () => {
 
-        if (navigator.vibrate) {
-            navigator.vibrate(10);
-        }
+                /* Don't go above target */
 
-        if (count === target) {
+                if (count >= target) {
+                    return;
+                }
 
-            session++;
 
-            if (navigator.vibrate) {
-                navigator.vibrate([
-                    50,
-                    50,
-                    50
-                ]);
+                count++;
+
+
+                /* Mobile vibration */
+
+                if (navigator.vibrate) {
+
+                    navigator.vibrate(10);
+
+                }
+
+
+                /* Target completed */
+
+                if (count === target) {
+
+                    session++;
+
+
+                    if (navigator.vibrate) {
+
+                        navigator.vibrate([
+                            50,
+                            50,
+                            50
+                        ]);
+
+                    }
+
+
+                    /* Completed progress color */
+
+                    if (progressCircle) {
+
+                        progressCircle.style.stroke =
+                            "#003820";
+
+
+                        setTimeout(() => {
+
+                            progressCircle.style.stroke =
+                                "";
+
+                        }, 1000);
+
+                    }
+
+                }
+
+
+                updateUI();
+                saveState();
+
             }
+        );
 
-            progressCircle.style.stroke =
-                "#003820";
+    }
 
-            setTimeout(() => {
-                progressCircle.style.stroke =
-                    "";
-            }, 1000);
-        }
 
-        updateUI();
-        saveState();
-    });
+    /* =====================================================
+       DECREASE BUTTON
+    ===================================================== */
 
-    /* Decrease */
+    if (decrementBtn) {
 
-    decrementBtn.addEventListener("click", () => {
+        decrementBtn.addEventListener(
+            "click",
+            () => {
 
-        if (count > 0) {
-            count--;
+                if (count > 0) {
 
-            updateUI();
-            saveState();
-        }
-    });
+                    count--;
 
-    /* Reset */
+                    updateUI();
+                    saveState();
 
-    resetBtn.addEventListener("click", () => {
+                }
 
-        count = 0;
+            }
+        );
 
-        updateUI();
-        saveState();
-    });
+    }
 
-    /* Reset everything */
 
-    resetAllBtn.addEventListener("click", () => {
+    /* =====================================================
+       RESET BUTTON
+    ===================================================== */
 
-        const confirmed =
-            confirm(
-                "Are you sure you want to reset everything including sessions?"
-            );
+    if (resetBtn) {
 
-        if (!confirmed) {
-            return;
-        }
+        resetBtn.addEventListener(
+            "click",
+            () => {
 
-        count = 0;
-        session = 0;
+                count = 0;
 
-        updateUI();
-        saveState();
-    });
+                updateUI();
+                saveState();
 
-    /* Target */
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       RESET EVERYTHING
+    ===================================================== */
+
+    if (resetAllBtn) {
+
+        resetAllBtn.addEventListener(
+            "click",
+            () => {
+
+                const confirmed =
+                    confirm(
+                        "Are you sure you want to reset everything including sessions?"
+                    );
+
+
+                if (!confirmed) {
+                    return;
+                }
+
+
+                count = 0;
+                session = 0;
+
+
+                updateUI();
+                saveState();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       TARGET BUTTONS
+    ===================================================== */
 
     targetBtns.forEach(button => {
 
-        button.addEventListener("click", () => {
+        button.addEventListener(
+            "click",
+            () => {
 
-            target =
-                parseInt(button.dataset.target);
+                target =
+                    parseInt(
+                        button.dataset.target
+                    );
 
-            count = Math.min(
-                count,
-                target
-            );
 
-            updateTargetButtons();
-            updateUI();
-            saveState();
-        });
+                /*
+                 * If current count is greater
+                 * than new target, reduce it.
+                 */
+
+                count =
+                    Math.min(
+                        count,
+                        target
+                    );
+
+
+                updateTargetButtons();
+                updateUI();
+                saveState();
+
+            }
+        );
+
     });
 
-    /* Phrase */
 
-    phraseSelect.addEventListener(
-        "change",
-        () => {
+    /* =====================================================
+       PHRASE SELECT
+    ===================================================== */
 
-            updateArabic();
+    if (phraseSelect) {
 
-            count = 0;
+        phraseSelect.addEventListener(
+            "change",
+            () => {
 
-            updateUI();
-            saveState();
-        }
-    );
+                updateArabic();
+
+
+                /*
+                 * Changing Dhikr starts
+                 * a fresh count.
+                 */
+
+                count = 0;
+
+
+                updateUI();
+                saveState();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       DARK MODE
+    ===================================================== */
+
+    const themeToggle =
+        document.getElementById("theme-toggle");
+
+    const themeIcon =
+        document.getElementById("theme-icon");
+
+
+    /*
+     * Load saved theme
+     */
+
+    const savedTheme =
+        localStorage.getItem("tasbih-theme");
+
+
+    if (
+        savedTheme === "dark" &&
+        themeToggle &&
+        themeIcon
+    ) {
+
+        document.body.classList.add(
+            "dark-mode"
+        );
+
+        themeIcon.textContent =
+            "light_mode";
+
+    }
+
+
+    /*
+     * Dark mode button
+     */
+
+    if (themeToggle) {
+
+        themeToggle.addEventListener(
+            "click",
+            () => {
+
+                document.body.classList.toggle(
+                    "dark-mode"
+                );
+
+
+                const isDark =
+                    document.body.classList.contains(
+                        "dark-mode"
+                    );
+
+
+                if (isDark) {
+
+                    /*
+                     * Dark mode
+                     */
+
+                    if (themeIcon) {
+
+                        themeIcon.textContent =
+                            "light_mode";
+
+                    }
+
+
+                    localStorage.setItem(
+                        "tasbih-theme",
+                        "dark"
+                    );
+
+
+                } else {
+
+                    /*
+                     * Light mode
+                     */
+
+                    if (themeIcon) {
+
+                        themeIcon.textContent =
+                            "dark_mode";
+
+                    }
+
+
+                    localStorage.setItem(
+                        "tasbih-theme",
+                        "light"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       FINISHED
+    ===================================================== */
 
 });

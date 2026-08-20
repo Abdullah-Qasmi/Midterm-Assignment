@@ -8,6 +8,7 @@
 
     <title>40 Duas - Ilm-e-Quran</title>
 
+
     <!-- ================================================= -->
     <!-- GOOGLE FONTS -->
     <!-- ================================================= -->
@@ -15,15 +16,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif:wght@400;700&family=Plus+Jakarta+Sans:wght@600;700&display=swap"
-          rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif:wght@400;700&family=Plus+Jakarta+Sans:wght@600;700&display=swap"
+        rel="stylesheet">
+
 
     <!-- ================================================= -->
     <!-- MATERIAL ICONS -->
     <!-- ================================================= -->
 
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
-          rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+        rel="stylesheet">
+
 
     <!-- ================================================= -->
     <!-- TAILWIND CSS -->
@@ -31,11 +36,13 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
+
     <!-- ================================================= -->
     <!-- YOUR CSS -->
     <!-- ================================================= -->
 
     <link rel="stylesheet" href="style.css">
+
 
     <!-- ================================================= -->
     <!-- CUSTOM CSS -->
@@ -53,6 +60,7 @@
             background: transparent;
         }
 
+
         .favorite-icon {
             font-variation-settings:
                 'FILL' 0,
@@ -62,6 +70,7 @@
 
             transition: all 0.2s ease;
         }
+
 
         .favorite-icon.favorite-active {
             font-variation-settings:
@@ -80,9 +89,11 @@
             width: 8px;
         }
 
+
         #duaModal ::-webkit-scrollbar-track {
             background: #f0f1ec;
         }
+
 
         #duaModal ::-webkit-scrollbar-thumb {
             background: #c8cec7;
@@ -100,6 +111,7 @@
                 box-shadow 0.3s ease;
         }
 
+
         .dua-card:hover {
             transform: translateY(-5px);
         }
@@ -114,50 +126,61 @@
             color: #e8eee9 !important;
         }
 
+
         body.dark-mode nav {
             background-color: rgba(16, 26, 21, 0.95) !important;
             border-color: #2a3930 !important;
         }
+
 
         body.dark-mode .dark-card {
             background-color: #17241d !important;
             border-color: #2d4034 !important;
         }
 
+
         body.dark-mode .dark-soft {
             background-color: #1d2c24 !important;
         }
+
 
         body.dark-mode .dark-text {
             color: #e8eee9 !important;
         }
 
+
         body.dark-mode .dark-muted {
             color: #aab9ae !important;
         }
+
 
         body.dark-mode footer {
             background-color: #17241d !important;
             border-color: #2d4034 !important;
         }
 
+
         body.dark-mode input {
             background-color: #1d2c24 !important;
             color: #ffffff !important;
         }
+
 
         body.dark-mode #themeToggle {
             background-color: #26372d !important;
             color: #ffffff !important;
         }
 
+
         body.dark-mode #duaModal > div {
             background-color: #17241d !important;
         }
 
+
         body.dark-mode #modalArabic {
             background-color: #1d2c24 !important;
         }
+
 
         body.dark-mode .modal-border {
             border-color: #2d4034 !important;
@@ -180,10 +203,13 @@
     <div class="max-w-7xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
 
 
+        <!-- ================================================= -->
         <!-- LOGO -->
+        <!-- ================================================= -->
 
-        <a href="index.html"
-           class="flex items-center gap-2 text-[#0f5132] text-xl font-bold">
+        <a
+            href="index.html"
+            class="flex items-center gap-2 text-[#0f5132] text-xl font-bold">
 
             <span class="material-symbols-outlined">
                 menu_book
@@ -194,45 +220,74 @@
         </a>
 
 
+        <!-- ================================================= -->
         <!-- DESKTOP NAVIGATION -->
+        <!-- ================================================= -->
 
         <div class="hidden md:flex items-center gap-2">
 
-            <a href="index.html"
-               class="px-4 py-2 rounded-lg text-[#52635a] hover:text-[#0f5132] hover:bg-[#f0f1ec]">
+
+            <!-- HOME -->
+
+            <a
+                href="index.html"
+                class="px-4 py-2 rounded-lg text-[#52635a] hover:text-[#0f5132] hover:bg-[#f0f1ec]">
 
                 Home
 
             </a>
 
 
-            <a href="99-names.html"
-               class="px-4 py-2 rounded-lg text-[#52635a] hover:text-[#0f5132] hover:bg-[#f0f1ec]">
+            <!-- 99 NAMES -->
+
+            <a
+                href="99-names.html"
+                class="px-4 py-2 rounded-lg text-[#52635a] hover:text-[#0f5132] hover:bg-[#f0f1ec]">
 
                 99 Names
 
             </a>
 
 
-            <a href="40-hadith.html"
-               class="px-4 py-2 rounded-lg text-[#52635a] hover:text-[#0f5132] hover:bg-[#f0f1ec]">
+            <!-- 40 HADITH -->
+
+            <a
+                href="40-hadith.html"
+                class="px-4 py-2 rounded-lg text-[#52635a] hover:text-[#0f5132] hover:bg-[#f0f1ec]">
 
                 40 Hadith
 
             </a>
 
 
-            <a href="40-duas.html"
-               class="px-4 py-2 rounded-lg bg-[#e7f0e9] text-[#0f5132] font-semibold">
+            <!-- 40 DUAS - ACTIVE -->
+
+            <a
+                href="dua.html"
+                class="px-4 py-2 rounded-lg bg-[#e7f0e9] text-[#0f5132] font-semibold">
 
                 40 Duas
 
             </a>
 
+
+            <!-- DIGITAL TASBIH -->
+
+            <a
+                href="digital tasbeeh.html"
+                class="px-4 py-2 rounded-lg text-[#52635a] hover:text-[#0f5132] hover:bg-[#f0f1ec]">
+
+                Digital Tasbih
+
+            </a>
+
+
         </div>
 
 
+        <!-- ================================================= -->
         <!-- DARK MODE BUTTON -->
+        <!-- ================================================= -->
 
         <button
             id="themeToggle"
@@ -256,7 +311,6 @@
 </nav>
 
 
-
 <!-- ===================================================== -->
 <!-- MAIN -->
 <!-- ===================================================== -->
@@ -277,7 +331,8 @@
 
             <!-- SMALL TITLE -->
 
-            <p class="text-[#c89b25] font-semibold uppercase tracking-widest text-sm mb-3">
+            <p
+                class="text-[#c89b25] font-semibold uppercase tracking-widest text-sm mb-3">
 
                 Ilm-e-Quran
 
@@ -347,7 +402,6 @@
     </section>
 
 
-
     <!-- ===================================================== -->
     <!-- DUA GRID -->
     <!-- ===================================================== -->
@@ -359,7 +413,6 @@
         <!-- JavaScript will insert all 40 Duas here -->
 
     </section>
-
 
 
     <!-- ===================================================== -->
@@ -399,7 +452,6 @@
 </main>
 
 
-
 <!-- ===================================================== -->
 <!-- DUA MODAL -->
 <!-- ===================================================== -->
@@ -433,7 +485,6 @@
         </button>
 
 
-
         <div class="p-6 md:p-10">
 
 
@@ -448,7 +499,6 @@
             </p>
 
 
-
             <!-- ================================================= -->
             <!-- TITLE -->
             <!-- ================================================= -->
@@ -458,7 +508,6 @@
                 class="text-3xl md:text-4xl font-bold text-[#0f5132] mb-8">
 
             </h2>
-
 
 
             <!-- ================================================= -->
@@ -478,7 +527,6 @@
                 </p>
 
             </div>
-
 
 
             <!-- ================================================= -->
@@ -503,7 +551,6 @@
                 </p>
 
             </div>
-
 
 
             <!-- ================================================= -->
@@ -531,7 +578,6 @@
             </div>
 
 
-
             <!-- ================================================= -->
             <!-- URDU -->
             <!-- ================================================= -->
@@ -556,7 +602,6 @@
                 </p>
 
             </div>
-
 
 
             <!-- ================================================= -->
@@ -587,7 +632,6 @@
     </div>
 
 </div>
-
 
 
 <!-- ===================================================== -->
@@ -624,7 +668,6 @@
             </p>
 
         </div>
-
 
 
         <!-- FOOTER LINKS -->
@@ -675,17 +718,18 @@
 </footer>
 
 
-
 <!-- ===================================================== -->
 <!-- JAVASCRIPT FILES -->
 <!-- ===================================================== -->
 
 <!-- 40 Duas data + functionality -->
+
 <script src="duas.js"></script>
 
-<!-- Website common functionality / Dark Mode -->
-<script src="script.js"></script>
 
+<!-- Website common functionality / Dark Mode -->
+
+<script src="script.js"></script>
 
 
 <!-- ===================================================== -->
@@ -696,8 +740,12 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const themeToggle = document.getElementById("themeToggle");
-    const themeIcon = document.getElementById("themeIcon");
+    const themeToggle =
+        document.getElementById("themeToggle");
+
+    const themeIcon =
+        document.getElementById("themeIcon");
+
 
     if (!themeToggle || !themeIcon) {
         return;
@@ -718,7 +766,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         themeIcon.textContent = "light_mode";
 
-    } else {
+    }
+
+    else {
 
         document.body.classList.remove("dark-mode");
 
@@ -746,7 +796,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             themeIcon.textContent = "light_mode";
 
-        } else {
+        }
+
+        else {
 
             localStorage.setItem("theme", "light");
 

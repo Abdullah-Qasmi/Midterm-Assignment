@@ -1,197 +1,408 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Digital Tasbih - Ilm-e-Quran</title>
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500&family=Noto+Serif:wght@400;700&display=swap"
+        rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1&display=swap" rel="stylesheet">
+    <!-- Material Icons -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1&display=swap"
+        rel="stylesheet">
 
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="stylesheet" href="digital-tasbih.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="digital tasbeeh.css">
+
 </head>
+
 
 <body>
 
-<nav class="top-nav">
-    <div class="logo">Ilm-e-Quran</div>
+    <!-- ================= NAVBAR ================= -->
 
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">99 Names</a></li>
-        <li><a href="#">40 Hadith</a></li>
-        <li><a class="active" href="#">Digital Tasbih</a></li>
-    </ul>
+    <nav class="top-nav">
 
-    <span class="material-symbols-outlined">dark_mode</span>
-</nav>
-
-<main class="main-content">
-
-    <header class="page-header">
-        <h1>Digital Tasbih</h1>
-        <p>Engage in daily Dhikr with focus and tranquility.</p>
-    </header>
-
-    <div class="tasbih-card">
-
-        <!-- Target -->
-        <div class="target-session">
-
-            <div class="targets">
-                <button class="target-btn active" data-target="33">33</button>
-                <button class="target-btn" data-target="99">99</button>
-                <button class="target-btn" data-target="100">100</button>
-            </div>
-
-            <div class="session">
-                <span>Session</span>
-                <strong id="session-count">0</strong>
-            </div>
-
+        <div class="logo">
+            Ilm-e-Quran
         </div>
 
-        <!-- Phrase -->
-        <div class="phrase-section">
 
-            <select id="phrase-select">
-                <option data-ar="سُبْحَانَ ٱللَّٰهِ" value="SubhanAllah">
-                    SubhanAllah
-                </option>
+        <ul>
 
-                <option data-ar="ٱلْحَمْدُ لِلَّٰهِ" value="Alhamdulillah">
-                    Alhamdulillah
-                </option>
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
 
-                <option data-ar="ٱللَّهُ أَكْبَرُ" value="AllahuAkbar">
-                    Allahu Akbar
-                </option>
+            <li>
+                <a href="99-names.html">
+                    99 Names
+                </a>
+            </li>
 
-                <option data-ar="أَسْتَغْفِرُ اللَّهَ" value="Astaghfirullah">
-                    Astaghfirullah
-                </option>
+            <li>
+                <a href="40-hadith.html">
+                    40 Hadith
+                </a>
+            </li>
 
-                <option
-                    data-ar="سُبْحَانَ اللَّهِ وَبِحَمْدِهِ"
-                    value="SubhanAllahi wa bihamdihi">
-                    SubhanAllahi wa bihamdihi
-                </option>
+            <li>
+                <a href="40-duas.html">
+                    40 Duas
+                </a>
+            </li>
 
-                <option
-                    data-ar="لَا إِلَٰهَ إِلَّا اللَّهُ"
-                    value="La ilaha illallah">
-                    La ilaha illallah
-                </option>
+            <li>
+                <a class="active" href="digital tasbeeh.html">
+                    Digital Tasbih
+                </a>
+            </li>
 
-                <option
-                    data-ar="حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ"
-                    value="Hasbunallahu wa ni'mal wakeel">
-                    Hasbunallahu wa ni'mal wakeel
-                </option>
+        </ul>
 
-                <option
-                    data-ar="لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ"
-                    value="La hawla wa la quwwata illa billah">
-                    La hawla wa la quwwata illa billah
-                </option>
-            </select>
 
-            <div id="arabic-display">
-                سُبْحَانَ ٱللَّٰهِ
-            </div>
+        <!-- DARK MODE BUTTON -->
 
-        </div>
+        <button
+            id="theme-toggle"
+            class="theme-toggle"
+            type="button"
+            aria-label="Toggle dark mode">
 
-        <!-- Counter -->
-        <div class="counter-wrapper">
+            <span
+                id="theme-icon"
+                class="material-symbols-outlined">
 
-            <svg class="progress-svg" viewBox="0 0 100 100">
+                dark_mode
 
-                <circle
-                    class="progress-bg"
-                    cx="50"
-                    cy="50"
-                    r="45">
-                </circle>
+            </span>
 
-                <circle
-                    id="progress-circle"
-                    class="progress-circle"
-                    cx="50"
-                    cy="50"
-                    r="45">
-                </circle>
-
-            </svg>
-
-            <button id="count-btn" class="counter-btn">
-
-                <span id="counter-display">0</span>
-
-                <small>COUNT</small>
-
-            </button>
-
-        </div>
-
-        <!-- Controls -->
-        <div class="controls">
-
-            <button id="decrement-btn">
-                <span class="material-symbols-outlined">remove</span>
-                Decrease
-            </button>
-
-            <button id="reset-btn">
-                <span class="material-symbols-outlined">refresh</span>
-                Reset
-            </button>
-
-        </div>
-
-        <button id="reset-all-btn" class="reset-all">
-            Reset Everything
         </button>
 
-    </div>
+    </nav>
 
-</main>
 
-<nav class="mobile-nav">
+    <!-- ================= MAIN ================= -->
 
-    <a href="#">
-        <span class="material-symbols-outlined">home</span>
-        Home
-    </a>
+    <main class="main-content">
 
-    <a href="#" class="selected">
-        <span class="material-symbols-outlined">touch_app</span>
-        Tasbih
-    </a>
 
-    <a href="#">
-        <span class="material-symbols-outlined">menu_book</span>
-        Quran
-    </a>
+        <header class="page-header">
 
-    <a href="#">
-        <span class="material-symbols-outlined">person</span>
-        Profile
-    </a>
+            <h1>
+                Digital Tasbih
+            </h1>
 
-</nav>
+            <p>
+                Engage in daily Dhikr with focus and tranquility.
+            </p>
 
-<script src="digital tasbeeh.js"></script>
-<link rel="stylesheet" href="digital tasbeeh.css">
-<script src="digital tasbeeh.js"></script>
+        </header>
 
+
+
+        <!-- ================= CARD ================= -->
+
+        <div class="tasbih-card">
+
+
+            <!-- TARGET -->
+
+            <div class="target-session">
+
+                <div class="targets">
+
+                    <button
+                        class="target-btn active"
+                        data-target="33">
+
+                        33
+
+                    </button>
+
+                    <button
+                        class="target-btn"
+                        data-target="99">
+
+                        99
+
+                    </button>
+
+                    <button
+                        class="target-btn"
+                        data-target="100">
+
+                        100
+
+                    </button>
+
+                </div>
+
+
+                <div class="session">
+
+                    <span>
+                        Session
+                    </span>
+
+                    <strong id="session-count">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PHRASE -->
+
+            <div class="phrase-section">
+
+                <select id="phrase-select">
+
+                    <option
+                        data-ar="سُبْحَانَ ٱللَّٰهِ"
+                        value="SubhanAllah">
+
+                        SubhanAllah
+
+                    </option>
+
+                    <option
+                        data-ar="ٱلْحَمْدُ لِلَّٰهِ"
+                        value="Alhamdulillah">
+
+                        Alhamdulillah
+
+                    </option>
+
+                    <option
+                        data-ar="ٱللَّهُ أَكْبَرُ"
+                        value="AllahuAkbar">
+
+                        Allahu Akbar
+
+                    </option>
+
+                    <option
+                        data-ar="أَسْتَغْفِرُ اللَّهَ"
+                        value="Astaghfirullah">
+
+                        Astaghfirullah
+
+                    </option>
+
+                    <option
+                        data-ar="سُبْحَانَ اللَّهِ وَبِحَمْدِهِ"
+                        value="SubhanAllahi wa bihamdihi">
+
+                        SubhanAllahi wa bihamdihi
+
+                    </option>
+
+                    <option
+                        data-ar="لَا إِلَٰهَ إِلَّا اللَّهُ"
+                        value="La ilaha illallah">
+
+                        La ilaha illallah
+
+                    </option>
+
+                    <option
+                        data-ar="حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ"
+                        value="Hasbunallahu wa ni'mal wakeel">
+
+                        Hasbunallahu wa ni'mal wakeel
+
+                    </option>
+
+                    <option
+                        data-ar="لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ"
+                        value="La hawla wa la quwwata illa billah">
+
+                        La hawla wa la quwwata illa billah
+
+                    </option>
+
+                </select>
+
+
+                <div id="arabic-display">
+
+                    سُبْحَانَ ٱللَّٰهِ
+
+                </div>
+
+            </div>
+
+
+
+            <!-- COUNTER -->
+
+            <div class="counter-wrapper">
+
+                <svg
+                    class="progress-svg"
+                    viewBox="0 0 100 100">
+
+                    <circle
+                        class="progress-bg"
+                        cx="50"
+                        cy="50"
+                        r="45">
+                    </circle>
+
+
+                    <circle
+                        id="progress-circle"
+                        class="progress-circle"
+                        cx="50"
+                        cy="50"
+                        r="45">
+                    </circle>
+
+                </svg>
+
+
+                <button
+                    id="count-btn"
+                    class="counter-btn"
+                    type="button">
+
+                    <span id="counter-display">
+                        0
+                    </span>
+
+                    <small>
+                        COUNT
+                    </small>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- CONTROLS -->
+
+            <div class="controls">
+
+                <button
+                    id="decrement-btn"
+                    type="button">
+
+                    <span class="material-symbols-outlined">
+                        remove
+                    </span>
+
+                    Decrease
+
+                </button>
+
+
+                <button
+                    id="reset-btn"
+                    type="button">
+
+                    <span class="material-symbols-outlined">
+                        refresh
+                    </span>
+
+                    Reset
+
+                </button>
+
+            </div>
+
+
+            <button
+                id="reset-all-btn"
+                class="reset-all"
+                type="button">
+
+                Reset Everything
+
+            </button>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- ================= MOBILE NAV ================= -->
+
+    <nav class="mobile-nav">
+
+        <a href="index.html">
+
+            <span class="material-symbols-outlined">
+                home
+            </span>
+
+            Home
+
+        </a>
+
+
+        <a
+            href="digital tasbeeh.html"
+            class="selected">
+
+            <span class="material-symbols-outlined">
+                touch_app
+            </span>
+
+            Tasbih
+
+        </a>
+
+
+        <a href="index.html">
+
+            <span class="material-symbols-outlined">
+                menu_book
+            </span>
+
+            Quran
+
+        </a>
+
+
+        <a href="#">
+
+            <span class="material-symbols-outlined">
+                person
+            </span>
+
+            Profile
+
+        </a>
+
+    </nav>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="digital tasbeeh.js"></script>
 
 </body>
+
 </html>

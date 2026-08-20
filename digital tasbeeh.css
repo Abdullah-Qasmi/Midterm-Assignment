@@ -22,16 +22,21 @@
 body {
     margin: 0;
     min-height: 100vh;
-
     background-color: var(--background);
     color: var(--text);
-
     font-family: "Inter", sans-serif;
 
     background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%230f5132' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM36 4V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
 }
 
-/* Navbar */
+
+/* =====================================================
+   NAVBAR
+===================================================== */
 
 .top-nav {
     height: 72px;
@@ -61,6 +66,8 @@ body {
 
     font-size: 20px;
     font-weight: 600;
+
+    white-space: nowrap;
 }
 
 .top-nav ul {
@@ -80,6 +87,8 @@ body {
 
     font-size: 13px;
     font-weight: 500;
+
+    transition: color 0.2s ease;
 }
 
 .top-nav a:hover,
@@ -92,7 +101,52 @@ body {
     padding-bottom: 5px;
 }
 
-/* Main */
+
+/* =====================================================
+   DARK MODE BUTTON
+===================================================== */
+
+.theme-toggle {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    outline: none;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: var(--primary);
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+    background: var(--surface-container);
+}
+
+.theme-toggle:active {
+    transform: scale(0.92);
+}
+
+.theme-toggle .material-symbols-outlined {
+    font-size: 24px;
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
 
 .main-content {
     min-height: calc(100vh - 72px);
@@ -131,7 +185,10 @@ body {
     font-size: 16px;
 }
 
-/* Card */
+
+/* =====================================================
+   TASBIH CARD
+===================================================== */
 
 .tasbih-card {
     width: 100%;
@@ -154,9 +211,17 @@ body {
     align-items: center;
 
     gap: 24px;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-/* Target */
+
+/* =====================================================
+   TARGET SECTION
+===================================================== */
 
 .target-session {
     width: 100%;
@@ -191,6 +256,14 @@ body {
     cursor: pointer;
 
     font-weight: 500;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.target-btn:hover {
+    background: var(--surface-low);
 }
 
 .target-btn.active {
@@ -213,12 +286,15 @@ body {
 .session strong {
     color: var(--primary);
 
-    font-family: "Plus Jakarta Sans";
+    font-family: "Plus Jakarta Sans", sans-serif;
 
     font-size: 20px;
 }
 
-/* Phrase */
+
+/* =====================================================
+   PHRASE SECTION
+===================================================== */
 
 .phrase-section {
     width: 100%;
@@ -243,12 +319,17 @@ body {
 
     text-align: center;
 
-    font-family: "Plus Jakarta Sans";
+    font-family: "Plus Jakarta Sans", sans-serif;
 
     font-size: 20px;
     font-weight: 600;
 
     cursor: pointer;
+}
+
+#phrase-select option {
+    background: white;
+    color: #1b1c19;
 }
 
 #arabic-display {
@@ -263,7 +344,10 @@ body {
     line-height: 72px;
 }
 
-/* Counter */
+
+/* =====================================================
+   COUNTER
+===================================================== */
 
 .counter-wrapper {
     width: 256px;
@@ -340,7 +424,9 @@ body {
         0 10px 30px rgba(15, 81, 50, 0.15),
         inset 0 -4px 0 rgba(0, 0, 0, 0.1);
 
-    transition: transform 0.15s ease;
+    transition:
+        transform 0.15s ease,
+        background 0.3s ease;
 }
 
 .counter-btn:active {
@@ -348,7 +434,7 @@ body {
 }
 
 #counter-display {
-    font-family: "Plus Jakarta Sans";
+    font-family: "Plus Jakarta Sans", sans-serif;
 
     font-size: 56px;
 
@@ -365,7 +451,10 @@ body {
     font-size: 11px;
 }
 
-/* Controls */
+
+/* =====================================================
+   CONTROLS
+===================================================== */
 
 .controls {
     width: 100%;
@@ -396,6 +485,10 @@ body {
     justify-content: center;
 
     gap: 8px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
 }
 
 .controls button:hover {
@@ -418,11 +511,229 @@ body {
     text-decoration: underline;
 }
 
-/* Mobile */
+
+/* =====================================================
+   MOBILE NAV
+===================================================== */
 
 .mobile-nav {
     display: none;
 }
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark-mode {
+
+    --primary: #d8eee1;
+    --primary-container: #1f6b47;
+
+    --secondary: #f2cf67;
+    --secondary-container: #6f5a00;
+
+    --background: #101412;
+    --surface: #1a1f1c;
+    --surface-low: #202522;
+    --surface-container: #252b27;
+    --surface-variant: #3b443f;
+
+    --text: #f1f5f2;
+    --muted: #b8c2bc;
+    --error: #ffb4ab;
+
+    background-color: var(--background);
+    color: var(--text);
+
+    background-image: none;
+}
+
+
+/* =====================================================
+   DARK NAVBAR
+===================================================== */
+
+body.dark-mode .top-nav {
+    background: rgba(16, 20, 18, 0.95);
+
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .logo {
+    color: #d8eee1;
+}
+
+body.dark-mode .top-nav a {
+    color: #b8c2bc;
+}
+
+body.dark-mode .top-nav a:hover,
+body.dark-mode .top-nav a.active {
+    color: #ffffff;
+}
+
+body.dark-mode .top-nav a.active {
+    border-bottom-color: #f2cf67;
+}
+
+body.dark-mode .theme-toggle {
+    color: #ffffff;
+}
+
+body.dark-mode .theme-toggle:hover {
+    background: #2b332e;
+}
+
+
+/* =====================================================
+   DARK HEADER
+===================================================== */
+
+body.dark-mode .page-header h1 {
+    color: #ffffff;
+}
+
+body.dark-mode .page-header p {
+    color: #b8c2bc;
+}
+
+
+/* =====================================================
+   DARK CARD
+===================================================== */
+
+body.dark-mode .tasbih-card {
+    background: #1a1f1c;
+
+    border-color: #343c37;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.45);
+}
+
+
+/* =====================================================
+   DARK TARGET
+===================================================== */
+
+body.dark-mode .target-session {
+    background: #252b27;
+}
+
+body.dark-mode .target-btn {
+    color: #b8c2bc;
+}
+
+body.dark-mode .target-btn:hover {
+    background: #303833;
+}
+
+body.dark-mode .target-btn.active {
+    background: #d8eee1;
+    color: #102218;
+}
+
+body.dark-mode .session span {
+    color: #b8c2bc;
+}
+
+body.dark-mode .session strong {
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   DARK PHRASE
+===================================================== */
+
+body.dark-mode .phrase-section {
+    border-top-color: #343c37;
+    border-bottom-color: #343c37;
+}
+
+body.dark-mode #phrase-select {
+    color: #d8eee1;
+}
+
+body.dark-mode #phrase-select option {
+    background: #1a1f1c;
+    color: #ffffff;
+}
+
+body.dark-mode #arabic-display {
+    color: #f2cf67;
+}
+
+
+/* =====================================================
+   DARK COUNTER
+===================================================== */
+
+body.dark-mode .progress-bg {
+    stroke: #3b443f;
+}
+
+body.dark-mode .progress-circle {
+    stroke: #f2cf67;
+}
+
+body.dark-mode .counter-btn {
+    background: #1f6b47;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.45),
+        inset 0 -4px 0 rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode .counter-btn small {
+    color: #bde7cb;
+}
+
+
+/* =====================================================
+   DARK CONTROLS
+===================================================== */
+
+body.dark-mode .controls button {
+    background: #202522;
+
+    border-color: #3b443f;
+
+    color: #d8ddd9;
+}
+
+body.dark-mode .controls button:hover {
+    background: #2d3530;
+}
+
+body.dark-mode .reset-all {
+    color: #ffb4ab;
+}
+
+
+/* =====================================================
+   DARK MOBILE NAV
+===================================================== */
+
+body.dark-mode .mobile-nav {
+    background: rgba(16, 20, 18, 0.97);
+
+    border-top-color: #343c37;
+}
+
+body.dark-mode .mobile-nav a {
+    color: #b8c2bc;
+}
+
+body.dark-mode .mobile-nav a.selected {
+    color: #d8eee1;
+}
+
+
+/* =====================================================
+   RESPONSIVE / MOBILE
+===================================================== */
 
 @media (max-width: 768px) {
 
@@ -431,7 +742,10 @@ body {
     }
 
     .main-content {
-        padding-bottom: 100px;
+        min-height: 100vh;
+
+        padding:
+            40px 16px 100px;
     }
 
     .page-header {
@@ -443,8 +757,36 @@ body {
         line-height: 32px;
     }
 
+    .page-header p {
+        font-size: 14px;
+    }
+
+    .tasbih-card {
+        max-width: 448px;
+
+        padding: 20px;
+
+        gap: 20px;
+    }
+
     #arabic-display {
         font-size: 36px;
+
+        line-height: 58px;
+    }
+
+    .counter-wrapper {
+        width: 230px;
+        height: 230px;
+    }
+
+    .counter-btn {
+        width: 174px;
+        height: 174px;
+    }
+
+    #counter-display {
+        font-size: 48px;
     }
 
     .mobile-nav {
@@ -458,7 +800,7 @@ body {
 
         height: 72px;
 
-        background: rgba(250, 249, 244, 0.95);
+        background: rgba(250, 249, 244, 0.96);
 
         backdrop-filter: blur(12px);
 
@@ -471,6 +813,7 @@ body {
 
     .mobile-nav a {
         display: flex;
+
         flex-direction: column;
 
         align-items: center;
@@ -483,9 +826,65 @@ body {
         text-decoration: none;
 
         font-size: 10px;
+
+        transition: color 0.2s ease;
+    }
+
+    .mobile-nav a .material-symbols-outlined {
+        font-size: 22px;
     }
 
     .mobile-nav a.selected {
         color: var(--primary);
+    }
+
+    body.dark-mode .mobile-nav {
+        background: rgba(16, 20, 18, 0.97);
+
+        border-top-color: #343c37;
+    }
+
+    body.dark-mode .mobile-nav a {
+        color: #b8c2bc;
+    }
+
+    body.dark-mode .mobile-nav a.selected {
+        color: #d8eee1;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    .tasbih-card {
+        padding: 16px;
+    }
+
+    .target-btn {
+        padding: 7px 12px;
+    }
+
+    .target-session {
+        padding: 6px;
+    }
+
+    #arabic-display {
+        font-size: 30px;
+
+        line-height: 50px;
+    }
+
+    .counter-wrapper {
+        width: 210px;
+        height: 210px;
+    }
+
+    .counter-btn {
+        width: 158px;
+        height: 158px;
+    }
+
+    #counter-display {
+        font-size: 44px;
     }
 }

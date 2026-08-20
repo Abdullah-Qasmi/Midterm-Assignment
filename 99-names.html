@@ -20,8 +20,7 @@
 
     <!-- ================= MATERIAL ICONS ================= -->
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet">
 
 
@@ -199,7 +198,6 @@
     <!-- ================= EXTRA CSS ================= -->
 
     <style>
-
         body {
             font-family: Inter, sans-serif;
         }
@@ -223,11 +221,11 @@
             scrollbar-width: none;
         }
 
-        #namesGrid > div {
+        #namesGrid>div {
             transition: all 0.25s ease;
         }
 
-        #namesGrid > div:hover {
+        #namesGrid>div:hover {
             transform: translateY(-4px);
         }
 
@@ -241,7 +239,6 @@
             }
 
         }
-
     </style>
 
 </head>
@@ -250,615 +247,561 @@
 <body class="bg-background text-on-background font-body-md">
 
 
-<div class="relative flex min-h-screen w-full flex-col bg-background overflow-x-hidden">
+    <div class="relative flex min-h-screen w-full flex-col bg-background overflow-x-hidden">
 
 
-<div class="layout-container flex h-full grow flex-col">
+        <div class="layout-container flex h-full grow flex-col">
 
 
-<!-- ================================================= -->
-<!-- HEADER -->
-<!-- ================================================= -->
+            <!-- ================================================= -->
+            <!-- HEADER -->
+            <!-- ================================================= -->
 
-<header
-    class="sticky top-0 z-50 glass-header border-b border-outline-variant px-4 md:px-40 py-3 flex items-center justify-between">
+            <header
+                class="sticky top-0 z-50 glass-header border-b border-outline-variant px-4 md:px-40 py-3 flex items-center justify-between">
 
 
-    <!-- Logo -->
+                <!-- Logo -->
 
-    <div class="flex items-center gap-4 text-on-surface">
+                <div class="flex items-center gap-4 text-on-surface">
 
-        <a href="index.html"
-           class="flex items-center gap-3">
+                    <a href="index.html" class="flex items-center gap-3">
 
-            <div class="size-6 text-on-primary-fixed-variant">
+                        <div class="size-6 text-on-primary-fixed-variant">
 
-                <span class="material-symbols-outlined text-2xl">
-                    menu_book
-                </span>
-
-            </div>
-
-            <h2 class="text-on-surface text-lg font-bold">
-
-                99 Names of Allah
-
-            </h2>
-
-        </a>
-
-    </div>
-
-
-    <!-- Desktop Right -->
-
-    <div class="flex flex-1 justify-end gap-4">
-
-
-        <!-- Search -->
-
-        <label class="hidden md:flex flex-col min-w-40 h-10 max-w-64">
-
-            <div
-                class="flex w-full flex-1 items-stretch rounded-lg h-full">
-
-
-                <div
-                    class="text-on-primary-fixed-variant flex border-none bg-surface-container-high items-center justify-center pl-4 rounded-l-lg">
-
-                    <span class="material-symbols-outlined">
-                        search
-                    </span>
-
-                </div>
-
-
-                <input
-                    class="form-input flex w-full min-w-0 flex-1 border-none bg-surface-container-high h-full px-4 rounded-r-lg text-base focus:ring-0"
-                    id="desktopSearch"
-                    placeholder="Search Names..."
-                    type="search">
-
-            </div>
-
-        </label>
-
-
-        <!-- Buttons -->
-
-        <div class="flex gap-2">
-
-            <button
-                id="favoriteButton"
-                type="button"
-                class="flex items-center justify-center rounded-lg h-10 w-10 bg-surface-container-high text-on-surface hover:bg-secondary-container transition">
-
-                <span class="material-symbols-outlined">
-                    favorite
-                </span>
-
-            </button>
-
-
-            <button
-                id="themeButton"
-                type="button"
-                class="flex items-center justify-center rounded-lg h-10 w-10 bg-surface-container-high text-on-surface hover:bg-secondary-container transition">
-
-                <span class="material-symbols-outlined">
-                    dark_mode
-                </span>
-
-            </button>
-
-        </div>
-
-    </div>
-
-</header>
-
-
-<!-- ================================================= -->
-<!-- MAIN -->
-<!-- ================================================= -->
-
-<main
-    class="flex-1 flex flex-col md:flex-row px-4 md:px-40 py-6 gap-8">
-
-
-    <!-- ================================================= -->
-    <!-- SIDEBAR -->
-    <!-- ================================================= -->
-
-    <aside
-        class="w-full md:w-64 flex flex-col gap-6">
-
-
-        <!-- Home -->
-
-        <a
-            href="index.html"
-            class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary-container text-on-primary-container">
-
-            <span
-                class="material-symbols-outlined"
-                style="font-variation-settings: 'FILL' 1;">
-
-                home
-
-            </span>
-
-            <p class="text-sm font-medium">
-                Home
-            </p>
-
-        </a>
-
-
-        <!-- 99 Names -->
-
-        <a
-            href="99-names.html"
-            class="flex items-center gap-3 px-3 py-2 rounded-lg bg-surface-container-high text-primary">
-
-            <span class="material-symbols-outlined">
-                auto_awesome
-            </span>
-
-            <p class="text-sm font-medium">
-                99 Names
-            </p>
-
-        </a>
-
-
-        <!-- Hadith -->
-
-        <a
-            href="40-hadith.html"
-            class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-surface-container-high text-on-surface">
-
-            <span class="material-symbols-outlined">
-                menu_book
-            </span>
-
-            <p class="text-sm font-medium">
-                40 Hadith
-            </p>
-
-        </a>
-
-
-        <!-- Duas -->
-
-        <a
-            href="40-duas.html"
-            class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-surface-container-high text-on-surface">
-
-            <span class="material-symbols-outlined">
-                auto_stories
-            </span>
-
-            <p class="text-sm font-medium">
-                40 Duas
-            </p>
-
-        </a>
-
-
-        <!-- Daily Verse -->
-
-        <div class="mt-auto hidden md:block">
-
-            <div
-                class="p-4 rounded-xl bg-secondary-fixed text-on-secondary-fixed">
-
-                <p
-                    class="text-xs font-bold uppercase tracking-wider mb-2">
-
-                    Daily Verse
-
-                </p>
-
-                <p class="text-sm italic">
-
-                    "And to Allah belong the best names,
-                    so invoke Him by them."
-
-                    <span class="font-semibold">
-                        (7:180)
-                    </span>
-
-                </p>
-
-            </div>
-
-        </div>
-
-    </aside>
-
-
-    <!-- ================================================= -->
-    <!-- CONTENT -->
-    <!-- ================================================= -->
-
-    <div class="flex-1 flex flex-col gap-6">
-
-
-        <!-- Search + Counter -->
-
-        <div class="flex flex-col gap-4">
-
-
-            <!-- Mobile Search -->
-
-            <div class="md:hidden">
-
-                <label class="flex flex-col h-12 w-full">
-
-                    <div
-                        class="flex w-full flex-1 items-stretch rounded-lg h-full">
-
-
-                        <div
-                            class="text-on-primary-fixed-variant flex bg-surface-container-high items-center justify-center pl-4 rounded-l-lg">
-
-                            <span class="material-symbols-outlined">
-                                search
+                            <span class="material-symbols-outlined text-2xl">
+                                menu_book
                             </span>
 
                         </div>
 
+                        <h2 class="text-on-surface text-lg font-bold">
 
-                        <input
-                            class="form-input flex w-full min-w-0 flex-1 border-none bg-surface-container-high h-full px-4 rounded-r-lg focus:ring-0"
-                            id="mobileSearch"
-                            placeholder="Search Arabic, English, Urdu..."
-                            type="search">
+                            99 Names of Allah
+
+                        </h2>
+
+                    </a>
+
+                </div>
+
+
+                <!-- Desktop Right -->
+
+                <div class="flex flex-1 justify-end gap-4">
+
+
+                    <!-- Search -->
+
+                    <label class="hidden md:flex flex-col min-w-40 h-10 max-w-64">
+
+                        <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+
+
+                            <div
+                                class="text-on-primary-fixed-variant flex border-none bg-surface-container-high items-center justify-center pl-4 rounded-l-lg">
+
+                                <span class="material-symbols-outlined">
+                                    search
+                                </span>
+
+                            </div>
+
+
+                            <input
+                                class="form-input flex w-full min-w-0 flex-1 border-none bg-surface-container-high h-full px-4 rounded-r-lg text-base focus:ring-0"
+                                id="desktopSearch" placeholder="Search Names..." type="search">
+
+                        </div>
+
+                    </label>
+
+
+                    <!-- Buttons -->
+
+                    <div class="flex gap-2">
+
+                        <button id="favoriteButton" type="button"
+                            class="flex items-center justify-center rounded-lg h-10 w-10 bg-surface-container-high text-on-surface hover:bg-secondary-container transition">
+
+                            <span class="material-symbols-outlined">
+                                favorite
+                            </span>
+
+                        </button>
+
+
+                        <button id="themeButton" type="button"
+                            class="flex items-center justify-center rounded-lg h-10 w-10 bg-surface-container-high text-on-surface hover:bg-secondary-container transition">
+
+                            <span class="material-symbols-outlined">
+                                dark_mode
+                            </span>
+
+                        </button>
 
                     </div>
 
-                </label>
+                </div>
 
-            </div>
-
-
-            <!-- Counter -->
-
-            <div
-                class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            </header>
 
 
-                <h1
-                    class="text-2xl font-bold text-on-surface"
-                    id="counter">
+            <!-- ================================================= -->
+            <!-- MAIN -->
+            <!-- ================================================= -->
 
-                    Showing 99 Names
-
-                </h1>
+            <main class="flex-1 flex flex-col md:flex-row px-4 md:px-40 py-6 gap-8">
 
 
-                <!-- Tabs -->
+                <!-- ================================================= -->
+                <!-- SIDEBAR -->
+                <!-- ================================================= -->
 
-                <div
-                    class="flex border-b border-outline-variant overflow-x-auto hide-scrollbar">
-
-
-                    <button
-                        id="allTab"
-                        type="button"
-                        class="px-4 py-2 border-b-2 border-primary-container text-on-surface font-bold text-sm whitespace-nowrap">
-
-                        All Names
-
-                    </button>
+                <aside class="w-full md:w-64 flex flex-col gap-6">
 
 
-                    <button
-                        id="favoriteTab"
-                        type="button"
-                        class="px-4 py-2 border-b-2 border-transparent text-outline font-bold text-sm whitespace-nowrap">
+                    <!-- Home -->
 
-                        Favorites
+                    <a href="index.html"
+                        class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary-container text-on-primary-container">
 
-                    </button>
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">
+
+                            home
+
+                        </span>
+
+                        <p class="text-sm font-medium">
+                            Home
+                        </p>
+
+                    </a>
 
 
-                    <button
-                        id="reflectionTab"
-                        type="button"
-                        class="px-4 py-2 border-b-2 border-transparent text-outline font-bold text-sm whitespace-nowrap">
+                    <!-- 99 Names -->
 
-                        Reflections
+                    <a href="99-names.html"
+                        class="flex items-center gap-3 px-3 py-2 rounded-lg bg-surface-container-high text-primary">
 
-                    </button>
+                        <span class="material-symbols-outlined">
+                            auto_awesome
+                        </span>
 
+                        <p class="text-sm font-medium">
+                            99 Names
+                        </p>
+
+                    </a>
+
+
+                    <!-- Hadith -->
+
+                    <a href="40-hadith.html"
+                        class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-surface-container-high text-on-surface">
+
+                        <span class="material-symbols-outlined">
+                            menu_book
+                        </span>
+
+                        <p class="text-sm font-medium">
+                            40 Hadith
+                        </p>
+
+                    </a>
+
+
+                    <!-- Duas -->
+
+                    <a href="40-duas.html"
+                        class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-surface-container-high text-on-surface">
+
+                        <span class="material-symbols-outlined">
+                            auto_stories
+                        </span>
+
+                        <p class="text-sm font-medium">
+                            40 Duas
+                        </p>
+
+                    </a>
+                    <a href="digital tasbeeh.html"
+                        class="px-4 py-2 rounded-lg text-[#52635a] hover:text-[#0f5132] hover:bg-[#f0f1ec]">
+
+                        📿 Digital Tasbih
+
+                    </a>
+
+                    <!-- Daily Verse -->
+
+                    <div class="mt-auto hidden md:block">
+
+                        <div class="p-4 rounded-xl bg-secondary-fixed text-on-secondary-fixed">
+
+                            <p class="text-xs font-bold uppercase tracking-wider mb-2">
+
+                                Daily Verse
+
+                            </p>
+
+                            <p class="text-sm italic">
+
+                                "And to Allah belong the best names,
+                                so invoke Him by them."
+
+                                <span class="font-semibold">
+                                    (7:180)
+                                </span>
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </aside>
+
+
+                <!-- ================================================= -->
+                <!-- CONTENT -->
+                <!-- ================================================= -->
+
+                <div class="flex-1 flex flex-col gap-6">
+
+
+                    <!-- Search + Counter -->
+
+                    <div class="flex flex-col gap-4">
+
+
+                        <!-- Mobile Search -->
+
+                        <div class="md:hidden">
+
+                            <label class="flex flex-col h-12 w-full">
+
+                                <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+
+
+                                    <div
+                                        class="text-on-primary-fixed-variant flex bg-surface-container-high items-center justify-center pl-4 rounded-l-lg">
+
+                                        <span class="material-symbols-outlined">
+                                            search
+                                        </span>
+
+                                    </div>
+
+
+                                    <input
+                                        class="form-input flex w-full min-w-0 flex-1 border-none bg-surface-container-high h-full px-4 rounded-r-lg focus:ring-0"
+                                        id="mobileSearch" placeholder="Search Arabic, English, Urdu..." type="search">
+
+                                </div>
+
+                            </label>
+
+                        </div>
+
+
+                        <!-- Counter -->
+
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+
+
+                            <h1 class="text-2xl font-bold text-on-surface" id="counter">
+
+                                Showing 99 Names
+
+                            </h1>
+
+
+                            <!-- Tabs -->
+
+                            <div class="flex border-b border-outline-variant overflow-x-auto hide-scrollbar">
+
+
+                                <button id="allTab" type="button"
+                                    class="px-4 py-2 border-b-2 border-primary-container text-on-surface font-bold text-sm whitespace-nowrap">
+
+                                    All Names
+
+                                </button>
+
+
+                                <button id="favoriteTab" type="button"
+                                    class="px-4 py-2 border-b-2 border-transparent text-outline font-bold text-sm whitespace-nowrap">
+
+                                    Favorites
+
+                                </button>
+
+
+                                <button id="reflectionTab" type="button"
+                                    class="px-4 py-2 border-b-2 border-transparent text-outline font-bold text-sm whitespace-nowrap">
+
+                                    Reflections
+
+                                </button>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================================================= -->
+                    <!-- 99 NAMES GRID -->
+                    <!-- ================================================= -->
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="namesGrid">
+
+                        <!-- names.js will insert all 99 names here -->
+
+                    </div>
+
+
+                </div>
+
+            </main>
+
+
+            <!-- ================================================= -->
+            <!-- DETAILS MODAL -->
+            <!-- ================================================= -->
+
+            <div id="detailsModal"
+                class="fixed inset-0 z-[60] hidden items-center justify-center p-4 bg-on-background/40 backdrop-blur-sm">
+
+
+                <div class="bg-surface w-full max-w-2xl rounded-2xl overflow-hidden shadow-2xl">
+
+
+                    <!-- Modal Header -->
+
+                    <div class="relative min-h-48 bg-primary-container p-8 flex flex-col justify-end overflow-hidden">
+
+
+                        <!-- Close -->
+
+                        <button id="closeModalButton" type="button"
+                            class="absolute top-4 right-4 h-10 w-10 flex items-center justify-center rounded-full bg-surface-container-highest text-on-surface hover:bg-secondary-container">
+
+                            <span class="material-symbols-outlined">
+                                close
+                            </span>
+
+                        </button>
+
+
+                        <div class="relative z-10 flex justify-between items-end gap-4">
+
+
+                            <div>
+
+                                <span class="text-primary-fixed-dim font-bold text-lg mb-1 block" id="modalNumber">
+
+                                    #00
+
+                                </span>
+
+
+                                <h2 class="text-surface font-bold text-4xl" id="modalTransliteration">
+
+                                    Transliteration
+
+                                </h2>
+
+                            </div>
+
+
+                            <div class="arabic-text text-surface text-5xl md:text-6xl leading-normal" id="modalArabic">
+
+                                الله
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Modal Body -->
+
+                    <div class="p-8 flex flex-col gap-6">
+
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+
+                            <!-- English -->
+
+                            <div>
+
+                                <p class="text-xs font-bold text-outline uppercase tracking-widest mb-1">
+
+                                    English Meaning
+
+                                </p>
+
+                                <p class="text-xl font-semibold text-on-surface" id="modalEnglish">
+
+                                </p>
+
+                            </div>
+
+
+                            <!-- Urdu -->
+
+                            <div class="md:text-right">
+
+                                <p class="text-xs font-bold text-outline uppercase tracking-widest mb-1">
+
+                                    Urdu Meaning
+
+                                </p>
+
+                                <p class="text-xl font-semibold text-on-surface arabic-text" id="modalUrdu">
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Description -->
+
+                        <div class="border-t border-outline-variant pt-6">
+
+                            <p class="text-xs font-bold text-outline uppercase tracking-widest mb-3">
+
+                                Reflections & Description
+
+                            </p>
+
+                            <p class="text-on-surface-variant leading-relaxed" id="modalDescription">
+
+                                Detailed description of the name will appear here.
+
+                            </p>
+
+                        </div>
+
+
+                        <!-- Buttons -->
+
+                        <div class="flex gap-3 mt-4">
+
+
+                            <button id="listenButton" type="button"
+                                class="flex-1 flex items-center justify-center gap-2 h-12 rounded-xl bg-primary-container text-surface font-bold hover:opacity-90">
+
+                                <span class="material-symbols-outlined">
+                                    play_circle
+                                </span>
+
+                                Listen Audio
+
+                            </button>
+
+
+                            <button id="shareButton" type="button"
+                                class="h-12 w-12 flex items-center justify-center rounded-xl bg-surface-container-high text-on-surface">
+
+                                <span class="material-symbols-outlined">
+                                    share
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
             </div>
 
-        </div>
-
-
-        <!-- ================================================= -->
-        <!-- 99 NAMES GRID -->
-        <!-- ================================================= -->
-
-        <div
-            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
-            id="namesGrid">
-
-            <!-- names.js will insert all 99 names here -->
 
         </div>
-
 
     </div>
 
-</main>
 
+    <!-- ================================================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ================================================= -->
 
-<!-- ================================================= -->
-<!-- DETAILS MODAL -->
-<!-- ================================================= -->
+    <script src="names.js"></script>
 
-<div
-    id="detailsModal"
-    class="fixed inset-0 z-[60] hidden items-center justify-center p-4 bg-on-background/40 backdrop-blur-sm">
 
+    <!-- Small fallback for modal if names.js doesn't provide it -->
 
-    <div
-        class="bg-surface w-full max-w-2xl rounded-2xl overflow-hidden shadow-2xl">
+    <script>
 
+        function closeModal() {
 
-        <!-- Modal Header -->
+            const modal = document.getElementById("detailsModal");
 
-        <div
-            class="relative min-h-48 bg-primary-container p-8 flex flex-col justify-end overflow-hidden">
+            if (modal) {
 
-
-            <!-- Close -->
-
-            <button
-                id="closeModalButton"
-                type="button"
-                class="absolute top-4 right-4 h-10 w-10 flex items-center justify-center rounded-full bg-surface-container-highest text-on-surface hover:bg-secondary-container">
-
-                <span class="material-symbols-outlined">
-                    close
-                </span>
-
-            </button>
-
-
-            <div
-                class="relative z-10 flex justify-between items-end gap-4">
-
-
-                <div>
-
-                    <span
-                        class="text-primary-fixed-dim font-bold text-lg mb-1 block"
-                        id="modalNumber">
-
-                        #00
-
-                    </span>
-
-
-                    <h2
-                        class="text-surface font-bold text-4xl"
-                        id="modalTransliteration">
-
-                        Transliteration
-
-                    </h2>
-
-                </div>
-
-
-                <div
-                    class="arabic-text text-surface text-5xl md:text-6xl leading-normal"
-                    id="modalArabic">
-
-                    الله
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- Modal Body -->
-
-        <div class="p-8 flex flex-col gap-6">
-
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-
-                <!-- English -->
-
-                <div>
-
-                    <p
-                        class="text-xs font-bold text-outline uppercase tracking-widest mb-1">
-
-                        English Meaning
-
-                    </p>
-
-                    <p
-                        class="text-xl font-semibold text-on-surface"
-                        id="modalEnglish">
-
-                    </p>
-
-                </div>
-
-
-                <!-- Urdu -->
-
-                <div class="md:text-right">
-
-                    <p
-                        class="text-xs font-bold text-outline uppercase tracking-widest mb-1">
-
-                        Urdu Meaning
-
-                    </p>
-
-                    <p
-                        class="text-xl font-semibold text-on-surface arabic-text"
-                        id="modalUrdu">
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- Description -->
-
-            <div
-                class="border-t border-outline-variant pt-6">
-
-                <p
-                    class="text-xs font-bold text-outline uppercase tracking-widest mb-3">
-
-                    Reflections & Description
-
-                </p>
-
-                <p
-                    class="text-on-surface-variant leading-relaxed"
-                    id="modalDescription">
-
-                    Detailed description of the name will appear here.
-
-                </p>
-
-            </div>
-
-
-            <!-- Buttons -->
-
-            <div class="flex gap-3 mt-4">
-
-
-                <button
-                    id="listenButton"
-                    type="button"
-                    class="flex-1 flex items-center justify-center gap-2 h-12 rounded-xl bg-primary-container text-surface font-bold hover:opacity-90">
-
-                    <span class="material-symbols-outlined">
-                        play_circle
-                    </span>
-
-                    Listen Audio
-
-                </button>
-
-
-                <button
-                    id="shareButton"
-                    type="button"
-                    class="h-12 w-12 flex items-center justify-center rounded-xl bg-surface-container-high text-on-surface">
-
-                    <span class="material-symbols-outlined">
-                        share
-                    </span>
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-</div>
-
-</div>
-
-
-<!-- ================================================= -->
-<!-- JAVASCRIPT -->
-<!-- ================================================= -->
-
-<script src="names.js"></script>
-
-
-<!-- Small fallback for modal if names.js doesn't provide it -->
-
-<script>
-
-    function closeModal() {
-
-        const modal = document.getElementById("detailsModal");
-
-        if (modal) {
-
-            modal.classList.add("hidden");
-            modal.classList.remove("flex");
-
-        }
-
-    }
-
-
-    const closeButton =
-        document.getElementById("closeModalButton");
-
-    if (closeButton) {
-
-        closeButton.addEventListener("click", closeModal);
-
-    }
-
-
-    const modal =
-        document.getElementById("detailsModal");
-
-    if (modal) {
-
-        modal.addEventListener("click", function (event) {
-
-            if (event.target === modal) {
-
-                closeModal();
+                modal.classList.add("hidden");
+                modal.classList.remove("flex");
 
             }
 
-        });
-
-    }
+        }
 
 
-    /* Theme button */
+        const closeButton =
+            document.getElementById("closeModalButton");
 
-    const themeButton =
-        document.getElementById("themeButton");
+        if (closeButton) {
 
-    if (themeButton) {
+            closeButton.addEventListener("click", closeModal);
 
-        themeButton.addEventListener("click", function () {
+        }
 
-            document.documentElement.classList.toggle("dark");
 
-        });
+        const modal =
+            document.getElementById("detailsModal");
 
-    }
+        if (modal) {
 
-</script>
+            modal.addEventListener("click", function (event) {
 
-<script src="script.js"></script>
+                if (event.target === modal) {
+
+                    closeModal();
+
+                }
+
+            });
+
+        }
+
+
+        /* Theme button */
+
+        const themeButton =
+            document.getElementById("themeButton");
+
+        if (themeButton) {
+
+            themeButton.addEventListener("click", function () {
+
+                document.documentElement.classList.toggle("dark");
+
+            });
+
+        }
+
+    </script>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

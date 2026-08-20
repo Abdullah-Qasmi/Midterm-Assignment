@@ -9,23 +9,23 @@
 
     <title>40 Hadith - Ilm-e-Quran</title>
     <style>
-    .favorite-icon {
-        font-variation-settings:
-            'FILL' 0,
-            'wght' 400,
-            'GRAD' 0,
-            'opsz' 24;
-        transition: all 0.2s ease;
-    }
+        .favorite-icon {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24;
+            transition: all 0.2s ease;
+        }
 
-    .favorite-icon.favorite-active {
-        font-variation-settings:
-            'FILL' 1,
-            'wght' 500,
-            'GRAD' 0,
-            'opsz' 24;
-    }
-</style>
+        .favorite-icon.favorite-active {
+            font-variation-settings:
+                'FILL' 1,
+                'wght' 500,
+                'GRAD' 0,
+                'opsz' 24;
+        }
+    </style>
 
 
     <!-- ================= GOOGLE FONTS ================= -->
@@ -41,8 +41,7 @@
 
     <!-- ================= MATERIAL ICONS ================= -->
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet">
 
 
@@ -239,7 +238,6 @@
     <!-- ================= PAGE CSS ================= -->
 
     <style>
-
         * {
             box-sizing: border-box;
         }
@@ -257,17 +255,13 @@
         .bg-pattern {
 
             background-image:
-                linear-gradient(
-                    rgba(250, 249, 244, 0.96),
-                    rgba(250, 249, 244, 0.96)
-                ),
-                repeating-linear-gradient(
-                    45deg,
+                linear-gradient(rgba(250, 249, 244, 0.96),
+                    rgba(250, 249, 244, 0.96)),
+                repeating-linear-gradient(45deg,
                     transparent,
                     transparent 35px,
                     rgba(15, 81, 50, 0.025) 35px,
-                    rgba(15, 81, 50, 0.025) 36px
-                );
+                    rgba(15, 81, 50, 0.025) 36px);
 
         }
 
@@ -345,7 +339,6 @@
             }
 
         }
-
     </style>
 
 </head>
@@ -354,715 +347,660 @@
 <body class="bg-background text-on-background min-h-screen flex flex-col bg-pattern">
 
 
-<!-- ================================================= -->
-<!-- DESKTOP NAVIGATION -->
-<!-- ================================================= -->
+    <!-- ================================================= -->
+    <!-- DESKTOP NAVIGATION -->
+    <!-- ================================================= -->
 
-<nav
-    class="desktop-nav hidden md:flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto bg-surface/90 backdrop-blur-md sticky top-0 z-50 border-b border-surface-variant shadow-sm">
+    <nav
+        class="desktop-nav hidden md:flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto bg-surface/90 backdrop-blur-md sticky top-0 z-50 border-b border-surface-variant shadow-sm">
 
 
-    <!-- Logo -->
+        <!-- Logo -->
 
-    <a
-        href="index.html"
-        class="flex items-center gap-3 text-primary">
+        <a href="index.html" class="flex items-center gap-3 text-primary">
 
-        <span class="material-symbols-outlined text-3xl">
-            menu_book
-        </span>
-
-        <span class="text-title-md font-title-md tracking-tight">
-            Ilm-e-Quran
-        </span>
-
-    </a>
-
-
-    <!-- Links -->
-
-    <div class="flex items-center gap-4">
-
-        <a
-            href="index.html"
-            class="text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-lg px-3 py-2 transition">
-
-            Home
-
-        </a>
-
-
-        <a
-            href="99-names.html"
-            class="text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-lg px-3 py-2 transition">
-
-            99 Names
-
-        </a>
-
-
-        <a
-            href="40-hadith.html"
-            class="text-primary border-b-2 border-secondary font-semibold rounded-lg px-3 py-2">
-
-            40 Hadith
-
-        </a>
-
-
-        <a
-            href="40-duas.html"
-            class="text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-lg px-3 py-2 transition">
-
-            40 Duas
-
-        </a>
-
-    </div>
-
-
-    <!-- Actions -->
-
-    <div class="flex items-center gap-2">
-
-        <button
-            id="themeToggle"
-            type="button"
-            class="flex items-center justify-center rounded-lg p-2 bg-surface-container-high text-on-surface hover:bg-secondary-container transition">
-
-            <span class="material-symbols-outlined">
-                dark_mode
-            </span>
-
-        </button>
-
-
-        <button
-            id="mobileMenuButton"
-            type="button"
-            class="md:hidden flex items-center justify-center rounded-lg p-2 bg-surface-container-high">
-
-            <span class="material-symbols-outlined">
-                menu
-            </span>
-
-        </button>
-
-    </div>
-
-</nav>
-
-
-<!-- ================================================= -->
-<!-- MOBILE HEADER -->
-<!-- ================================================= -->
-
-<div
-    class="md:hidden sticky top-0 z-50 flex items-center justify-between px-4 py-4 bg-surface/95 backdrop-blur-md border-b border-surface-variant">
-
-
-    <a
-        href="index.html"
-        class="flex items-center gap-2 text-primary font-bold">
-
-        <span class="material-symbols-outlined">
-            menu_book
-        </span>
-
-        Ilm-e-Quran
-
-    </a>
-
-
-    <div class="flex gap-2">
-
-        <button
-            id="mobileThemeToggle"
-            type="button"
-            class="p-2 rounded-lg bg-surface-container-high">
-
-            <span class="material-symbols-outlined">
-                dark_mode
-            </span>
-
-        </button>
-
-
-        <button
-            id="mobileMenuOpen"
-            type="button"
-            class="p-2 rounded-lg bg-surface-container-high">
-
-            <span class="material-symbols-outlined">
-                menu
-            </span>
-
-        </button>
-
-    </div>
-
-</div>
-
-
-<!-- ================================================= -->
-<!-- MOBILE MENU -->
-<!-- ================================================= -->
-
-<div
-    id="mobileNav"
-    class="mobile-menu fixed inset-y-0 left-0 z-[100] w-72 bg-surface shadow-2xl p-6 md:hidden">
-
-
-    <div class="flex justify-between items-center mb-8">
-
-        <div class="flex items-center gap-2 text-primary font-bold">
-
-            <span class="material-symbols-outlined">
+            <span class="material-symbols-outlined text-3xl">
                 menu_book
             </span>
 
-            Ilm-e-Quran
+            <span class="text-title-md font-title-md tracking-tight">
+                Ilm-e-Quran
+            </span>
+
+        </a>
+
+
+        <!-- Links -->
+
+        <div class="flex items-center gap-4">
+
+            <a href="index.html"
+                class="text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-lg px-3 py-2 transition">
+
+                Home
+
+            </a>
+
+
+            <a href="99-names.html"
+                class="text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-lg px-3 py-2 transition">
+
+                99 Names
+
+            </a>
+
+
+            <a href="40-hadith.html"
+                class="text-primary border-b-2 border-secondary font-semibold rounded-lg px-3 py-2">
+
+                40 Hadith
+
+            </a>
+
+
+            <a href="40-duas.html"
+                class="text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-lg px-3 py-2 transition">
+
+                40 Duas
+
+            </a>
+            <a href="digital tasbeeh.html"
+                class="px-4 py-2 rounded-lg text-[#52635a] hover:text-[#0f5132] hover:bg-[#f0f1ec]">
+
+                Digital Tasbih
+
+            </a>
 
         </div>
 
 
-        <button
-            id="mobileMenuClose"
-            type="button"
-            class="p-2 rounded-full bg-surface-container-high">
+        <!-- Actions -->
 
-            <span class="material-symbols-outlined">
-                close
-            </span>
+        <div class="flex items-center gap-2">
 
-        </button>
+            <button id="themeToggle" type="button"
+                class="flex items-center justify-center rounded-lg p-2 bg-surface-container-high text-on-surface hover:bg-secondary-container transition">
 
-    </div>
-
-
-    <div class="flex flex-col gap-2">
-
-
-        <a
-            href="index.html"
-            class="flex items-center gap-4 p-3 rounded-xl hover:bg-surface-container-high">
-
-            <span class="material-symbols-outlined">
-                home
-            </span>
-
-            Home
-
-        </a>
-
-
-        <a
-            href="99-names.html"
-            class="flex items-center gap-4 p-3 rounded-xl hover:bg-surface-container-high">
-
-            <span class="material-symbols-outlined">
-                star
-            </span>
-
-            99 Names
-
-        </a>
-
-
-        <a
-            href="40-hadith.html"
-            class="flex items-center gap-4 p-3 rounded-xl bg-secondary-container text-on-secondary-container">
-
-            <span class="material-symbols-outlined">
-                menu_book
-            </span>
-
-            40 Hadith
-
-        </a>
-
-
-        <a
-            href="40-duas.html"
-            class="flex items-center gap-4 p-3 rounded-xl hover:bg-surface-container-high">
-
-            <span class="material-symbols-outlined">
-                auto_stories
-            </span>
-
-            40 Duas
-
-        </a>
-
-    </div>
-
-</div>
-
-
-<!-- ================================================= -->
-<!-- MAIN -->
-<!-- ================================================= -->
-
-<main
-    class="flex-1 px-margin-mobile md:px-margin-desktop py-stack-lg max-w-container-max mx-auto w-full relative z-10">
-
-
-    <!-- HEADER SECTION -->
-
-    <header
-        class="mb-stack-lg text-center max-w-3xl mx-auto">
-
-
-        <div
-            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary-container/40 text-on-secondary-container mb-5">
-
-            <span class="material-symbols-outlined text-lg">
-                menu_book
-            </span>
-
-            <span class="text-sm font-semibold">
-                Sacred Teachings
-            </span>
-
-        </div>
-
-
-        <h1
-            class="font-headline-lg-mobile md:font-headline-lg text-primary mb-4">
-
-            40 Hadith
-
-        </h1>
-
-
-        <p
-            class="font-body-md text-on-surface-variant mb-8">
-
-            Imam An-Nawawi's timeless collection of foundational
-            sayings of the Prophet Muhammad ﷺ.
-
-        </p>
-
-
-        <!-- SEARCH -->
-
-        <div
-            class="relative bg-surface-container-lowest rounded-2xl p-2 shadow-lg flex flex-col md:flex-row items-center gap-4 border border-surface-variant">
-
-
-            <div class="relative flex-1 w-full">
-
-
-                <span
-                    class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">
-
-                    search
-
+                <span class="material-symbols-outlined">
+                    dark_mode
                 </span>
 
-
-                <input
-                    id="searchInput"
-                    type="text"
-                    placeholder="Search by English, Arabic, or Urdu..."
-                    class="w-full pl-12 pr-4 py-3 bg-transparent border-b border-primary/20 focus:border-secondary focus:border-b-2 outline-none text-on-surface transition-all rounded-t-lg">
+            </button>
 
 
-            </div>
+            <button id="mobileMenuButton" type="button"
+                class="md:hidden flex items-center justify-center rounded-lg p-2 bg-surface-container-high">
+
+                <span class="material-symbols-outlined">
+                    menu
+                </span>
+
+            </button>
+
+        </div>
+
+    </nav>
 
 
-            <div
-                class="flex items-center gap-2 px-4 whitespace-nowrap text-on-surface-variant">
+    <!-- ================================================= -->
+    <!-- MOBILE HEADER -->
+    <!-- ================================================= -->
+
+    <div
+        class="md:hidden sticky top-0 z-50 flex items-center justify-between px-4 py-4 bg-surface/95 backdrop-blur-md border-b border-surface-variant">
 
 
-                <span class="material-symbols-outlined text-secondary">
+        <a href="index.html" class="flex items-center gap-2 text-primary font-bold">
+
+            <span class="material-symbols-outlined">
+                menu_book
+            </span>
+
+            Ilm-e-Quran
+
+        </a>
+
+
+        <div class="flex gap-2">
+
+            <button id="mobileThemeToggle" type="button" class="p-2 rounded-lg bg-surface-container-high">
+
+                <span class="material-symbols-outlined">
+                    dark_mode
+                </span>
+
+            </button>
+
+
+            <button id="mobileMenuOpen" type="button" class="p-2 rounded-lg bg-surface-container-high">
+
+                <span class="material-symbols-outlined">
+                    menu
+                </span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- MOBILE MENU -->
+    <!-- ================================================= -->
+
+    <div id="mobileNav" class="mobile-menu fixed inset-y-0 left-0 z-[100] w-72 bg-surface shadow-2xl p-6 md:hidden">
+
+
+        <div class="flex justify-between items-center mb-8">
+
+            <div class="flex items-center gap-2 text-primary font-bold">
+
+                <span class="material-symbols-outlined">
                     menu_book
                 </span>
 
-
-                <span
-                    id="counterText"
-                    class="font-semibold">
-
-                    Showing 40/40
-
-                </span>
+                Ilm-e-Quran
 
             </div>
 
-        </div>
 
-    </header>
-
-
-    <!-- ================================================= -->
-    <!-- HADITH GRID -->
-    <!-- ================================================= -->
-
-    <div
-        id="hadithGrid"
-        class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-gutter">
-
-
-        <!-- hadith.js will generate all 40 cards here -->
-
-
-    </div>
-
-
-    <!-- NO RESULTS -->
-
-    <div
-        id="noResults"
-        class="hidden text-center py-20">
-
-
-        <span
-            class="material-symbols-outlined text-5xl text-outline">
-
-            search_off
-
-        </span>
-
-
-        <h2
-            class="text-xl font-bold text-primary mt-4">
-
-            No Hadith Found
-
-        </h2>
-
-
-        <p
-            class="text-on-surface-variant mt-2">
-
-            Try searching with another word.
-
-        </p>
-
-    </div>
-
-
-</main>
-
-
-<!-- ================================================= -->
-<!-- FOOTER -->
-<!-- ================================================= -->
-
-<footer
-    class="w-full px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col md:flex-row justify-between items-center gap-stack-md max-w-container-max mx-auto border-t border-surface-variant bg-surface-container-low mt-auto z-10 relative">
-
-
-    <div class="text-center md:text-left">
-
-
-        <a
-            href="index.html"
-            class="font-title-md text-primary block mb-2">
-
-            Ilm-e-Quran
-
-        </a>
-
-
-        <p
-            class="text-on-surface-variant">
-
-            © 2024 Ilm-e-Quran.
-            Seeking Tranquility through Knowledge.
-
-        </p>
-
-    </div>
-
-
-    <div class="flex flex-wrap justify-center gap-6">
-
-
-        <a
-            href="#"
-            class="text-on-surface-variant hover:text-primary transition">
-
-            About Us
-
-        </a>
-
-
-        <a
-            href="#"
-            class="text-on-surface-variant hover:text-primary transition">
-
-            Contact
-
-        </a>
-
-
-        <a
-            href="#"
-            class="text-on-surface-variant hover:text-primary transition">
-
-            Privacy Policy
-
-        </a>
-
-
-        <a
-            href="#"
-            class="text-on-surface-variant hover:text-primary transition">
-
-            Terms of Service
-
-        </a>
-
-    </div>
-
-</footer>
-
-
-<!-- ================================================= -->
-<!-- HADITH MODAL -->
-<!-- ================================================= -->
-
-<div
-    id="hadithModal"
-    class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-
-
-    <div
-        id="modalContent"
-        class="bg-surface-container-lowest w-full max-w-3xl rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
-
-
-        <!-- Modal Header -->
-
-        <div
-            class="p-6 border-b border-surface-variant flex justify-between items-center bg-surface">
-
-
-            <h2
-                class="font-title-md text-primary"
-                id="modalTitle">
-
-                Hadith
-
-            </h2>
-
-
-            <button
-                id="closeModalBtn"
-                type="button"
-                class="text-on-surface-variant hover:text-error transition-colors p-2 rounded-full hover:bg-error-container/50">
-
+            <button id="mobileMenuClose" type="button" class="p-2 rounded-full bg-surface-container-high">
 
                 <span class="material-symbols-outlined">
                     close
                 </span>
-
 
             </button>
 
         </div>
 
 
-        <!-- Modal Content -->
-
-        <div
-            class="p-6 overflow-y-auto flex-1 flex flex-col gap-6">
+        <div class="flex flex-col gap-2">
 
 
-            <!-- Arabic -->
+            <a href="index.html" class="flex items-center gap-4 p-3 rounded-xl hover:bg-surface-container-high">
 
-            <p
-                class="font-body-ar text-[28px] md:text-[32px] leading-loose text-primary text-right arabic-text"
-                dir="rtl"
-                id="modalArabic">
+                <span class="material-symbols-outlined">
+                    home
+                </span>
 
-            </p>
+                Home
 
-
-            <div
-                class="h-px w-full bg-surface-variant">
-            </div>
+            </a>
 
 
-            <!-- English -->
+            <a href="99-names.html" class="flex items-center gap-4 p-3 rounded-xl hover:bg-surface-container-high">
 
-            <div>
+                <span class="material-symbols-outlined">
+                    star
+                </span>
 
-                <h3
-                    class="text-xs font-bold text-on-surface-variant mb-2 uppercase tracking-wider">
+                99 Names
 
-                    English Translation
-
-                </h3>
-
-
-                <p
-                    class="text-on-surface leading-relaxed"
-                    id="modalEnglish">
-
-                </p>
-
-            </div>
+            </a>
 
 
-            <!-- Urdu -->
+            <a href="40-hadith.html"
+                class="flex items-center gap-4 p-3 rounded-xl bg-secondary-container text-on-secondary-container">
 
-            <div>
+                <span class="material-symbols-outlined">
+                    menu_book
+                </span>
 
-                <h3
-                    class="text-xs font-bold text-on-surface-variant mb-2 uppercase tracking-wider">
+                40 Hadith
 
-                    Urdu Translation
-
-                </h3>
-
-
-                <p
-                    class="text-on-surface leading-relaxed text-right arabic-text"
-                    dir="rtl"
-                    id="modalUrdu">
-
-                </p>
-
-            </div>
-
-        </div>
+            </a>
 
 
-        <!-- Reference -->
+            <a href="40-duas.html" class="flex items-center gap-4 p-3 rounded-xl hover:bg-surface-container-high">
 
-        <div
-            class="p-6 border-t border-surface-variant bg-surface">
+                <span class="material-symbols-outlined">
+                    auto_stories
+                </span>
 
+                40 Duas
 
-            <span
-                class="text-sm text-on-surface-variant bg-surface-container-high px-3 py-2 rounded-md"
-                id="modalRef">
-
-            </span>
+            </a>
 
         </div>
 
     </div>
 
-</div>
+
+    <!-- ================================================= -->
+    <!-- MAIN -->
+    <!-- ================================================= -->
+
+    <main
+        class="flex-1 px-margin-mobile md:px-margin-desktop py-stack-lg max-w-container-max mx-auto w-full relative z-10">
 
 
-<!-- ================================================= -->
-<!-- HADITH JAVASCRIPT -->
-<!-- ================================================= -->
+        <!-- HEADER SECTION -->
 
-<script src="hadith.js"></script>
+        <header class="mb-stack-lg text-center max-w-3xl mx-auto">
 
 
-<!-- ================================================= -->
-<!-- BASIC PAGE JAVASCRIPT -->
-<!-- ================================================= -->
+            <div
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary-container/40 text-on-secondary-container mb-5">
 
-<script>
+                <span class="material-symbols-outlined text-lg">
+                    menu_book
+                </span>
 
-    /* ================= THEME ================= */
+                <span class="text-sm font-semibold">
+                    Sacred Teachings
+                </span>
 
-    function toggleTheme() {
-
-        document.documentElement.classList.toggle("dark");
-
-    }
-
-
-    const themeToggle =
-        document.getElementById("themeToggle");
-
-    const mobileThemeToggle =
-        document.getElementById("mobileThemeToggle");
+            </div>
 
 
-    if (themeToggle) {
+            <h1 class="font-headline-lg-mobile md:font-headline-lg text-primary mb-4">
 
-        themeToggle.addEventListener(
-            "click",
-            toggleTheme
-        );
+                40 Hadith
 
-    }
+            </h1>
 
 
-    if (mobileThemeToggle) {
+            <p class="font-body-md text-on-surface-variant mb-8">
 
-        mobileThemeToggle.addEventListener(
-            "click",
-            toggleTheme
-        );
+                Imam An-Nawawi's timeless collection of foundational
+                sayings of the Prophet Muhammad ﷺ.
 
-    }
+            </p>
 
 
-    /* ================= MOBILE MENU ================= */
+            <!-- SEARCH -->
 
-    const mobileNav =
-        document.getElementById("mobileNav");
-
-
-    document
-        .getElementById("mobileMenuOpen")
-        ?.addEventListener("click", function () {
-
-            mobileNav.classList.add("open");
-
-        });
+            <div
+                class="relative bg-surface-container-lowest rounded-2xl p-2 shadow-lg flex flex-col md:flex-row items-center gap-4 border border-surface-variant">
 
 
-    document
-        .getElementById("mobileMenuClose")
-        ?.addEventListener("click", function () {
-
-            mobileNav.classList.remove("open");
-
-        });
+                <div class="relative flex-1 w-full">
 
 
-    /* ================= MODAL ================= */
+                    <span
+                        class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">
 
-    const hadithModal =
-        document.getElementById("hadithModal");
+                        search
 
-
-    const closeModalBtn =
-        document.getElementById("closeModalBtn");
+                    </span>
 
 
-    function closeHadithModal() {
-
-        if (!hadithModal) return;
-
-        hadithModal.classList.add("hidden");
-
-        hadithModal.classList.remove("flex");
-
-        document.body.style.overflow = "";
-
-    }
+                    <input id="searchInput" type="text" placeholder="Search by English, Arabic, or Urdu..."
+                        class="w-full pl-12 pr-4 py-3 bg-transparent border-b border-primary/20 focus:border-secondary focus:border-b-2 outline-none text-on-surface transition-all rounded-t-lg">
 
 
-    if (closeModalBtn) {
-
-        closeModalBtn.addEventListener(
-            "click",
-            closeHadithModal
-        );
-
-    }
+                </div>
 
 
-    if (hadithModal) {
+                <div class="flex items-center gap-2 px-4 whitespace-nowrap text-on-surface-variant">
 
-        hadithModal.addEventListener(
-            "click",
+
+                    <span class="material-symbols-outlined text-secondary">
+                        menu_book
+                    </span>
+
+
+                    <span id="counterText" class="font-semibold">
+
+                        Showing 40/40
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================================================= -->
+        <!-- HADITH GRID -->
+        <!-- ================================================= -->
+
+        <div id="hadithGrid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-gutter">
+
+
+            <!-- hadith.js will generate all 40 cards here -->
+
+
+        </div>
+
+
+        <!-- NO RESULTS -->
+
+        <div id="noResults" class="hidden text-center py-20">
+
+
+            <span class="material-symbols-outlined text-5xl text-outline">
+
+                search_off
+
+            </span>
+
+
+            <h2 class="text-xl font-bold text-primary mt-4">
+
+                No Hadith Found
+
+            </h2>
+
+
+            <p class="text-on-surface-variant mt-2">
+
+                Try searching with another word.
+
+            </p>
+
+        </div>
+
+
+    </main>
+
+
+    <!-- ================================================= -->
+    <!-- FOOTER -->
+    <!-- ================================================= -->
+
+    <footer
+        class="w-full px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col md:flex-row justify-between items-center gap-stack-md max-w-container-max mx-auto border-t border-surface-variant bg-surface-container-low mt-auto z-10 relative">
+
+
+        <div class="text-center md:text-left">
+
+
+            <a href="index.html" class="font-title-md text-primary block mb-2">
+
+                Ilm-e-Quran
+
+            </a>
+
+
+            <p class="text-on-surface-variant">
+
+                © 2024 Ilm-e-Quran.
+                Seeking Tranquility through Knowledge.
+
+            </p>
+
+        </div>
+
+
+        <div class="flex flex-wrap justify-center gap-6">
+
+
+            <a href="#" class="text-on-surface-variant hover:text-primary transition">
+
+                About Us
+
+            </a>
+
+
+            <a href="#" class="text-on-surface-variant hover:text-primary transition">
+
+                Contact
+
+            </a>
+
+
+            <a href="#" class="text-on-surface-variant hover:text-primary transition">
+
+                Privacy Policy
+
+            </a>
+
+
+            <a href="#" class="text-on-surface-variant hover:text-primary transition">
+
+                Terms of Service
+
+            </a>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================================================= -->
+    <!-- HADITH MODAL -->
+    <!-- ================================================= -->
+
+    <div id="hadithModal"
+        class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+
+
+        <div id="modalContent"
+            class="bg-surface-container-lowest w-full max-w-3xl rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+
+
+            <!-- Modal Header -->
+
+            <div class="p-6 border-b border-surface-variant flex justify-between items-center bg-surface">
+
+
+                <h2 class="font-title-md text-primary" id="modalTitle">
+
+                    Hadith
+
+                </h2>
+
+
+                <button id="closeModalBtn" type="button"
+                    class="text-on-surface-variant hover:text-error transition-colors p-2 rounded-full hover:bg-error-container/50">
+
+
+                    <span class="material-symbols-outlined">
+                        close
+                    </span>
+
+
+                </button>
+
+            </div>
+
+
+            <!-- Modal Content -->
+
+            <div class="p-6 overflow-y-auto flex-1 flex flex-col gap-6">
+
+
+                <!-- Arabic -->
+
+                <p class="font-body-ar text-[28px] md:text-[32px] leading-loose text-primary text-right arabic-text"
+                    dir="rtl" id="modalArabic">
+
+                </p>
+
+
+                <div class="h-px w-full bg-surface-variant">
+                </div>
+
+
+                <!-- English -->
+
+                <div>
+
+                    <h3 class="text-xs font-bold text-on-surface-variant mb-2 uppercase tracking-wider">
+
+                        English Translation
+
+                    </h3>
+
+
+                    <p class="text-on-surface leading-relaxed" id="modalEnglish">
+
+                    </p>
+
+                </div>
+
+
+                <!-- Urdu -->
+
+                <div>
+
+                    <h3 class="text-xs font-bold text-on-surface-variant mb-2 uppercase tracking-wider">
+
+                        Urdu Translation
+
+                    </h3>
+
+
+                    <p class="text-on-surface leading-relaxed text-right arabic-text" dir="rtl" id="modalUrdu">
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Reference -->
+
+            <div class="p-6 border-t border-surface-variant bg-surface">
+
+
+                <span class="text-sm text-on-surface-variant bg-surface-container-high px-3 py-2 rounded-md"
+                    id="modalRef">
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- HADITH JAVASCRIPT -->
+    <!-- ================================================= -->
+
+    <script src="hadith.js"></script>
+
+
+    <!-- ================================================= -->
+    <!-- BASIC PAGE JAVASCRIPT -->
+    <!-- ================================================= -->
+
+    <script>
+
+        /* ================= THEME ================= */
+
+        function toggleTheme() {
+
+            document.documentElement.classList.toggle("dark");
+
+        }
+
+
+        const themeToggle =
+            document.getElementById("themeToggle");
+
+        const mobileThemeToggle =
+            document.getElementById("mobileThemeToggle");
+
+
+        if (themeToggle) {
+
+            themeToggle.addEventListener(
+                "click",
+                toggleTheme
+            );
+
+        }
+
+
+        if (mobileThemeToggle) {
+
+            mobileThemeToggle.addEventListener(
+                "click",
+                toggleTheme
+            );
+
+        }
+
+
+        /* ================= MOBILE MENU ================= */
+
+        const mobileNav =
+            document.getElementById("mobileNav");
+
+
+        document
+            .getElementById("mobileMenuOpen")
+            ?.addEventListener("click", function () {
+
+                mobileNav.classList.add("open");
+
+            });
+
+
+        document
+            .getElementById("mobileMenuClose")
+            ?.addEventListener("click", function () {
+
+                mobileNav.classList.remove("open");
+
+            });
+
+
+        /* ================= MODAL ================= */
+
+        const hadithModal =
+            document.getElementById("hadithModal");
+
+
+        const closeModalBtn =
+            document.getElementById("closeModalBtn");
+
+
+        function closeHadithModal() {
+
+            if (!hadithModal) return;
+
+            hadithModal.classList.add("hidden");
+
+            hadithModal.classList.remove("flex");
+
+            document.body.style.overflow = "";
+
+        }
+
+
+        if (closeModalBtn) {
+
+            closeModalBtn.addEventListener(
+                "click",
+                closeHadithModal
+            );
+
+        }
+
+
+        if (hadithModal) {
+
+            hadithModal.addEventListener(
+                "click",
+                function (event) {
+
+                    if (event.target === hadithModal) {
+
+                        closeHadithModal();
+
+                    }
+
+                }
+            );
+
+        }
+
+
+        document.addEventListener(
+            "keydown",
             function (event) {
 
-                if (event.target === hadithModal) {
+                if (event.key === "Escape") {
 
                     closeHadithModal();
 
@@ -1071,107 +1009,91 @@
             }
         );
 
-    }
+
+        /* ================= SEARCH ================= */
+
+        const searchInput =
+            document.getElementById("searchInput");
 
 
-    document.addEventListener(
-        "keydown",
-        function (event) {
+        if (searchInput) {
 
-            if (event.key === "Escape") {
+            searchInput.addEventListener(
+                "input",
+                function () {
 
-                closeHadithModal();
+                    const query =
+                        this.value.toLowerCase().trim();
 
-            }
+                    const cards =
+                        document.querySelectorAll(
+                            "#hadithGrid > *"
+                        );
+
+
+                    let visible = 0;
+
+
+                    cards.forEach(function (card) {
+
+                        const text =
+                            card.innerText.toLowerCase();
+
+
+                        if (text.includes(query)) {
+
+                            card.style.display = "";
+
+                            visible++;
+
+                        } else {
+
+                            card.style.display = "none";
+
+                        }
+
+                    });
+
+
+                    const counter =
+                        document.getElementById("counterText");
+
+
+                    if (counter) {
+
+                        counter.textContent =
+                            "Showing " +
+                            visible +
+                            "/40";
+
+                    }
+
+
+                    const noResults =
+                        document.getElementById("noResults");
+
+
+                    if (noResults) {
+
+                        if (visible === 0) {
+
+                            noResults.classList.remove("hidden");
+
+                        } else {
+
+                            noResults.classList.add("hidden");
+
+                        }
+
+                    }
+
+                }
+            );
 
         }
-    );
 
-
-    /* ================= SEARCH ================= */
-
-    const searchInput =
-        document.getElementById("searchInput");
-
-
-    if (searchInput) {
-
-        searchInput.addEventListener(
-            "input",
-            function () {
-
-                const query =
-                    this.value.toLowerCase().trim();
-
-                const cards =
-                    document.querySelectorAll(
-                        "#hadithGrid > *"
-                    );
-
-
-                let visible = 0;
-
-
-                cards.forEach(function (card) {
-
-                    const text =
-                        card.innerText.toLowerCase();
-
-
-                    if (text.includes(query)) {
-
-                        card.style.display = "";
-
-                        visible++;
-
-                    } else {
-
-                        card.style.display = "none";
-
-                    }
-
-                });
-
-
-                const counter =
-                    document.getElementById("counterText");
-
-
-                if (counter) {
-
-                    counter.textContent =
-                        "Showing " +
-                        visible +
-                        "/40";
-
-                }
-
-
-                const noResults =
-                    document.getElementById("noResults");
-
-
-                if (noResults) {
-
-                    if (visible === 0) {
-
-                        noResults.classList.remove("hidden");
-
-                    } else {
-
-                        noResults.classList.add("hidden");
-
-                    }
-
-                }
-
-            }
-        );
-
-    }
-
-</script>
-<script src="script.js"></script>
+    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
