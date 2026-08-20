@@ -1,0 +1,491 @@
+:root {
+    --primary: #003820;
+    --primary-container: #0f5132;
+    --secondary: #755b00;
+    --secondary-container: #fed255;
+
+    --background: #faf9f4;
+    --surface: #ffffff;
+    --surface-low: #f5f4ef;
+    --surface-container: #efeee9;
+    --surface-variant: #e3e3de;
+
+    --text: #1b1c19;
+    --muted: #404942;
+    --error: #ba1a1a;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background-color: var(--background);
+    color: var(--text);
+
+    font-family: "Inter", sans-serif;
+
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%230f5132' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM36 4V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Navbar */
+
+.top-nav {
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 48px;
+
+    background: rgba(250, 249, 244, 0.85);
+
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(0, 56, 32, 0.08);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 50;
+}
+
+.logo {
+    color: var(--primary);
+
+    font-family: "Plus Jakarta Sans", sans-serif;
+
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.top-nav ul {
+    display: flex;
+    gap: 32px;
+
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+.top-nav a {
+    color: var(--muted);
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.top-nav a:hover,
+.top-nav a.active {
+    color: var(--primary);
+}
+
+.top-nav a.active {
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom: 5px;
+}
+
+/* Main */
+
+.main-content {
+    min-height: calc(100vh - 72px);
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 48px 16px;
+}
+
+.page-header {
+    text-align: center;
+
+    margin-bottom: 48px;
+}
+
+.page-header h1 {
+    margin: 0 0 8px;
+
+    color: var(--primary);
+
+    font-family: "Plus Jakarta Sans", sans-serif;
+
+    font-size: 32px;
+    line-height: 40px;
+}
+
+.page-header p {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 16px;
+}
+
+/* Card */
+
+.tasbih-card {
+    width: 100%;
+    max-width: 448px;
+
+    padding: 24px;
+
+    background: var(--surface);
+
+    border-radius: 16px;
+
+    border: 1px solid rgba(0, 0, 0, 0.08);
+
+    box-shadow:
+        0 10px 30px rgba(15, 81, 50, 0.05);
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 24px;
+}
+
+/* Target */
+
+.target-session {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 8px;
+
+    border-radius: 8px;
+
+    background: var(--surface-container);
+}
+
+.targets {
+    display: flex;
+    gap: 8px;
+}
+
+.target-btn {
+    border: 0;
+
+    padding: 8px 16px;
+
+    border-radius: 6px;
+
+    background: transparent;
+
+    color: var(--muted);
+
+    cursor: pointer;
+
+    font-weight: 500;
+}
+
+.target-btn.active {
+    background: var(--primary);
+    color: white;
+}
+
+.session {
+    text-align: right;
+}
+
+.session span {
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+.session strong {
+    color: var(--primary);
+
+    font-family: "Plus Jakarta Sans";
+
+    font-size: 20px;
+}
+
+/* Phrase */
+
+.phrase-section {
+    width: 100%;
+
+    text-align: center;
+
+    padding: 16px 0;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+#phrase-select {
+    width: 100%;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+
+    color: var(--primary);
+
+    text-align: center;
+
+    font-family: "Plus Jakarta Sans";
+
+    font-size: 20px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+#arabic-display {
+    margin-top: 8px;
+
+    color: var(--secondary);
+
+    font-family: "Noto Serif", serif;
+
+    font-size: 48px;
+
+    line-height: 72px;
+}
+
+/* Counter */
+
+.counter-wrapper {
+    width: 256px;
+    height: 256px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 16px 0;
+}
+
+.progress-svg {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    transform: rotate(-90deg);
+}
+
+.progress-bg,
+.progress-circle {
+    fill: none;
+
+    r: 45;
+
+    stroke-width: 6;
+}
+
+.progress-bg {
+    stroke: var(--surface-variant);
+}
+
+.progress-circle {
+    stroke: var(--secondary);
+
+    stroke-linecap: round;
+
+    stroke-dasharray: 282.743;
+
+    stroke-dashoffset: 282.743;
+
+    transition: stroke-dashoffset 0.3s ease;
+}
+
+.counter-btn {
+    width: 192px;
+    height: 192px;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: var(--primary-container);
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    position: relative;
+
+    box-shadow:
+        0 10px 30px rgba(15, 81, 50, 0.15),
+        inset 0 -4px 0 rgba(0, 0, 0, 0.1);
+
+    transition: transform 0.15s ease;
+}
+
+.counter-btn:active {
+    transform: scale(0.96);
+}
+
+#counter-display {
+    font-family: "Plus Jakarta Sans";
+
+    font-size: 56px;
+
+    font-weight: 700;
+}
+
+.counter-btn small {
+    margin-top: 8px;
+
+    color: #95d4ac;
+
+    letter-spacing: 2px;
+
+    font-size: 11px;
+}
+
+/* Controls */
+
+.controls {
+    width: 100%;
+
+    display: flex;
+
+    gap: 16px;
+}
+
+.controls button {
+    flex: 1;
+
+    padding: 12px;
+
+    border: 1px solid var(--surface-variant);
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: var(--muted);
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+}
+
+.controls button:hover {
+    background: var(--surface-low);
+}
+
+.reset-all {
+    border: 0;
+
+    background: transparent;
+
+    color: var(--error);
+
+    cursor: pointer;
+
+    font-size: 13px;
+}
+
+.reset-all:hover {
+    text-decoration: underline;
+}
+
+/* Mobile */
+
+.mobile-nav {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    .top-nav {
+        display: none;
+    }
+
+    .main-content {
+        padding-bottom: 100px;
+    }
+
+    .page-header {
+        margin-bottom: 32px;
+    }
+
+    .page-header h1 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    #arabic-display {
+        font-size: 36px;
+    }
+
+    .mobile-nav {
+        display: flex;
+
+        position: fixed;
+
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        height: 72px;
+
+        background: rgba(250, 249, 244, 0.95);
+
+        backdrop-filter: blur(12px);
+
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+
+        z-index: 100;
+
+        justify-content: space-around;
+    }
+
+    .mobile-nav a {
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 4px;
+
+        color: var(--muted);
+
+        text-decoration: none;
+
+        font-size: 10px;
+    }
+
+    .mobile-nav a.selected {
+        color: var(--primary);
+    }
+}
